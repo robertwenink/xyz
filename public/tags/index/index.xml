@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>index on Website of Jane Doe</title>
-    <link>https://example.com/tags/index/</link>
-    <description>Recent content in index on Website of Jane Doe</description>
+    <title>index on Website of Robert Wenink</title>
+    <link>https://robertwenink.xyz/tags/index/</link>
+    <description>Recent content in index on Website of Robert Wenink</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="https://example.com/tags/index/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://robertwenink.xyz/tags/index/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Posts</title>
-      <link>https://example.com/post/</link>
+      <link>https://robertwenink.xyz/post/</link>
       <pubDate>Thu, 07 May 2020 10:26:41 +0200</pubDate>
       
-      <guid>https://example.com/post/</guid>
+      <guid>https://robertwenink.xyz/post/</guid>
       <description></description>
     </item>
     
