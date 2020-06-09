@@ -1,8 +1,7 @@
-baseURL = "https://robertwenink.xyz"
+baseURL = "https://robertwenink.xyz/"
 languageCode = "en"
 DefaultContentLanguage = "en"
-title = "Website of Robert Wenink"
-theme = "anatole"
+title = "Home"
 summarylength = 10
 enableEmoji = true
 
@@ -13,13 +12,14 @@ enableEmoji = true
 #googleAnalytics = "UA-123-45"
 
 [params]
-title = "I'm a geit"
-author = "Gerry Geit"
-description = "Call me Geitty"
-profilePicture = "images/geit.png"
+title = ""
+author = "Robert Wenink"
+description = "Student Computer Scientist & Marine Engineering"
+profilePicture = "images/pf.jfif"
 keywords = ""
 favicon = "favicons/"
-customCss = []
+customCss = ["css/added_style.css"]
+introtext = "Welcome to this website dedicated to keeping track of my adventures in the combined and somewhat suprising field of Computer Science and Marine Engineering. Feel free to browse some."
 
 ## Math settings
 [params.math]
@@ -30,7 +30,7 @@ use = "katex"  # options: "katex", "mathjax". default is "katex".
 [[params.socialIcons]]
 icon = "fa-linkedin"
 title = "Linkedin"
-url = "https://de.linkedin.com/"
+url = "linkedin.com/in/robertwenink/"
 
 [[params.socialIcons]]
 icon = "fa-github"
@@ -49,6 +49,11 @@ url = "mailto:R.C.T.Wenink@student.tudelft.nl"
 
 ## Menu items
 
+[taxonomies]
+	tag = "tags"
+	category = "categories"
+	field = "field"
+
 [menu]
 
   [[menu.main]]
@@ -61,5 +66,5 @@ url = "mailto:R.C.T.Wenink@student.tudelft.nl"
   name = "Posts"
   weight = 200
   identifier = "posts"
-  url = "/post/"
+  url = "/posts/"
 

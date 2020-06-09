@@ -1,28 +1,20 @@
 ---
 title: "About"
-description: "Hugo, the world’s fastest framework for building websites"
+description: "About me"
 date: "2018-02-11"
 aliases: ["about-us","about-hugo","contact"]
-author: "Hugo Authors"
+author: "Robert Wenink"
 menu: main
 name: "About"
 weight: 300
+markup: mmark
+math: true
 ---
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Hi, my name is Robert Wenink. I started the bachelor Marine Technology at the Technical University Delft (Netherlands) and later did a bridging programme in order to do a double masters together with Computer Science. 
+For me, it is a beautifull symbiosis as Computer Science provides me with the problem solving and optimization capabilities I long for, with Marine Engineering being the field where in my opinion still lots of opportunities are left on the table for applying the combined knowledge.
 
-Hugo makes use of a variety of open source projects including:
+Primary interests within Computer Science are (evolutionary) algorithms, Machine/DeepLearning, and High Performance Computing. Within Marine Engineering I have pivoted to fluid simulations (CFD), in which subject I will surely conduct my master's thesis.
+How about multi-grid methods enhanced using Machine Learning? How about a laminar flow solver encoded in a lightweight neural network, creating a surrogate CFD model to be used as fitness function in an EA for preliminary design purposes? It surely are some academic and interesting subjects, including skills required for solving a myriad of other real-world problems.
 
-* https://github.com/russross/blackfriday
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
