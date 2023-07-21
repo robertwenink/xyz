@@ -1,4 +1,5 @@
 themes/introduction
+themes/LoveIt/exampleSite
 demo/
 .hugo/*
 !.hugo/version
