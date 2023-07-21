@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
@@ -44,5 +45,16 @@
 
         {{- /* Load JavaScript scripts and CSS */ -}}
         {{- partial "assets.html" . -}}
+    <script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+        if (!user) {
+            window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+            });
+        }
+        });
+    }
+    </script>
     </body>
 </html>
