@@ -1,3 +1,5 @@
+gebruik git bash voor commands!
+
 draft op http://localhost:1313/ : hugo server -D
 generate to public 				: hugo -s C:\Users\RobertWenink\Documents\robertwenink.xyz
 new post						: hugo new posts/name_of_new_post.md
