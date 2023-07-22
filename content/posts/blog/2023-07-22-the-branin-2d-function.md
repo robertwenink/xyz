@@ -46,7 +46,7 @@ E﻿ven more text, at the same heading level
 
 T﻿his is heading 5
 
-###### D﻿eepest
+###### D﻿eepest 
 
 A﻿nd this is heading level 6. The heading text is smaller than the actual text! 
 
