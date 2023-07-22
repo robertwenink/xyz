@@ -5,7 +5,7 @@ date: 2023-07-22T07:18:06.254Z
 thumbnail: /images/uploads/branin_transformed_alternating.png
 rating: 1
 ---
-## The Branin 2D function
+# The Branin 2D function
 
 D﻿oes this really need text?
 
