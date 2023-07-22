@@ -5,11 +5,11 @@ date: 2023-07-22T07:18:06.254Z
 thumbnail: /images/uploads/branin_transformed_alternating.png
 rating: 1
 ---
-# The Branin 2D function
+## The Branin 2D function
 
-D﻿oes this really need text? Yes it does
+D﻿oes this really need text? Yes it does. Furthermore, heading1 is not included in the toc (probably with reason, the font size is larger than that of the title!
 
-## T﻿est 2
+### T﻿est 2
 
 ***T﻿his is italic and bold text***
 
