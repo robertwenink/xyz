@@ -1,3 +1,5 @@
+# documentation for theme found in https://hugoloveit.com/categories/documentation/
+
 title = "Robert Wenink - Maritime Engineering and Computer Science"
 baseURL = "https://robertwenink.xyz"
 theme = "LoveIt"
@@ -23,6 +25,29 @@ enableEmoji = true
     url = "/posts/"
     # title will be shown when you hover on this menu link
     title = ""
+  [[menu.main]]
+    weight = 1
+    identifier = "projects"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Projects"
+    url = "/projects/"
+    # title will be shown when you hover on this menu link
+    title = ""
+  [[menu.main]]
+    weight = 1
+    identifier = "about"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "About"
+    url = "/about.md"
+    # title will be shown when you hover on this menu link
+    title = ""
+
   [[menu.main]]
     weight = 2
     identifier = "tags"
@@ -84,16 +109,16 @@ enableEmoji = true
       post = ""
 
       # whether to use typeit animation for title name
-      typeit = false
+      typeit = true
 
   # Footer config
   [params.footer]
     enable = true
     # Custom content (HTML format is supported)
-    custom = ""
+    custom = "Powered by hugo and netlify"
 
     # whether to show Hugo and theme info
-    hugo = true
+    hugo = false
 
     # whether to show copyright info
     copyright = true
@@ -102,7 +127,7 @@ enableEmoji = true
     author = true
 
     # site creation time
-    since = 2023
+    since = 2022
     
     # ICP info only in China (HTML format is supported)
     icp = ""
@@ -196,10 +221,10 @@ enableEmoji = true
       avatarURL = ""
 
       # title shown in home page (HTML format is supported)
-      title = "Robert Wenink - Maritime Engineering and Computer Science"
+      title = "Robert Wenink -<br>Maritime Engineering & Computer Science"
 
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "This is my cool site"
+      subtitle = "Inspiring subtitle"
 
       # whether to use typeit animation for subtitle
       typeit = true
@@ -218,10 +243,10 @@ enableEmoji = true
 
   # Social config in home page
   [params.social]
-    GitHub = "https://github.com/robertwenink"
-    Linkedin = "https://linkedin.com/in/robertwenink/"
-    # Twitter = ""
-    # Instagram = ""
+    GitHub = "robertwenink"
+    Linkedin = "robertwenink"
+    Twitter = ""
+    Instagram = ""
     Facebook = ""
     Telegram = ""
     Medium = ""
@@ -309,7 +334,7 @@ enableEmoji = true
     lightgallery = true
 
     # whether to enable the ruby extended syntax
-    ruby = true
+    ruby = false
 
     # whether to enable the fraction extended syntax
     fraction = true
@@ -358,7 +383,7 @@ enableEmoji = true
       copyTex = true
 
       # KaTeX extension mhchem
-      mhchem = true
+      mhchem = false
 
     # Mapbox GL JS config (Mapbox GL JS https://docs.mapbox.com/mapbox-gl-js)
     [params.page.mapbox]
@@ -538,7 +563,7 @@ enableEmoji = true
     cursorChar = "|"
 
     # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
-    duration = -1
+    duration = 920
 
   # Site verification code for Google/Bing/Yandex/Pinterest/Baidu
   [params.verification]

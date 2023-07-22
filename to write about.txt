@@ -1,0 +1,30 @@
+About
+- persoonlijke 'over mij' tekst
+- CV
+- 
+
+Projects:
+- Thesis
+- Cadeler AWP tool
+
+Gaussian Processes / Kriging
+- Latex from thesis report
+
+
+Programming
+- Compile your python program with PyInstaller to .exe
+	- for included files, on windows, require trick (sys._OMEI oid)
+	- limited to the system the executable was compiled on
+- Speed up your calculations with Numba
+	- how to do that well (ifs etc)
+	- drawbacks: not portable
+- (Beautiful) Graphical User Interfaces with TkInter and CustomTkInter
+- Exporting the TkInter GUI to image and pdf
+	- capturing the screen 
+	- resolution dependency ...
+	- streaming solution
+- vectorisation with numpy, and why it is not worse than compiled languages
+
+Ergonomics
+- Desktop setup
+- inzichten?
