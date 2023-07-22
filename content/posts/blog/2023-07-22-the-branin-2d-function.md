@@ -19,6 +19,7 @@ A﻿nd this is a quote:
 
 L﻿ets insert some python code :
 
+
 ```python
 class Encoder(json.JSONEncoder):
     """ Special json encoder for numpy types """
