@@ -34,8 +34,20 @@ class Encoder(json.JSONEncoder):
 
 ![test](/images/uploads/branin_transformed_alternating.png "The Branin 2d Function plotted inline")
 
-### C﻿ontinuation
+#### C﻿ontinuation
 
 L﻿et's continue with the post here after the image.
+
+#### E﻿xtra
+
+E﻿ven more text, at the same heading level
+
+##### E﻿ven deeper
+
+T﻿his is heading 5
+
+###### D﻿eepest
+
+A﻿nd this is heading level 6. The heading text is smaller than the actual text!
 
 T﻿he end.
