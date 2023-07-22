@@ -48,6 +48,6 @@ T﻿his is heading 5
 
 ###### D﻿eepest
 
-A﻿nd this is heading level 6. The heading text is smaller than the actual text!
+A﻿nd this is heading level 6. The heading text is smaller than the actual text! 
 
 T﻿he end.
