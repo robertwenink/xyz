@@ -5,9 +5,9 @@ date: 2023-07-22T07:18:06.254Z
 thumbnail: /images/uploads/branin_transformed_alternating.png
 rating: 1
 ---
-# The Branin 2D function
+## The Branin 2D function
 
-## T﻿est 2
+### T﻿est 2
 
 ***T﻿his is italic and bold text***
 
@@ -32,7 +32,7 @@ class Encoder(json.JSONEncoder):
 
 ![test](/images/uploads/branin_transformed_alternating.png "The Branin 2d Function plotted inline")
 
-## C﻿ontinuation
+### C﻿ontinuation
 
 L﻿et's continue with the post here after the image.
 
