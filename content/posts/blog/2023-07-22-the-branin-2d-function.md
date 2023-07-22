@@ -7,6 +7,8 @@ rating: 1
 ---
 ## The Branin 2D function
 
+D﻿oes this really need text?
+
 ### T﻿est 2
 
 ***T﻿his is italic and bold text***
