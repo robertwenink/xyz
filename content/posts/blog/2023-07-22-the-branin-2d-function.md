@@ -48,6 +48,6 @@ T﻿his is heading 5
 
 ###### D﻿eepest 
 
-A﻿nd this is heading level 6. The heading text is smaller than the actual text! 
+A﻿nd this is heading level 6. Everything from level 3 (2nd real level) and on is not included in the toc.
 
 T﻿he end.
