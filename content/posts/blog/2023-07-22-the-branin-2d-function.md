@@ -7,7 +7,7 @@ rating: 1
 ---
 # The Branin 2D function
 
-D﻿oes this really need text?
+D﻿oes this really need text? Yes it does
 
 ### T﻿est 2
 
@@ -17,7 +17,7 @@ A﻿nd this is a quote:
 
 > W﻿owzers what an empty site
 
-L﻿ets insert some python code:
+L﻿ets insert some python code :
 
 ```python
 class Encoder(json.JSONEncoder):
