@@ -54,10 +54,13 @@ A﻿nd this is heading level 6. Everything from level 3 (2nd real level) and on 
 ### T﻿esting Latex
 
 Following the principle of a Gaussian Process, it is typically assumed that data at locations $\mathbf{x}={x*0,...x_n}$ is the result of sampling a stochastic process $\boldsymbol{Y}(x) = \mu + \mathcal{N}(0,\sigma^2)$. We further assume realisations of $\boldsymbol{Y(x)}$ that are spatially near to each other are correlated. We describe this correlation using a covariance matrix $\boldsymbol{\Sigma}$, composed of an (unknown) process variance $\sigma$ and the correlation matrix $\boldsymbol{R}$:
+
 \begin{equation}
 \boldsymbol{\Sigma}\left(\boldsymbol{Y}\right)=\sigma^{2} \boldsymbol{R}
 \end{equation}
+
 To define the correlation matrix $\boldsymbol{R}$, \citet{Jones2001} and many others use the so-called "Kriging" kernel:
+
 \begin{equation}\label{eqn:Kriging_kernel}
 \boldsymbol{R}\left[\boldsymbol{Y}(x*{i}), \boldsymbol{Y}(x*{j})\right]=\exp \left(-\sum*{\ell=1}^{d} \theta*{\ell}\left|\boldsymbol{x}*{i \ell}-\boldsymbol{x}*{j \ell}\right|^{p*{\ell}}\right)
 \end{equation}
