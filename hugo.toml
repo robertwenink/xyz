@@ -3,14 +3,22 @@
 title = "Robert Wenink - Maritime Engineering and Computer Science"
 baseURL = "https://robertwenink.xyz"
 theme = "LoveIt"
+
 languageCode = "en"
+languageName = "English"
+
 enableEmoji = true
+
+# default amount of posts in each pages
+paginate = 12
 
 [author]
   name = "Robert Wenink"
   link  = "https://robertwenink.xyz"
   email = "robertwenink@gmail.com"
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 # Menu config
 [menu]
@@ -44,7 +52,7 @@ enableEmoji = true
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
     name = "About"
-    url = "/about.md"
+    url = "/about/"
     # title will be shown when you hover on this menu link
     title = ""
 
@@ -193,7 +201,7 @@ enableEmoji = true
     maxResultLength = 10
 
     # snippet length of the result
-    snippetLength = 30
+    snippetLength = 130
 
     # HTML tag name of the highlight part in results
     highlightTag = "em"
@@ -247,74 +255,6 @@ enableEmoji = true
     Linkedin = "robertwenink"
     Twitter = ""
     Instagram = ""
-    Facebook = ""
-    Telegram = ""
-    Medium = ""
-    Gitlab = ""
-    Youtubelegacy = ""
-    Youtubecustom = ""
-    Youtubechannel = ""
-    Tumblr = ""
-    Quora = ""
-    Keybase = ""
-    Pinterest = ""
-    Reddit = ""
-    Codepen = ""
-    FreeCodeCamp = ""
-    Bitbucket = ""
-    Stackoverflow = ""
-    Weibo = ""
-    Odnoklassniki = ""
-    VK = ""
-    Flickr = ""
-    Xing = ""
-    Snapchat = ""
-    Soundcloud = ""
-    Spotify = ""
-    Bandcamp = ""
-    Paypal = ""
-    Fivehundredpx = ""
-    Mix = ""
-    Goodreads = ""
-    Lastfm = ""
-    Foursquare = ""
-    Hackernews = ""
-    Kickstarter = ""
-    Patreon = ""
-    Steam = ""
-    Twitch = ""
-    Strava = ""
-    Skype = ""
-    Whatsapp = ""
-    Zhihu = ""
-    Douban = ""
-    Angellist = ""
-    Slidershare = ""
-    Jsfiddle = ""
-    Deviantart = ""
-    Behance = ""
-    Dribbble = ""
-    Wordpress = ""
-    Vine = ""
-    Googlescholar = ""
-    Researchgate = ""
-    Mastodon = ""
-    Thingiverse = ""
-    Devto = ""
-    Gitea = ""
-    XMPP = ""
-    Matrix = ""
-    Bilibili = ""
-    Discord = ""
-    DiscordInvite = ""
-    Lichess = ""
-    ORCID = ""
-    Pleroma = ""
-    Kaggle = ""
-    MediaWiki= ""
-    Plume = ""
-    HackTheBox = ""
-    RootMe= ""
     Email = "robertwenink@gmail.com"
     Phone = ""
     RSS = ""
@@ -354,10 +294,10 @@ enableEmoji = true
       enable = true
 
       # whether to keep the static table of the contents in front of the post
-      keepStatic = true
+      keepStatic = false
 
       # whether to make the table of the contents in the sidebar automatically collapsed
-      auto = true
+      auto = false
 
     # Code config
     [params.page.code]
@@ -411,29 +351,11 @@ enableEmoji = true
     # Social share links in post page
     [params.page.share]
       enable = true
-      Twitter = true
-      Facebook = true
+      Twitter = false
+      Facebook = false
       Linkedin = true
       Whatsapp = false
-      Pinterest = false
-      Tumblr = false
-      HackerNews = true
       Reddit = false
-      VK = false
-      Buffer = false
-      Xing = false
-      Line = true
-      Instapaper = false
-      Pocket = false
-      Flipboard = false
-      Weibo = true
-      Blogger = false
-      Baidu = false
-      Odnoklassniki = false
-      Evernote = false
-      Skype = false
-      Trello = false
-      Mix = false
 
     # Comment config
     [params.page.comment]
@@ -629,12 +551,34 @@ enableEmoji = true
     objectFit = false
 
 
-# Markup related configuration in Hugo
+# Markup related config in Hugo
 [markup]
-  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  # Syntax Highlighting
   [markup.highlight]
-    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    # false is a necessary configuration
+    # (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+  # Goldmark is from Hugo 0.60 the default library used for Markdown
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # whether to use HTML tags directly in the document
+      unsafe = true
+  # Table Of Contents settings
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
 
 
 # ignore some build errors

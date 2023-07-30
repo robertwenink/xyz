@@ -2,8 +2,12 @@
 layout: blog
 title: The Branin 2D function
 date: 2023-07-22T07:18:06.254Z
-thumbnail: /images/uploads/branin_transformed_alternating.png
-rating: 1
+lastmod: 2023-07-28T07:18:06.254Z
+featuredImage: /images/uploads/branin_transformed_alternating.png
+
+toc:
+  enable: true
+  auto: true
 ---
 ## The Branin 2D function
 
@@ -61,8 +65,12 @@ Following the principle of a Gaussian Process, it is typically assumed that data
 
 To define the correlation matrix $\boldsymbol{R}$, \citet{Jones2001} and many others use the so-called "Kriging" kernel:
 
-\begin{equation}\label{eqn:Kriging_kernel}
-\boldsymbol{R}\left[\boldsymbol{Y}(x*{i}), \boldsymbol{Y}(x*{j})\right]=\exp \left(-\sum*{\ell=1}^{d} \theta*{\ell}\left|\boldsymbol{x}*{i \ell}-\boldsymbol{x}*{j \ell}\right|^{p*{\ell}}\right)
+{{< raw >}}
+\begin{equation}
+\begin{aligned}
+\boldsymbol{R}\left[\boldsymbol{Y}(x*{i}), \boldsymbol{Y}(x*{j})\right]=
+\exp \left(-\sum*{\ell=1}^{d} \theta*{\ell}\left|\boldsymbol{x}*{i \ell}-\boldsymbol{x}*{j \ell}\right|^{p*{\ell}}\right)
+\end{aligned}
 \end{equation}
-
+{{< /raw >}}
 T﻿he end.

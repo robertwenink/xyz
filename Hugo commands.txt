@@ -6,3 +6,8 @@ new post						: hugo new posts/name_of_new_post.md
 
 
 custimizing template: https://gohugo.io/templates/introduction/
+
+Om een example website te bekijken van een thema:
+cd themes/introduction/exampleSite/
+hugo serve  --themesDir ../..
+
