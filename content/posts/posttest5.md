@@ -1,8 +1,8 @@
 ---
-title: "About"
+title: "Posttest5"
 subtitle: ""
-date: 2023-07-22T09:01:20+02:00
-lastmod: 2023-07-22T09:01:20+02:00
+date: 2023-07-31T14:26:13+02:00
+lastmod: 2023-07-31T14:26:13+02:00
 draft: true
 author: ""
 authorLink: ""
@@ -38,7 +38,7 @@ math:
 mapbox:
   # ...
 share:
-  enable: true
+  enable: false
   # ...
 comment:
   enable: true
@@ -60,7 +60,3 @@ seo:
 ---
 
 <!--more-->
-asdfasdfasdf
-hallo hallo
-hallo
-hallllllo

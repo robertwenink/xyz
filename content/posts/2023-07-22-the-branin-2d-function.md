@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: The Branin 2D function
-date: 2023-07-22T07:18:06.254Z
+date: 2023-06-22T07:18:06.254Z
 lastmod: 2023-07-28T07:18:06.254Z
 featuredImage: /images/uploads/branin_transformed_alternating.png
 

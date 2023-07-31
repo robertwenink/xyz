@@ -1,8 +1,0 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Tags - Tag - Robert Wenink - Maritime Engineering and Computer Science</title>
-        <link>https://robertwenink.xyz/tags/</link>
-        <description>Tags - Tag - Robert Wenink - Maritime Engineering and Computer Science</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>robertwenink@gmail.com (Robert Wenink)</managingEditor>
-            <webMaster>robertwenink@gmail.com (Robert Wenink)</webMaster><atom:link href="https://robertwenink.xyz/tags/" rel="self" type="application/rss+xml" /></channel>
-</rss>

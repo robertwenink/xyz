@@ -1,9 +1,9 @@
 ---
-title: "About"
+title: "Posttest6"
 subtitle: ""
-date: 2023-07-22T09:01:20+02:00
-lastmod: 2023-07-22T09:01:20+02:00
-draft: true
+date: 2023-07-31T14:37:23+02:00
+lastmod: 2023-07-31T14:37:23+02:00
+draft: false
 author: ""
 authorLink: ""
 description: ""
@@ -60,7 +60,3 @@ seo:
 ---
 
 <!--more-->
-asdfasdfasdf
-hallo hallo
-hallo
-hallllllo
