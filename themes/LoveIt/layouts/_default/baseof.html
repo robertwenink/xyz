@@ -45,6 +45,8 @@
 
         {{- /* Load JavaScript scripts and CSS */ -}}
         {{- partial "assets.html" . -}}
+
+    <!-- Netlify / Decap CMS script -->
     <script>
     if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
@@ -55,6 +57,6 @@
         }
         });
     }
-    </script>
+    </script> 
     </body>
 </html>

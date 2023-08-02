@@ -23,17 +23,17 @@ paginate = 12
 [menu]
   [[menu.main]]
     weight = 1
-    identifier = "posts"
+    identifier = "about"
     # you can add extra information before the name (HTML format is supported), such as icons
     pre = ""
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
-    name = "Posts"
-    url = "/posts/"
+    name = "About"
+    url = "/about/"
     # title will be shown when you hover on this menu link
     title = ""
   [[menu.main]]
-    weight = 1
+    weight = 2
     identifier = "projects"
     # you can add extra information before the name (HTML format is supported), such as icons
     pre = ""
@@ -44,32 +44,15 @@ paginate = 12
     # title will be shown when you hover on this menu link
     title = ""
   [[menu.main]]
-    weight = 1
-    identifier = "about"
+    weight = 3
+    identifier = "blog"
     # you can add extra information before the name (HTML format is supported), such as icons
     pre = ""
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
-    name = "About"
-    url = "/about/"
+    name = "Blog"
+    url = "/posts/"
     # title will be shown when you hover on this menu link
-    title = ""
-
-  [[menu.main]]
-    weight = 2
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "Tags"
-    url = "/tags/"
-    title = ""
-  [[menu.main]]
-    weight = 3
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
-    url = "/categories/"
     title = ""
 
 [params]
@@ -122,7 +105,7 @@ paginate = 12
   [params.footer]
     enable = true
     # Custom content (HTML format is supported)
-    custom = "Powered by hugo and netlify"
+    custom = "CoC no: <a href='https://www.kvk.nl/bestellen/#/87003279000052935140'>87003279</a>  |  VAT no: NL004343026B56  |  <br>Powered by hugo and netlify"
 
     # whether to show Hugo and theme info
     hugo = false

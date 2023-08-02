@@ -28,6 +28,9 @@
         <div class="menu">
             <div class="menu-inner">
                 {{- range .Site.Menus.main -}}
+                    <!-- {{- if eq .Name "Tags" -}} -->
+                    <span class="menu-item delimiter"></span>
+                    <!-- {{- end -}} -->
                     {{- $url := .URL | relLangURL -}}
                     {{- with .Page -}}
                         {{- $url = .RelPermalink -}}
