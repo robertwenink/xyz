@@ -1,9 +1,9 @@
 ---
-title: "_Index"
+title: "About this website"
 subtitle: ""
 date: 2023-08-01T17:37:43+02:00
 lastmod: 2023-08-01T17:37:43+02:00
-draft: true
+draft: false
 description: ""
 
 tags: []
@@ -11,7 +11,6 @@ categories: []
 
 featuredImage: ""
 featuredImagePreview: ""
-
 ---
 
 ## About this website
@@ -24,4 +23,3 @@ Maritime Engineering & Computer Science.
 
 Want to hire me, or have any suggestions? Contact me: <robertwenink@gmail.com>!
 
-## Projects

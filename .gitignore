@@ -3,3 +3,4 @@ themes/LoveIt/exampleSite
 demo/
 .hugo/*
 !.hugo/version
+public

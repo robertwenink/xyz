@@ -19,6 +19,10 @@ paginate = 12
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+[imaging]
+  quality = 90
+  hint = "photo"
+
 # Menu config
 [menu]
   [[menu.main]]

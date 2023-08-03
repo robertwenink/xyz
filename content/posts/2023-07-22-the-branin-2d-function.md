@@ -8,6 +8,8 @@ featuredImage: /images/uploads/branin_transformed_alternating.png
 tags: ["Test tag"]
 categories: ["Test Category"]
 
+draft: false
+
 toc:
   enable: true
   auto: true
