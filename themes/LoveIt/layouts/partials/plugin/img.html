@@ -2,11 +2,11 @@
 {{- $src := .Src -}}
 {{- $width := .Width -}}
 {{- $height := .Height -}}
-{{- $isJPG := eq (path.Ext .Src) ".jpg" -}}
-{{- $isPNG := eq (path.Ext .Src) ".png" -}}
+
+{{- $isformat := in (slice ".jpg" ".jpeg" ".png" ".tiff") (path.Ext .Src) -}}
 
 {{- with dict "Path" $src "Resources" .Resources | partial "function/resource.html" -}}
-    {{- if or $isJPG $isPNG -}}
+    {{- if $isformat -}}
         {{- with .Resize (printf "%dx%d webp" .Width .Height) -}}
             {{- $src = .RelPermalink -}}
             {{- $width = $width | default .Width -}}

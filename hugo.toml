@@ -80,6 +80,9 @@ paginate = 12
   # website description for RSS, SEO, Open Graph and Twitter Cards
   description = ""
 
+  # is what will be displayed by the paginator
+  mainSections = ['projects']
+
 # Header config
   [params.header]
     # desktop header mode ["fixed", "normal", "auto"]
@@ -109,7 +112,7 @@ paginate = 12
   [params.footer]
     enable = true
     # Custom content (HTML format is supported)
-    custom = "CoC no: <a href='https://www.kvk.nl/bestellen/#/87003279000052935140'>87003279</a>  |  VAT no: NL004343026B56  |  <br>Powered by hugo and netlify"
+    custom = "CoC no: <a href='https://www.kvk.nl/bestellen/#/87003279000052935140'>87003279</a>  |  VAT no: NL004343026B56  <br>Powered by hugo and netlify"
 
     # whether to show Hugo and theme info
     hugo = false
