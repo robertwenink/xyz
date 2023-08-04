@@ -9,6 +9,4 @@ description: ""
 ---
 
 <!--more-->
-Welcome to my website.
-
 ![pf](pf.jpg "Me on top of a mountain/hill in the black forest, Germany.")
