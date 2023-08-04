@@ -87,10 +87,10 @@ paginate = 12
 # Header config
   [params.header]
     # desktop header mode ["fixed", "normal", "auto"]
-    desktopMode = "fixed"
+    desktopMode = "auto"
 
     # mobile header mode ["fixed", "normal", "auto"]
-    mobileMode = "fixed"
+    mobileMode = "auto"
 
     # Header title config
     [params.header.title]
@@ -349,7 +349,7 @@ paginate = 12
 
     # Comment config
     [params.page.comment]
-      enable = true
+      enable = false
 
       # Disqus comment config (https://disqus.com/)
       [params.page.comment.disqus]
