@@ -1,5 +1,4 @@
 ---
-layout: blog
 title: "Testproject"
 subtitle: ""
 date: 2023-08-03T13:40:50+02:00
