@@ -71,7 +71,8 @@ paginate = 12
   fingerprint = ""
 
   # date format
-  dateFormat = "01-02-2006"
+  # 02 (dag) en 01 (maand) omgedraaid, want hugo staat standaard in amerikaans systeem
+  dateFormat = "02-01-2006"
 
   # website title and images for Open Graph and Twitter Cards
   title = ""
@@ -89,7 +90,7 @@ paginate = 12
     desktopMode = "fixed"
 
     # mobile header mode ["fixed", "normal", "auto"]
-    mobileMode = "auto"
+    mobileMode = "fixed"
 
     # Header title config
     [params.header.title]
@@ -138,7 +139,7 @@ paginate = 12
     paginate = 20
 
     # date format (month and day)
-    dateFormat = "01-02"
+    dateFormat = "02-Jan"
 
     # amount of RSS pages
     rss = 10
@@ -149,7 +150,7 @@ paginate = 12
     paginate = 20
 
     # date format (month and day)
-    dateFormat = "01-02"
+    dateFormat = "02-Jan"
     
     # amount of RSS pages
     rss = 10

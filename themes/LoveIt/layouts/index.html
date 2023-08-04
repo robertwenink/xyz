@@ -38,4 +38,20 @@
             {{- partial "paginator.html" . -}}
         {{- end -}}
     </div>
+
+    <div class="page archive">
+        <h2> Tags </h2>
+        <div class="tag-cloud-tags">
+            {{- range $.Site.Taxonomies.tags.ByCount -}}
+                <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <sup>{{ .Count }}</sup></a>
+            {{- end -}}
+        </div>
+        <h2> Categories </h2>
+        <div class="tag-cloud-tags">
+            {{- range $.Site.Taxonomies.categories.ByCount -}}
+                <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <sup>{{ .Count }}</sup></a>
+            {{- end -}}
+        </div>
+    </div>
+
 {{- end -}}

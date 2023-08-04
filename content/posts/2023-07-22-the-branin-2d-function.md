@@ -14,6 +14,7 @@ toc:
   enable: true
   auto: true
 ---
+
 ## The Branin 2D function
 
 D﻿oes this really need text? Yes it does. Furthermore, heading1 is not included in the toc (probably with reason, the font size is larger than that of the title!)
