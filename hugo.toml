@@ -302,12 +302,12 @@ paginate = 12
       enable = true
       
       # default inline delimiter is $ ... $ and \( ... \)
-      inlineLeftDelimiter = ""
-      inlineRightDelimiter = ""
+      #inlineLeftDelimiter = ""
+      #inlineRightDelimiter = ""
 
       # default block delimiter is $$ ... $$, \[ ... \], \begin{equation} ... \end{equation} and some other functions
-      blockLeftDelimiter = ""
-      blockRightDelimiter = ""
+      #blockLeftDelimiter = ""
+      #blockRightDelimiter = ""
 
       # KaTeX extension copy_tex
       copyTex = true

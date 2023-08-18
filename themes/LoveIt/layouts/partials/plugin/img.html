@@ -3,7 +3,7 @@
 {{- $width := .Width -}}
 {{- $height := .Height -}}
 
-{{- $isformat := in (slice ".jpg" ".jpeg" ".png" ".tiff") (path.Ext .Src) -}}
+{{- $isformat := in (slice ".jpg" ".jpeg" ".png" ".tiff" ".tif") (path.Ext .Src) -}}
 
 {{- with dict "Path" $src "Resources" .Resources | partial "function/resource.html" -}}
     {{- if $isformat -}}
