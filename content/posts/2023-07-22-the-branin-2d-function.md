@@ -71,10 +71,8 @@ Following the principle of a Gaussian Process, it is typically assumed that data
 To define the correlation matrix $\boldsymbol{R}$, \citet{Jones2001} and many others use the so-called "Kriging" kernel:
 
 \begin{equation}
-\begin{aligned}
-\boldsymbol{R}\left[\boldsymbol{Y}(x*{i}), \boldsymbol{Y}(x*{j})\right]=
-\exp \left(-\sum*{\ell=1}^{d} \theta*{\ell}\left|\boldsymbol{x}*{i \ell}-\boldsymbol{x}*{j \ell}\right|^{p*{\ell}}\right)
-\end{aligned}
+\mathbf{R}\left[\mathbf{Y}(x^{i}), \mathbf{Y}(x^{j})\right]=
+\exp \left(-\sum_{\ell=1}^{d} \theta_{\ell}\left|\mathbf{x}^{i \ell}-\mathbf{x}^{j \ell}\right|^{p_{\ell}}\right)
 \end{equation}
 
 The end.
