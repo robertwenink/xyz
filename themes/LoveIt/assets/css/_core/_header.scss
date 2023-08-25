@@ -10,8 +10,13 @@ header {
 
   .logo {
     min-height: 1.5em;
-    height: 1.5em;
+    height: 2.5rem;
     vertical-align: text-bottom;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(-100%, -50%);
+    transform: translate(-100%, -50%);
   }
 
   .logo, .header-title-pre {
@@ -156,7 +161,9 @@ header {
   }
 
   .header-wrapper {
-    padding: 0 2rem 0 10vh;
+    padding: 0 2rem 0 5.25rem;
+    // dus 2rem + 0.25rem (van image padding) + 2.5rem (breedte image) +0.5 rem (menu items)
+    // NOTE laatste was 10vh
 
     .header-title {
       font-size: var(--header-title-font-size);

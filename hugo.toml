@@ -95,10 +95,11 @@ paginate = 12
     # Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = ""
+      logo = "logo.svg"
 
       # title name
-      name = "Robert Wenink - ME & CS"
+      # name = "Robert Wenink - ME & CS"
+      name = "ME&CS"
 
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
@@ -164,7 +165,7 @@ paginate = 12
     noFavicon = false
 
     # modern SVG favicon to use in place of older style .png and .ico files
-    svgFavicon = ""
+    svgFavicon = "logo.svg"
 
     # Android browser theme color
     themeColor = "#ffffff"
@@ -219,7 +220,7 @@ paginate = 12
       avatarURL = ""
 
       # title shown in home page (HTML format is supported)
-      title = "Robert Wenink -<br>Maritime Engineering & Computer Science"
+      title = "<img src='logo.svg' width='200' height='200'><br> Robert Wenink - Maritime Engineering & Computer Science"
 
       # subtitle shown in home page (HTML format is supported)
       subtitle = "Inspiring subtitle"
