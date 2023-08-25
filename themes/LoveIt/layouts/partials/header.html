@@ -105,7 +105,8 @@
                             <span id="{{ $id }}" class="typeit"></span>
                             {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
                         {{- else -}}
-                            {{- .name -}}
+                        <!-- empty charachter needed for css styling in case of empty name -->
+                        &#x200b;{{- .name -}}
                         {{- end -}}
                         {{- with .post -}}
                             <span class="header-title-post">{{ . | safeHTML }}</span>

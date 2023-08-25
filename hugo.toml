@@ -95,11 +95,11 @@ paginate = 12
     # Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = "logo.svg"
+      logo = "../logo.svg"
 
       # title name
       # name = "Robert Wenink - ME & CS"
-      name = "ME&CS"
+      name = ""
 
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
