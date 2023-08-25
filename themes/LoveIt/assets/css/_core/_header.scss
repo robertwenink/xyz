@@ -11,7 +11,7 @@ header {
   .logo {
     min-height: 1.5em;
     height: 2.5rem;
-    vertical-align: text-bottom;
+    vertical-align: middle;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -33,6 +33,7 @@ header {
 }
 
 .header-wrapper {
+  padding: 0 2rem 0 5.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -232,7 +233,7 @@ header {
     margin: 0;
 
     .header-wrapper {
-      padding: 0 1rem;
+      // padding: 0 1rem;
       font-size: 1.125rem;
       @include transition(margin-top 0.3s ease);
 
