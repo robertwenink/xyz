@@ -33,7 +33,7 @@ header {
 }
 
 .header-wrapper {
-  padding: 0 2rem 0 7.75rem;
+  padding: 0 2rem 0 5.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -162,7 +162,7 @@ header {
   }
 
   .header-wrapper {
-    padding: 0 2rem 0 7.75rem;
+    padding: 0 2rem 0 5.25rem;
     // dus 2rem + 0.25rem (van image padding) + 2.5rem (breedte image) +0.5 rem (menu items)
     // NOTE laatste was 10vh
 
