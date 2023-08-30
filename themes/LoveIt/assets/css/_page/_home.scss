@@ -36,27 +36,25 @@
     }
     
     .home-group {
-      height: inherit;
       margin: auto;
       text-align: center;
+      padding: .5rem;
+      padding-right: 0;
     }
 
     .home-title {
       font-size: 1.25rem;
       font-weight: bold;
       margin: 0;
-      padding: .5rem;
     }
 
     .home-subtitle {
       font-size: 1rem;
       font-weight: normal;
       margin: 0;
-      padding: .5rem;
     }
 
     .links {
-      padding: .5rem;
       font-size: 1.5rem;
 
       a * {
