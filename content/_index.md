@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="fronttext">
 My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both. 
 
-In 2022, I started freelancing using a most self-explanatory company name:
+<span style="white-space:nowrap;">In 2022, I started freelancing</span> using a most self-explanatory company name:
 </br>
 
 <div id="centered_company">
