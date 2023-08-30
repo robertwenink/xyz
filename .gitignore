@@ -4,4 +4,4 @@ demo/
 .hugo/*
 !.hugo/version
 public
-.xlsm
+*.xlsm

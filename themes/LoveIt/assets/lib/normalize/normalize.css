@@ -147,6 +147,8 @@ sup {
 
 img {
   border-style: none;
+  margin: auto;
+  display: block;
 }
 
 /* Forms

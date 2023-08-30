@@ -20,8 +20,10 @@ function adjustClearProperty() {
 
   var ulHeight = ul.offsetHeight;
   var imageHeight = image.offsetHeight;  
-  var textHeight = text.offsetHeight;
-  var diff = imageHeight - textHeight;
+  var textHeight = text.offsetHeight;  
+  var companyHeight = document.querySelector("#centered_company").offsetHeight;
+
+  var diff = imageHeight - textHeight - companyHeight;
   console.log(ulHeight, diff)
 
   if (diff < ulHeight * 1 / 2) {
@@ -40,20 +42,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-## About this website
+## About me and this website
 <!-- alt="Me on top of a mountain/hill in the black forest, Germany." caption="Me on top of a mountain/hill in the black forest, Germany." -->
 <div class="wrap-around">
 {{< image src="pf.tif" width="45%" alt="Me on top of a mountain/hill in the black forest, Germany." >}}
 
 <div id="fronttext">
-I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both. 
+My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both. 
 
-In 2022, I started freelancing with a most self-explanatory company name:
-</br></br>
-<i style="white-space:nowrap;">Robert Wenink - </i>
-<i style="white-space:nowrap;">Maritime Engineering &</i>
-<i style="white-space:nowrap;">Computer Science.</i> 
+In 2022, I started freelancing using a most self-explanatory company name:
+</br>
+
+<div id="centered_company">
+<div class = "flex-center">
+<i>Robert Wenink -</i>
+<i> Maritime Engineering </i>
+<i>& Computer Science.</i> 
+</div></div>
+
+
 </div>
+
 <!-- padding om de ul binnen de div te houden -->
 <div id="ul" style="padding:1px">
 
@@ -62,7 +71,7 @@ In 2022, I started freelancing with a most self-explanatory company name:
 - A (personal) tech blog is maintained in [Blog](/posts/).
 
 Want to hire me, or have any suggestions? 
-<span></br>Contact me: <robertwenink@gmail.com>. </span>
+<span style="white-space:nowrap;">Contact me: <robertwenink@gmail.com>. </span>
 
 </div>
 </div>

@@ -91,14 +91,12 @@
             data-srcset="{{ $small | safeURL }}, {{ $src | safeURL }} 1.5x, {{ $large | safeURL }} 2x"
             data-sizes="auto"
             alt="{{ $alt }}"
-            {{- with $width }} 
-            width="{{print . $ext}}"
-            style='min-width: {{print . $ext}}'
+            title="{{ .Title | default $alt }}"
+            {{- with .Id }}
+            id="{{ . }}"
             {{ end }}
-            {{- with $height }} 
-            height="{{print . $ext}}"
-            {{ end }} 
-             />
+            style='{{ with $width }}width:{{print . $ext}};{{ end }}{{ with $height }}height:{{print . $ext}};{{ end }}'
+            />
     </a>
 {{- else -}}
     <img
@@ -109,13 +107,10 @@
         data-sizes="auto"
         alt="{{ $alt }}"
         title="{{ .Title | default $alt }}"
-        {{- with $width }} 
-        width="{{print . $ext}}"
-        style='min-width: {{print . $ext}}'
+        {{- with .Id }}
+        id="{{ . }}"
         {{ end }}
-        {{- with $height }} 
-        height="{{print . $ext}}"
-        {{ end }} 
+        style='{{ with $width }}width:{{print . $ext}};{{ end }}{{ with $height }}height:{{print . $ext}};{{ end }}'
         />
 {{- end -}}
 
