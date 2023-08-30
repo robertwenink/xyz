@@ -95,7 +95,7 @@ paginate = 12
     # Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = "../logo.svg"
+      logo = "../../../logo.svg"
 
       # title name
       # name = "Robert Wenink - ME & CS"
@@ -262,7 +262,7 @@ paginate = 12
     twemoji = false
 
     # whether to enable lightgallery
-    lightgallery = true
+    lightgallery = false
 
     # whether to enable the ruby extended syntax
     ruby = false

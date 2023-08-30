@@ -9,6 +9,4 @@ description: ""
 ---
 
 <!--more-->
-![pf](pf.tif "Me on top of a mountain/hill in the black forest, Germany.")
-
-
+{{< image src="pf.tif" width="50%" alt="Me on top of a mountain/hill in the black forest, Germany." >}}
