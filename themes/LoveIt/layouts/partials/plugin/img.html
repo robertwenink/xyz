@@ -1,22 +1,71 @@
 {{- /* lazysizes and lightgallery */ -}}
 {{- $src := .Src -}}
-{{- $width := .Width -}}
-{{- $height := .Height -}}
+
+<!-- .Width and .Height are the name parameters here -->
+<!-- {{ printf "%#v" .Width }} -->
+<!-- {{- $width := .Width -}} -->
+{{ $cutset := "ptxrem%inc vh" }}
+{{ $width := strings.TrimRight $cutset .Width }}
+{{ $width_ext := strings.TrimLeft $width .Width }}
+{{ $ext := $width_ext }}
+
+<!-- {{- $height := .Height -}} -->
+{{ $height := strings.TrimRight $cutset .Height }}
+{{ $height_ext := strings.TrimLeft $height .Height }}
+
 
 {{- $isformat := in (slice ".jpg" ".jpeg" ".png" ".tiff" ".tif") (path.Ext .Src) -}}
 
+
 {{- with dict "Path" $src "Resources" .Resources | partial "function/resource.html" -}}
     {{- if $isformat -}}
+        <!-- .Width and .Height are the original image dimensions here -->
+        <!-- {{ printf "%#v" .Width }} -->
         {{- with .Resize (printf "%dx%d webp" .Width .Height) -}}
             {{- $src = .RelPermalink -}}
-            {{- $width = $width | default .Width -}}
-            {{- $height = $height | default .Height -}}
         {{- end -}}
     {{- else -}}
         {{- $src = .RelPermalink -}}
-        {{- $width = $width | default .Width -}}
-        {{- $height = $height | default .Height -}}
     {{- end -}}
+    
+    <!-- Set the sizes here, default to the width of the image if no html width has been given -->
+    <!-- .Width and .Height are the original image dimensions here -->
+    <!-- If no heights were passed in the shortcode, take the image dimensions! -->
+
+    {{ if or (ne $width "") (ne $height "") }}        
+        {{ $aspect := div .Height (float .Width) }}
+        <!-- {{ printf "%#v" $width }} -->
+        <!-- {{ printf "%#v" $height }} -->
+        
+        {{ if and (ne $width "") (ne $height "") }}
+            <!-- neem dan de kleinste doorgegeven kwantiteit -->
+            {{ $fwidth := (float $width | default 1) }}
+            {{ $fheight := (float $height | default 1) }}
+            {{ $aspect_html := div $fheight $fwidth }}
+
+            {{ if le $aspect_html  $aspect }}
+                <!-- {{ printf "height is limiting" }} -->
+                {{ $width = div (float $height) $aspect }}
+                {{ $ext = $height_ext }}
+            {{ else }}
+                <!-- {{ printf "width is limiting" }} -->
+                {{ $height = mul $aspect (float $width) }}
+                {{ $ext = $width_ext }}
+                {{ end }}
+        {{ else }}
+            {{ with $width }}
+                {{ $height = mul $aspect (float $width) }}
+                {{ $ext = $width_ext }}
+                <!-- {{ printf "Scaled to width" }}   -->
+            {{ else }}
+                {{ $width = div (float $height) $aspect }}
+                {{ $ext = $height_ext }}
+                <!-- {{ printf "Scaled to height" }}   -->
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    <!-- {{ printf "%#v" $width }} -->
+    <!-- {{ printf "%#v" $height }} -->
 {{- end -}}
 
 {{- $small := .SrcSmall | default $src -}}
@@ -29,7 +78,9 @@
     {{- $large = .RelPermalink -}}
 {{- end -}}
 
-{{- $alt := .Alt | default $src -}}
+<!-- Dit was $src, maar dat wil ik niet. alleen alt weergeven als die gedefinieerd is. -->
+{{- $alt := .Alt | default "" -}} 
+<!-- {{- $width_ext -}} -->
 {{- $loading := resources.Get "svg/loading.svg" | minify -}}
 {{- if .Linked -}}
     <a class="lightgallery" href="{{ $large | safeURL }}" title="{{ .Title | default $alt }}" data-thumbnail="{{ $small | safeURL }}"{{ with .Caption }} data-sub-html="<h2>{{ . }}</h2>{{ with $.Title }}<p>{{ . }}</p>{{ end }}"{{ end }}{{ with .Rel }} rel="{{ . }}"{{ end }}>
@@ -40,8 +91,14 @@
             data-srcset="{{ $small | safeURL }}, {{ $src | safeURL }} 1.5x, {{ $large | safeURL }} 2x"
             data-sizes="auto"
             alt="{{ $alt }}"
-            {{- with $width }} width="{{ . }}"{{ end }}
-            {{- with $height }} height="{{ . }}"{{ end }} />
+            {{- with $width }} 
+            width="{{print . $ext}}"
+            style='min-width: {{print . $ext}}'
+            {{ end }}
+            {{- with $height }} 
+            height="{{print . $ext}}"
+            {{ end }} 
+             />
     </a>
 {{- else -}}
     <img
@@ -52,6 +109,18 @@
         data-sizes="auto"
         alt="{{ $alt }}"
         title="{{ .Title | default $alt }}"
-        {{- with $width }} width="{{ . }}"{{ end }}
-        {{- with $height }} height="{{ . }}"{{ end }} />
+        {{- with $width }} 
+        width="{{print . $ext}}"
+        style='min-width: {{print . $ext}}'
+        {{ end }}
+        {{- with $height }} 
+        height="{{print . $ext}}"
+        {{ end }} 
+        />
 {{- end -}}
+
+<!-- DEBUGGING -->
+<!-- {{ printf "%#v" $width }}
+{{ printf "%#v" .Width }}
+{{ printf "%#v" $height }}
+{{ printf "%#v" .Height }} -->
