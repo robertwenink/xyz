@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
 {{< image src="pf.tif" width="45%" alt="Me on top of a mountain/hill in the black forest, Germany." >}}
 
 <div id="fronttext">
+
 My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both. 
 
 <span style="white-space:nowrap;">In 2022, I started freelancing</span> using a most self-explanatory company name:
