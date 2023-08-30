@@ -3,13 +3,17 @@
 // 自定义样式
 // ==============================
 
+.wrap-around {
+    display: inline-block
+}
+
 .wrap-around img {
     float: left;
     margin: 0 2.5% 2.5% 0;
 }
   
 .wrap-around p {
-    text-align: justify;
+    text-align: left;
 }
 
 .wrap-around ul {
