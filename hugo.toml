@@ -220,7 +220,8 @@ paginate = 12
       avatarURL = ""
 
       # title shown in home page (HTML format is supported)
-      title = "<img src='logo.svg' width='200' height='200'><br> Robert Wenink - Maritime Engineering & Computer Science"
+      title = "Robert Wenink - <br>Maritime Engineering & Computer Science"
+      title_image = "logo.svg"
 
       # subtitle shown in home page (HTML format is supported)
       subtitle = "Inspiring subtitle"

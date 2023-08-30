@@ -4,12 +4,12 @@
 // ==============================
 
 .wrap-around {
-    display: inline-block
+    display: inline-block;
 }
 
 .wrap-around img {
     float: left;
-    margin: 0 2.5% 2.5% 0;
+    padding: 8px 2.5% 2.5% 0; // p heeft 8 px margin, 12pt=16px en lineheight = 1.5x, maar met div heeft ie dat niet.
 }
   
 .wrap-around p {
@@ -18,4 +18,8 @@
 
 .wrap-around ul {
     overflow: auto;
+}
+
+.wrap-around a div {
+    height: max-content;
 }
