@@ -55,8 +55,8 @@ In 2022, I started freelancing using a most self-explanatory company name:
 
 <div id="centered_company">
 <div class = "flex-center">
-<i>Robert Wenink -</i>
-<i> Maritime Engineering </i>
+<i>Robert Wenink - </i>
+<i>Maritime Engineering </i>
 <i>& Computer Science.</i> 
 </div></div>
 
