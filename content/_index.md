@@ -21,8 +21,9 @@ function adjustClearProperty() {
   var ulHeight = ul.offsetHeight;
   var imageHeight = image.offsetHeight;  
   var textHeight = text.offsetHeight;  
-  var companyHeight = document.querySelector("#centered_company").offsetHeight;
-
+  var companyHeight = document.querySelector("#centered_company");
+  var companyHeight = companyHeight === null ? 0 : companyHeight.offsetHeight;
+  
   var diff = imageHeight - textHeight - companyHeight;
   console.log(ulHeight, diff)
 
@@ -49,8 +50,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div id="fronttext">
 
-My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both. 
-
+<!-- My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both.  -->
+<!-- 
 <span style="white-space:nowrap;">In 2022, I started freelancing</span> using a most self-explanatory company name:
 </br>
 
@@ -59,11 +60,13 @@ My name is Robert Wenink. I specialise in the fusion between the fields of Compu
 <i>Robert Wenink -</i>
 <i>&nbsp;Maritime Engineering&nbsp;</i>
 <i>& Computer Science.</i> 
-</div></div>
+</div></div> -->
 
+Hi, I'm Robert, an engineer using computer science for optimized maritime engineering.
+
+You can hire me for projects related to process automation or code optimisation.
 
 </div>
-
 <!-- padding om de ul binnen de div te houden -->
 <div id="ul" style="padding:1px">
 
