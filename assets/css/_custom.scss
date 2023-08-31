@@ -5,6 +5,7 @@
 
 .wrap-around {
     display: inline-block;
+    width: 100%;
     
     img {
         float: left;
@@ -13,12 +14,20 @@
     p {
         text-align: left;
     }
+
     ul {
         overflow: auto;
+        margin-top: 0 !important;
     }
+
+    #ul {
+        margin-top: 0;
+    }
+
     a div {
         height: max-content;
     }
+
 }
 
 @media only screen and (max-width: 680px) {
