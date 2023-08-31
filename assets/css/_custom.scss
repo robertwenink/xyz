@@ -1,0 +1,47 @@
+// ==============================
+// Custom style
+// 自定义样式
+// ==============================
+
+.wrap-around {
+    display: inline-block;
+    
+    img {
+        float: left;
+        margin: 6pt 2.5% 2.5% 0;
+    }    
+    p {
+        text-align: left;
+    }
+    ul {
+        overflow: auto;
+    }
+    a div {
+        height: max-content;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    #content {
+        #about_image {
+            width: 100% !important;
+        }
+    }
+}
+
+#centered_company {
+    display: flex;
+    justify-content: center; 
+
+    .flex-center {
+        display: flex;
+        flex-wrap: wrap; /* Allows elements to wrap when not enough space */
+        justify-content: center; /* Center-aligns the elements horizontally */
+        align-items: center; /* Center-aligns the elements vertically */
+        i {
+            white-space: preserve nowrap;
+        }
+    
+      }
+
+  }

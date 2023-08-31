@@ -1,7 +1,6 @@
 # documentation for theme found in https://hugoloveit.com/categories/documentation/
 title = "Robert Wenink - Maritime Engineering and Computer Science"
-baseURL = "https://robertwenink.xyz"
-theme = "LoveIt"
+baseURL = "https://robertwenink.xyz/"
 
 languageCode = "en"
 languageName = "English"
