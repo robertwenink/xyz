@@ -16,4 +16,10 @@ featuredImagePreview: ""
 
 <!--more-->
 
+<style>
+    .page {
+        width: 55em;
+        max-width: 100%;
+    }
+</style>
 {{< embed-pdf url="/resume.pdf" hidePaginator="true" >}}
