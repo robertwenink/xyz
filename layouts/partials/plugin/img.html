@@ -13,13 +13,14 @@
 {{ $height := strings.TrimRight $cutset .Height }}
 {{ $height_ext := strings.TrimLeft $height .Height }}
 
-
+<!-- Only transform some extension, and not e.g. svg -->
 {{- $isformat := in (slice ".jpg" ".jpeg" ".png" ".tiff" ".tif") (path.Ext .Src) -}}
-
 
 {{- with dict "Path" $src "Resources" .Resources | partial "function/resource.html" -}}
     {{- if $isformat -}}
-        <!-- .Width and .Height are the original image dimensions here -->
+        <!-- .Width and .Height are the original image dimensions here. 
+            Resize only used to change the file formatting, not to change size! (original sizes used).
+            Provided width and height are purely for styling convenience. -->
         <!-- {{ printf "%#v" .Width }} -->
         {{- with .Resize (printf "%dx%d webp" .Width .Height) -}}
             {{- $src = .RelPermalink -}}
@@ -28,17 +29,16 @@
         {{- $src = .RelPermalink -}}
     {{- end -}}
     
-    <!-- Set the sizes here, default to the width of the image if no html width has been given -->
-    <!-- .Width and .Height are the original image dimensions here -->
-    <!-- If no heights were passed in the shortcode, take the image dimensions! -->
-
+    <!-- Set the sizes here, default to the width of the image if no html width has been given
+        .Width and .Height are the original image dimensions here.
+        If no heights were passed in the shortcode, no style is applied -->
     {{ if or (ne $width "") (ne $height "") }}        
         {{ $aspect := div .Height (float .Width) }}
         <!-- {{ printf "%#v" $width }} -->
         <!-- {{ printf "%#v" $height }} -->
         
         {{ if and (ne $width "") (ne $height "") }}
-            <!-- neem dan de kleinste doorgegeven kwantiteit -->
+            <!-- Select and use smallest size -->
             {{ $fwidth := (float $width | default 1) }}
             {{ $fheight := (float $height | default 1) }}
             {{ $aspect_html := div $fheight $fwidth }}
@@ -80,7 +80,7 @@
 
 <!-- Dit was $src, maar dat wil ik niet. alleen alt weergeven als die gedefinieerd is. -->
 {{- $alt := .Alt | default "" -}} 
-<!-- {{- $width_ext -}} -->
+
 {{- $loading := resources.Get "svg/loading.svg" | minify -}}
 {{- if .Linked -}}
     <a class="lightgallery" href="{{ $large | safeURL }}" title="{{ .Title | default $alt }}" data-thumbnail="{{ $small | safeURL }}"{{ with .Caption }} data-sub-html="<h2>{{ . }}</h2>{{ with $.Title }}<p>{{ . }}</p>{{ end }}"{{ end }}{{ with .Rel }} rel="{{ . }}"{{ end }}>
@@ -92,9 +92,7 @@
             data-sizes="auto"
             alt="{{ $alt }}"
             title="{{ .Title | default $alt }}"
-            {{- with .Id }}
-            id="{{ . }}"
-            {{ end }}
+            {{- with .Id }}id="{{ . }}"{{ end }}
             style='{{ with $width }}width:{{print . $ext}};{{ end }}{{ with $height }}height:{{print . $ext}};{{ end }}'
             />
     </a>
@@ -107,9 +105,7 @@
         data-sizes="auto"
         alt="{{ $alt }}"
         title="{{ .Title | default $alt }}"
-        {{- with .Id }}
-        id="{{ . }}"
-        {{ end }}
+        {{- with .Id }}id="{{ . }}"{{ end }}
         style='{{ with $width }}width:{{print . $ext}};{{ end }}{{ with $height }}height:{{print . $ext}};{{ end }}'
         />
 {{- end -}}
