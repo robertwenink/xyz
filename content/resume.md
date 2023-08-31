@@ -3,7 +3,7 @@ title: "Curriculum Vitae"
 subtitle: ""
 date: 2023-08-31T11:27:00+02:00
 lastmod: 2023-08-31T11:27:00+02:00
-draft: true
+draft: false
 description: ""
 
 tags: []
