@@ -13,7 +13,7 @@ paginate = 12
 
 [author]
   name = "Robert Wenink"
-  link  = "https://robertwenink.xyz"
+  link  = "https://robertwenink.xyz/"
   email = "robertwenink@gmail.com"
 
 [outputs]
