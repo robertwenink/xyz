@@ -10,7 +10,7 @@ description: ""
 
 <!--more-->
 <div class="wrap-around">
-{{< image src="pf.tif" id="about_image" width="50%" alt="Me on top of a mountain/hill in the black forest, Germany." >}}
+{{< image src="pf.tif" id="about_image" width="50%" alt="Me on top of a mountain/hill in the black forest, Germany." linked=false >}}
 
 My name is Robert Wenink, and I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both. 
 

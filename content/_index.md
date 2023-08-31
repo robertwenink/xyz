@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ## About me and this website
 <!-- alt="Me on top of a mountain/hill in the black forest, Germany." caption="Me on top of a mountain/hill in the black forest, Germany." -->
 <div class="wrap-around">
-{{< image src="pf.tif" width="45%" alt="Me on top of a mountain/hill in the black forest, Germany." >}}
+{{< image src="pf.tif" width="45%" alt="Me on top of a mountain/hill in the black forest, Germany."  linked=false >}}
 
 <div id="fronttext">
 
@@ -76,7 +76,5 @@ Want to hire me, or have any suggestions?
 
 </div>
 </div>
-
-<hr>
 
 ## Projects

@@ -5,3 +5,5 @@ demo/
 !.hugo/version
 public
 *.xlsm
+*.xlsx
+time_tracking.xlsm
