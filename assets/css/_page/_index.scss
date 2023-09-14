@@ -15,6 +15,13 @@
   @include blur;
 }
 
+.header-wrapper {
+  position: relative;
+  max-width: 800px;
+  width: 60%;
+  margin: 0 auto;
+}
+
 @import "_single";
 @import "_special";
 @import "_archive";

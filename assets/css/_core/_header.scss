@@ -33,7 +33,7 @@ header {
 }
 
 .header-wrapper {
-  padding: 0 2rem 0 5.25rem;
+  padding: 0 0rem 0 2.5rem; // idem: was 2rem 0 5.25rem
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -162,7 +162,7 @@ header {
   }
 
   .header-wrapper {
-    padding: 0 2rem 0 5.25rem;
+    padding: 0 0rem 0 2.5rem; // was 2 en 5.25 in brede layout van menu
     // dus 2rem + 0.25rem (van image padding) + 2.5rem (breedte image) +0.5 rem (menu items)
     // NOTE laatste was 10vh
 
