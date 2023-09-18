@@ -1,0 +1,1490 @@
+@book{NURBSbook,
+author = {Piegl, Les and Tiller, Wayne},
+title = {{The NURBS Book 2ed}},
+year = {1997},
+publisher = {Springer}
+}
+
+@book{Rasmussen2006,
+author = {Rasmussen, C E and Williams, C K I and Processes, Gaussian and Press, M I T and Jordan, Michael I},
+isbn = {026218253X},
+title = {{Gaussian Processes for Machine Learning}},
+year = {2006},
+publisher = {the MIT Press}
+}
+
+
+
+@article{Babaee2016,
+author = {Babaee, Hessam and Perdikaris, Paris and Chryssostomidis, C. and Karniadakis, George},
+year = {2016},
+month = {12},
+pages = {895-917},
+title = {Multi-fidelity modelling of mixed convection based on experimental correlations and numerical simulations},
+volume = {809},
+journal = {Journal of Fluid Mechanics},
+doi = {10.1017/jfm.2016.718}
+}
+
+
+
+
+@article{Godino2016,
+abstract = {Simulations are often computationally expensive and the need for multiple realizations, as in uncertainty quantification or optimization, makes surrogate models an attractive option. For expensive high-fidelity models (HFMs), however, even performing the number of simulations needed for fitting a surrogate may be too expensive. Inexpensive but less accurate low-fidelity models (LFMs) are often also available. Multi-fidelity models (MFMs) combine HFMs and LFMs in order to achieve accuracy at a reasonable cost. With the increasing popularity of MFMs in mind, the aim of this paper is to summarize the state-of-the-art of MFM trends. For this purpose, publications in this field are classified based on application, surrogate selection if any, the difference between fidelities, the method used to combine these fidelities, the field of application and the year published. Available methods of combining fidelities are also reviewed, focusing our attention especially on multi-fidelity surrogate models in which fidelities are combined inside a surrogate model. Computation time savings are usually the reason for using MFMs, hence it is important to properly report the achieved savings. Unfortunately, we find that many papers do not present sufficient information to determine these savings. Therefore, the paper also includes guidelines for authors to present their MFM savings in a way that is useful to future MFM users. Based on papers that provided enough information, we find that time savings are highly problem dependent and that MFM methods we surveyed provided time savings up to 90\%. Keywords: Multi-fidelity, Variable-complexity, Variable-fidelity, Surrogate models, Optimization, Uncertainty quantification, Review, Survey},
+archivePrefix = {arXiv},
+arxivId = {1609.07196},
+author = {Fern{\'{a}}ndez-Godino, M. Giselle and Park, Chanyoung and Kim, Nam-Ho and Haftka, Raphael T.},
+keywords = {models,multi-fidelity,optimization,review,surrogate,survey,uncertainty quantification,variable-complexity,variable-fidelity},
+title = {{Review of multi-fidelity models}},
+doi = {10.2514/1.J057750},
+issn = {00011452},
+journal = {AIAA Journal},
+number = {5},
+pages = {2039--2054},
+volume = {57},
+year = {2016}
+}
+
+@article{Godino2019,
+author = {Giselle Fern\'{a}ndez-Godino, M. and Park, Chanyoung and Kim, Nam H. and Haftka, Raphael T.},
+title = {Issues in Deciding Whether to Use Multifidelity Surrogates},
+journal = {AIAA Journal},
+volume = {57},
+number = {5},
+pages = {2039-2054},
+year = {2019},
+doi = {10.2514/1.J057750},
+URL = {https://doi.org/10.2514/1.J057750},
+eprint = {https://doi.org/10.2514/1.J057750},
+abstract = { Multifidelity surrogates are essential in cases where it is not affordable to have more than a few high-fidelity samples, but it is affordable to have as many low-fidelity samples as needed. In these cases, given a good correlation between the models, the performance of multifidelity models can be outstanding. The first objective of this paper is to discuss progress in creating accurate multifidelity surrogates when they are essential. A more ambiguous situation exists when it may be possible to afford enough high-fidelity samples to construct an accurate surrogate model. In that case, the question is whether a multifidelity surrogate will afford a substantial cost reduction for comparable accuracy. Our the second objective is to see if there are any indications under what circumstances this substantial cost reduction is realized. From the literature, it appears that it is hard to get an idea, in terms of cost savings, of when it is useful to invest the additional effort of creating and using multifidelity surrogates. It is observed that in some cases the inclusion of low-fidelity samples along with the high-fidelity samples in building multifidelity surrogates led to less accurate surrogates than just using the available high-fidelity samples. }
+}
+
+@article{Korondi2021,
+abstract = {In this work, a design optimisation strategy is presented for expensive and uncertain single- and multi-objective problems. Computationally expensive design fitness evaluations prohibit the application of standard optimisation techniques and the direct calculation of risk measures. Therefore, a surrogate-assisted optimisation framework is presented. The computational budget limits the number of high-fidelity simulations which makes impossible to accurately approximate the landscape. This motivates the use of cheap low-fidelity simulations to obtain more information about the unexplored locations of the design space. The information stemming from numerical experiments of various fidelities can be fused together with multi-fidelity Gaussian process regression to build an accurate surrogate model despite the low number of high-fidelity simulations. We propose a new strategy for automatically selecting the fidelity level of the surrogate model update. The proposed method is extended to multi-objective applications. Although, Gaussian processes can inherently model uncertain processes, here the deterministic input and uncertain parameters are treated separately and only the design space is modelled with a Gaussian process. The probabilistic space is modelled with a polynomial chaos expansion to allow also uncertainties of non-Gaussian type. The combination of the above techniques allows us to efficiently carry out a (multi-objective) design optimisation under uncertainty which otherwise would be impractical.},
+author = {Korondi, P{\'{e}}ter Z{\'{e}}n{\'{o}} and Marchi, Mariapia and Parussini, Lucia and Poloni, Carlo},
+doi = {10.1007/s11081-020-09510-1},
+isbn = {0123456789},
+issn = {15732924},
+journal = {Optimization and Engineering},
+keywords = {Co-Kriging,Design optimisation under uncertainty,Gaussian process regression,Multi-fidelity learning},
+number = {2},
+pages = {1039--1064},
+publisher = {Springer US},
+title = {{Multi-fidelity design optimisation strategy under uncertainty with limited computational budget}},
+url = {https://doi.org/10.1007/s11081-020-09510-1},
+volume = {22},
+year = {2021}
+}
+
+@article{Toal2011,
+abstract = {Optimizations involving high-fidelity simulations can become prohibitively expensive when an exhaustive search is employed. To remove this expense a surrogate model is often constructed. One of the most popular techniques for the construction of such a surrogate model is that of kriging. However, the construction of a kriging model requires the optimization of a multi-model likelihood function, the cost of which can approach that of the high-fidelity simulations upon which the model is based. The article describes the development of a hybridized particle swarm algorithm which aims to reduce the cost of this likelihood optimization by drawing on an efficient adjoint of the likelihood. This hybridized tuning strategy is compared to a number of other strategies with respect to the inverse design of an airfoil as well as the optimization of an airfoil for minimum drag at a fixed lift. {\textcopyright} 2011 Taylor & Francis.},
+author = {Toal, D. J.J. and Bressloff, N. W. and Keane, A. J. and Holden, C. M.E.},
+doi = {10.1080/0305215X.2010.508524},
+issn = {0305215X},
+journal = {Engineering Optimization},
+keywords = {hyperparameter tuning,kriging,particle swarm optimization},
+number = {6},
+pages = {675--699},
+title = {{The development of a hybridized particle swarm for kriging hyperparameter tuning}},
+volume = {43},
+year = {2011}
+}
+
+@article{Morris1995,
+abstract = {Recent work by Johnson et al. (J. Statist. Plann. Inference 26 (1990) 131-148) establishes equivalence of the maximin distance design criterion and an entropy criterion motivated by function prediction in a Bayesian setting. The latter criterion has been used by Currin et al. (J. Amer. Statist. Assoc. 86 (1991) 953-963) to design experiments for which the motivating application is approximation of a complex deterministic computer model. Because computer experiments often have a large number of controlled variables (inputs), maximin designs of moderate size are often concentrated in the corners of the cuboidal design region, i.e. each input is represented at only two levels. Here we will examine some maximin distance designs constructed within the class of Latin hypercube arrangements. The goal of this is to find designs which offer a compromise between the entropy/maximin criterion, and good projective properties in each dimension (as guaranteed by Latin hypercubes). A simulated annealing search algorithm is presented for constructing these designs, and patterns apparent in the optimal designs are discussed. {\textcopyright} 1995.},
+author = {Morris, Max D. and Mitchell, Toby J.},
+doi = {10.1016/0378-3758(94)00035-T},
+issn = {03783758},
+journal = {Journal of Statistical Planning and Inference},
+keywords = {Bayesian prediction,Computer experiment,Computer model,Interpolation,Latin hypercube design,Maximin design,Random functions},
+number = {3},
+pages = {381--402},
+title = {{Exploratory designs for computational experiments}},
+volume = {43},
+year = {1995}
+}
+
+@article{Viana2014,
+abstract = {The use of metamodeling techniques in the design and analysis of computer experiments has progressed remarkably in the past 25 years, but how far has the field really come? This is the question addressed in this paper, namely, the extent to which the use of metamodeling techniques in multidisciplinary design optimization have evolved in the 25 years since the seminal paper on design and analysis of computer experiments by Sacks et al. ("Design and Analysis of Computer Experiments," Statistical Science, Vol. 4, No. 4, 1989, pp. 409-435). Rather than a technical review of the entire body of metamodeling literature, the focus is on the evolution and motivation for advancements in metamodeling with some discussion on the research itself; not surprisingly, much of the current research motivation is the same as it was in the past. Based on current research thrusts in the field, multifidelity approximations and ensembles (i.e., sets) of metamodels, as well as the availability of metamodels within commercial software, are emphasized. Design space exploration and visualization via metamodels are also presented as they rely heavily on metamodels for rapid design evaluations during exploration. The closing remarks offer insight into future research directions, mostly motivated by the need for new capabilities and the ability to handle more complex simulations. {\textcopyright} 2013 by the American Institute of Aeronautics and Astronautics, Inc. All rights reserved.},
+author = {Viana, Felipe A.C. and Simpson, Timothy W. and Balabanov, Vladimir and Toropov, Vasilli},
+doi = {10.2514/1.J052375},
+issn = {00011452},
+journal = {AIAA Journal},
+number = {4},
+pages = {670--690},
+title = {{Metamodeling in multidisciplinary design optimization: How far have we really come?}},
+volume = {52},
+year = {2014}
+}
+
+@article{Palar2019,
+abstract = {Surrogate models are invaluable tools that greatly assist the process of computationally expensive analyses and optimization. Engineering optimization reaps the benefit from surrogate models in order to perform expensive optimization that could potentially be computationally intractable in the pre-high-performance computing age. Moreover, surrogate models provide a means to allow engineering design exploration with high-fidelity computer simulations. Despite their wide use and substantial research progresses, there are still some key issues and challenges that need to be addressed by researchers. Most of these issues stem from the growing complexity of engineering design optimization and exploration in real-world problems. In other words, the sophistication of the problem that we have to tackle increases faster than that of computing power and technology. It is thus imperative to have accurate and yet computationally efficient surrogate models that are suitable for real-world engineering problems. In this paper, we discuss key issues and challenges of the application of surrogate models in engineering design optimization and exploration. This paper is directed toward general readers, in which we aim to present general discussions regarding the effectiveness, issues, and future of surrogate-based optimization and exploration in engineering.},
+author = {Palar, Pramudita Satria and Zuhal, Lavi Rizki and Liem, Rhea Patricia and Shimoyama, Koji},
+doi = {10.1145/3319619.3326813},
+isbn = {9781450367486},
+journal = {GECCO 2019 Companion - Proceedings of the 2019 Genetic and Evolutionary Computation Conference Companion},
+keywords = {ACM proceedings,LATEX,Text tagging},
+pages = {1592--1602},
+title = {{On the use of surrogate models in engineering design optimization and exploration: The key issues}},
+year = {2019}
+}
+
+
+@article{Toal2015,
+abstract = {Surrogate models or metamodels are commonly used to exploit expensive computational simulations within a design optimization framework. The application of multi-fidelity surrogate modeling approaches has recently been gaining ground due to the potential for further reductions in simulation effort over single fidelity approaches. However, given a black box problem when exactly should a designer select a multi-fidelity approach over a single fidelity approach and vice versa? Using a series of analytical test functions and engineering design examples from the literature, the following paper illustrates the potential pitfalls of choosing one technique over the other without a careful consideration of the optimization problem at hand. These examples are then used to define and validate a set of guidelines for the creation of a multi-fidelity Kriging model. The resulting guidelines state that the different fidelity functions should be well correlated, that the amount of low fidelity data in the model should be greater than the amount of high fidelity data and that more than 10 \% and less than 80 \% of the total simulation budget should be spent on low fidelity simulations in order for the resulting multi-fidelity model to perform better than the equivalent costing high fidelity model.},
+author = {Toal, David J.J.},
+doi = {10.1007/s00158-014-1209-5},
+issn = {16151488},
+journal = {Structural and Multidisciplinary Optimization},
+keywords = {Kriging,Multi-fidelity,Surrogate modeling},
+number = {6},
+pages = {1223--1245},
+title = {{Some considerations regarding the use of multi-fidelity Kriging in the construction of surrogate models}},
+volume = {51},
+year = {2015}
+}
+
+@article{Bouhlel2019,
+abstract = {The surrogate modeling toolbox (SMT) is an open-source Python package that contains a collection of surrogate modeling methods, sampling techniques, and benchmarking functions. This package provides a library of surrogate models that is simple to use and facilitates the implementation of additional methods. SMT is different from existing surrogate modeling libraries because of its emphasis on derivatives, including training derivatives used for gradient-enhanced modeling, prediction derivatives, and derivatives with respect to training data. It also includes unique surrogate models: kriging by partial least-squares reduction, which scales well with the number of inputs; and energy-minimizing spline interpolation, which scales well with the number of training points. The efficiency and effectiveness of SMT are demonstrated through a series of examples. SMT is documented using custom tools for embedding automatically tested code and dynamically generated plots to produce high-quality user guides with minimal effort from contributors. SMT is maintained in a public version control repository.1},
+author = {Bouhlel, Mohamed Amine and Hwang, John T. and Bartoli, Nathalie and Lafage, R{\'{e}}mi and Morlier, Joseph and Martins, Joaquim R.R.A.},
+doi = {10.1016/j.advengsoft.2019.03.005},
+issn = {18735339},
+journal = {Advances in Engineering Software},
+keywords = {Derivatives,Gradient-enhanced surrogate modeling,Surrogate modeling},
+number = {September 2018},
+pages = {102662},
+publisher = {Elsevier},
+title = {{A Python surrogate modeling framework with derivatives}},
+url = {https://doi.org/10.1016/j.advengsoft.2019.03.005},
+volume = {135},
+year = {2019}
+}
+
+@book{Forrester2008,
+abstract = {Surrogate models expedite the search for promising designs by standing in for expensive design evaluations or simulations. They provide a global model of some metric of a design (such as weight, aerodynamic drag, cost, etc.), which can then be optimized efficiently. Engineering Design via Surrogate Modelling is a self-contained guide to surrogate models and their use in engineering design. The fundamentals of building, selecting, validating, searching and refining a surrogate are presented in a manner accessible to novices in the field. Figures are used liberally to explain the key concepts and clearly show the differences between the various techniques, as well as to emphasize the intuitive nature of the conceptual and mathematical reasoning behind them. More advanced and recent concepts are each presented in stand-alone chapters, allowing the reader to concentrate on material pertinent to their current design problem, and concepts are clearly demonstrated using simple design problems. This collection of advanced concepts (visualization, constraint handling, coping with noisy data, gradient-enhanced modelling, multi-fidelity analysis and multiple objectives) represents an invaluable reference manual for engineers and researchers active in the area. Engineering Design via Surrogate Modelling is complemented by a suite of Matlab codes, allowing the reader to apply all the techniques presented to their own design problems. By applying statistical modelling to engineering design, this book bridges the wide gap between the engineering and statistics communities. It will appeal to postgraduates and researchers across the academic engineering design community as well as practising design engineers.},
+author = {Forrester, Alexander I. J. and S{\'{o}}bester, Andr{\'{a}}s and Keane, Andy J.},
+booktitle = {Engineering Design via Surrogate Modelling},
+doi = {10.1002/9780470770801},
+isbn = {9780470060681},
+title = {{Engineering Design via Surrogate Modelling}},
+year = {2008},
+publisher = {John Wiley and Sons, Ltd}
+}
+
+@article{Toal2008,
+abstract = {Response surfaces have been extensively used as a method of building effective surrogate models of high-fidelity computational simulations. Of the numerous types of response surface models, kriging is perhaps one of the most effective, due to its ability to model complicated responses through interpolation or regression of known data while providing an estimate of the error in its prediction. There is, however, little information indicating the extent to which the hyperparameters of a kriging model need to be tuned for the resulting surrogate model to be effective. The following paper addresses this issue by investigating how often and how well it is necessary to tune the hyperparameters of a kriging model as it is updated during an optimization process. To this end, an optimization benchmarking procedure is introduced and used to assess the performance of five different tuning strategies over a range of problem sizes. The results of this benchmark demonstrate the performance gains that can be associated with reducing the complexity of the hyperparameter tuning process for complicated design problems. The strategy of tuning hyperparameters only once after the initial design of experiments is shown to perform poorly.},
+author = {Toal, David J.J. and Bressloff, Neil W. and Keane, Andy J.},
+doi = {10.2514/1.34822},
+issn = {00011452},
+journal = {AIAA Journal},
+number = {5},
+pages = {1240--1252},
+title = {{Kriging hyperparameter tuning strategies}},
+volume = {46},
+year = {2008}
+}
+
+
+@article{Jones2001,
+abstract = {This paper presents a taxonomy of existing approaches for using response surfaces for global optimization. Each method is illustrated with a simple numerical example that brings out its advantages and disadvantages. The central theme is that methods that seem quite reasonable often have non-obvious failure modes. Understanding these failure modes is essential for the development of practical algorithms that fulfill the intuitive promise of the response surface approach.},
+author = {Jones, R. Donald},
+issn = {02545330},
+journal = {Journal of Global Optimization},
+keywords = {global optimization,kriging,response surface,splines},
+pages = {345--383},
+title = {{A Taxonomy of Global Optimization Methods Based on Response Surfaces}},
+volume = {21},
+year = {2001}
+}
+
+@article{Jones1998,
+abstract = {In many engineering optimization problems, the number of function evaluations is severely limited by time or cost. These problems pose a special challenge to the field of global optimization, since existing methods often require more function evaluations than can be comfortably afforded. One way to address this challenge is to fit response surfaces to data collected by evaluating the objective and constraint functions at a few points. These surfaces can then be used for visualization, tradeoff analysis, and optimization. In this paper, we introduce the reader to a response surface methodology that is especially good at modeling the nonlinear, multimodal functions that often occur in engineering. We then show how these approximating functions can be used to construct an efficient global optimization algorithm with a credible stopping rule. The key to using response surfaces for global optimization lies in balancing the need to exploit the approximating surface (by sampling where it is minimized) with the need to improve the approximation (by sampling where prediction error may be high). Striking this balance requires solving certain auxiliary problems which have previously been considered intractable, but we show how these computational obstacles can be overcome.},
+author = {Jones, Donald R. and Schonlau, Matthias and Welch, William J.},
+doi = {10.1023/A:1008306431147},
+issn = {09255001},
+journal = {Journal of Global Optimization},
+keywords = {Bayesian global optimization,Kriging,Random function,Response surface,Stochastic process,Visualization},
+number = {4},
+pages = {455--492},
+title = {{Efficient Global Optimization of Expensive Black-Box Functions}},
+volume = {13},
+year = {1998}
+}
+
+@article{Krige1952,
+author = {Krige, D. G.},
+journal = {Journal of the Chemical, Metallurgical and Mining Society of South Africa},
+title = {{A statistical analysis of some of the borehole values in the orange free state goldfield}},
+year = {1952}
+}
+
+@article{Krige1951,
+abstract = {Certain fundamental concepts in the application of statistics to mine valuation on the Witwatersrand are discussed, and general conclusions are drawn regarding the application of the lognormal curve to the frequency distribution of gold values. An indication is given of the reliability of present valuation methods on the Rand. It is shown that the existing over- and under-valuation of blocks of ore listed as high-grade and low-grade, respectively, can be explained statistically. Suggestions are made for the elimination of such errors and for the improvement of the general standard of mine valuation by the use of statistical theory.},
+author = {Krige,D.G.},
+journal = {Journal of the Chemical Metallurgical \& Society of South Mining Africa},
+number = {6},
+pages = {119--139},
+title = {{Journal of the Chemical Metallu , Rgical \& Mining Society of South Africa}},
+url = {http://journals.co.za/content/saimm/52/6/AJA0038223X_4792},
+volume = {52},
+year = {1951}
+}
+
+@article{Meliani2019,
+abstract = {Predictions and design engineering decisions can be made using a variety of information sources that range from experimental data to computer models. These information sources could consist of different mathematical formulations, different grid resolutions, different physics, or different modeling assumptions that simplify the problem. This leads to information sources with varying degrees of fidelity, each with an associated accuracy and querying cost. In this paper, we propose a novel and flexible way to use multi-fidelity information sources optimally in the context of airfoil shape optimization using both Xfoil and ADflow. The new developments are based on Bayesian optimization and kriging metamodeling and allow the aerodynamic optimization to be sped up. In a constrained optimization example with 15-design variables problem, the proposed approach reduces the total cost by a factor of two compared to a single Bayesian based fidelity optimization and by a factor of 1.5 compared to sequential quadratic programming.},
+author = {Meliani, Mostafa and Bartoli, Nathalie and Lefebvre, Thierry and Bouhlel, Mohamed Amine and Martins, Joaquim R.R.A. and Morlier, Joseph},
+doi = {10.2514/6.2019-3236},
+URL = {https://arc.aiaa.org/doi/abs/10.2514/6.2019-3236},
+eprint = {https://arc.aiaa.org/doi/pdf/10.2514/6.2019-3236},
+isbn = {9781624105890},
+journal = {AIAA Aviation 2019 Forum},
+title = {{Multi-fidelity efficient global optimization: Methodology and application to airfoil shape design}},
+year = {2019}
+}
+
+@article{Forrester2006noisy,
+abstract = {Recently there has been a growing interest in using response surface techniques to expedite the global optimization of functions calculated by long running computer codes. The literature in this area commonly assumes that the objective function is a smooth, deterministic function of the inputs. Yet it is well known that many computer simulations, especially those of computational fluid and structural dynamics codes, often display what one might call numerical noise: rather than lying on a smooth curve, results appear to contain a random scatter about a smooth trend. This paper extends previous optimization methods based on the interpolating method of kriging to the case of such noisy computer experiments. Firstly, we review how the kriging interpolation can be modified to filter out numerical noise. We then show how to adjust the estimate of the error in a kriging prediction so that previous approaches to optimization, such as the method of maximizing the expected improvement, continue to work effectively. We introduce the problems associated with noise and demonstrate our approach using computational fluid dynamics based problems.},
+author = {Forrester, Alexander I.J. and Keane, Andy J. and Bressloff, Neil W.},
+doi = {10.2514/1.20068},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Forrester 2006 Design_and_Analysis_of_Noisy_Computer_Experiments.pdf:pdf},
+issn = {00011452},
+journal = {AIAA Journal},
+mendeley-groups = {afstuderen gebruikte papers},
+number = {10},
+pages = {2331--2339},
+title = {{Design and analysis of "noisy" computer experiments}},
+volume = {44},
+year = {2006}
+}
+
+@article{Forrester2006,
+abstract = {Efficient methods for global aerodynamic optimization using computational fluid dynamics simulations should aim to reduce both the time taken to evaluate design concepts and the number of evaluations needed for optimization. This paper investigates methods for improving such efficiency through the use of partially converged computational fluid dynamics results. These allow surrogate models to be built in a fraction of the time required for models based on converged results. The proposed optimization methodologies increase the speed of convergence to a global optimum while the computer resources expended in areas of poor designs are reduced. A strategy which combines a global approximation built using partially converged simulations with expected improvement updates of converged simulations is shown to outperform a traditional surrogate-based optimization. {\textcopyright} 2006 The Royal Society.},
+author = {Forrester, Alexander I.J. and Bressloff, Neil W. and Keane, Andy J.},
+doi = {10.1098/rspa.2006.1679},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Forrester 2006 Optimization_using_surrogate_models_and_partially_converged_CFD.pdf:pdf},
+issn = {14712946},
+journal = {Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences},
+keywords = {Computational fluid dynamics,Data fusion,Design of experiment,Kriging},
+number = {2071},
+pages = {2177--2204},
+title = {{Optimization using surrogate models and partially converged computational fluid dynamics simulations}},
+volume = {462},
+year = {2006}
+}
+@article{Forrester2007,
+abstract = {This paper demonstrates the application of correlated Gaussian process based approximations to optimization where multiple levels of analysis are available, using an extension to the geostatistical method of co-kriging. An exchange algorithm is used to choose which points of the search space to sample within each level of analysis. The derivation of the co-kriging equations is presented in an intuitive manner, along with a new variance estimator to account for varying degrees of computational 'noise' in the multiple levels of analysis. A multi-fidelity wing optimization is used to demonstrate the methodology. {\textcopyright} 2007 The Royal Society.},
+author = {Forrester, Alexander I.J. and S{\'{o}}bester, Andr{\'{a}}s and Keane, Andy J.},
+doi = {10.1098/rspa.2007.1900},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Forrester 2007 - Multi-fidelity optimization via surrogate modelling.pdf:pdf},
+issn = {14712946},
+journal = {Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences},
+keywords = {Kriging,Noise,Subset selection,Wing design,co-kriging},
+number = {2088},
+pages = {3251--3269},
+title = {{Multi-fidelity optimization via surrogate modelling}},
+volume = {463},
+year = {2007}
+}
+@article{Kennedy2000,
+abstract = {We consider prediction and uncertainty analysis for complex computer codes which can be run at different levels of sophistication. In particular, we wish to improve efficiency by combining expensive runs of the most complex versions of the code with relatively cheap runs from one or more simpler approximations. A Bayesian approach is described in which prior beliefs about the codes are represented in terms of Gaussian processes. An example is presented using two versions of an oil reservoir simulator. {\textcopyright} 2000 Biometrika Trust.},
+author = {Kennedy, M. C. and O'Hagan, A.},
+doi = {10.1093/biomet/87.1.1},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Kennedy and OHagan 2000Predicting the output from a complex computer code when fast approximations are av.pdf:pdf},
+issn = {00063444},
+journal = {Biometrika},
+keywords = {Bayesian uncertainty analysis,Computer experiment,Gaussian process,Multi-level code},
+number = {1},
+pages = {1--13},
+title = {{Predicting the output from a complex computer code when fast approximations are available}},
+volume = {87},
+year = {2000}
+}
+@article{Gratiet2014,
+abstract = {We consider in this paper the problem of building a fast-running approximation—also called surrogate model—of a complex computer code. The co-kriging based surrogate model is a promising tool to build such an approximation when the complex computer code can be run at different levels of accuracy. We present here an original approach to perform a multi-fidelity co-kriging model which is based on a recursive formulation. We prove that the predictive mean and the variance of the presented approach are identical to the ones of the original co-kriging model. However, our new approach allows to obtain original results. First, closed-form formulas for the universal co-kriging predictive mean and variance are given. Second, a fast cross-validation procedure for the multi-fidelity co-kriging model is introduced. Finally, the proposed approach has a reduced computational complexity compared to the previous one. The multi-fidelity model is successfully applied to emulate a hydrodynamic simulator.},
+author = {Gratiet, Loic Le and Garnier, Josselin},
+doi = {10.1615/int.j.uncertaintyquantification.2014006914},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/LeGratiet 2014 - Recursive Co-Kriging model for design of computer experiments with multiple levels of fidelity.pdf:pdf},
+issn = {21525099},
+journal = {International Journal for Uncertainty Quantification},
+keywords = {Fast cross-validation,Multi-fidelity computer code,Recursive model,Surrogate models,Uncertainty quantification,Universal co-kriging},
+number = {5},
+pages = {365--386},
+title = {{Recursive co-kriging model for design of computer experiments with multiple levels of fidelity}},
+volume = {4},
+year = {2014}
+}
+@article{Locatelli1997,
+abstract = {In this paper Bayesian analysis and Wiener process are used in order to build an algorithm to solve the problem of global optimization. The paper is divided in two main parts. In the first part an already known algorithm is considered: a new (Bayesian) stopping rule is added to it and some results are given, such as an upper bound for the number of iterations under the new stopping rule. In the second part a new algorithm is introduced in which the Bayesian approach is exploited not only in the choice of the Wiener model but also in the estimation of the parameter $\sigma$2 of the Wiener process, whose value appears to be quite crucial. Some results about this algorithm are also given.},
+author = {Locatelli, M.},
+doi = {10.1023/A:1008294716304},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Locatelli1997_Article_BayesianAlgorithmsForOne-Dimen.pdf:pdf},
+issn = {09255001},
+journal = {Journal of Global Optimization},
+keywords = {Bayesian analysis,Stopping rule,Wiener process},
+number = {1},
+pages = {57--76},
+title = {{Bayesian Algorithms for One-Dimensional Global Optimization}},
+volume = {10},
+year = {1997}
+}
+@misc{Matheron1962,
+author = {Matheron, G.},
+booktitle = {Economic Geology},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Matheron 1963 - Principles of Geostatics.pdf:pdf},
+pages = {1246--1266},
+title = {{Principals of Geostatistics}},
+volume = {58},
+year = {1962}
+}
+@article{Peherstorfer2018,
+abstract = {In many situations across computational science and engineering, multiple computational models are available that describe a system of interest. These different models have varying evaluation costs and varying fidelities. Typically, a computationally expensive high-fidelity model describes the system with the accuracy required by the current application at hand, while lower-fidelity models are less accurate but computationally cheaper than the high-fidelity model. Outer-loop applications, such as optimization, inference, and uncertainty quantification, require multiple model evaluations at many different inputs, which often leads to computational demands that exceed available resources if only the high-fidelity model is used. This work surveys multifidelity methods that accelerate the solution of outer-loop applications by combining high-fidelity and low-fidelity model evaluations, where the low-fidelity evaluations arise from an explicit low-fidelity model (e.g., a simplified physics approximation, a reduced model, a data-fit surrogate) that approximates the same output quantity as the high-fidelity model. The overall premise of these multifidelity methods is that low-fidelity models are leveraged for speedup while the high-fidelity model is kept in the loop to establish accuracy and/or convergence guarantees. We categorize multifidelity methods according to three classes of strategies: adaptation, fusion, and filtering. The paper reviews multifidelity methods in the outer-loop contexts of uncertainty propagation, inference, and optimization.},
+archivePrefix = {arXiv},
+arxivId = {1806.10761},
+author = {Peherstorfer, Benjamin and Willcox, Karen and Gunzburger, Max},
+doi = {10.1137/16M1082469},
+eprint = {1806.10761},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Peherstorfer 2018 - Survey of Multifidelity Methods.pdf:pdf},
+issn = {00361445},
+journal = {SIAM Review},
+keywords = {Model reduction,Multifidelity,Multifidelity optimization,Multifidelity statistical inference,Multifidelity uncertainty propagation,Multifidelity uncertainty quantification,Surrogate models},
+number = {3},
+pages = {550--591},
+title = {{Survey of multifidelity methods in uncertainty propagation, inference, and optimization}},
+volume = {60},
+year = {2018}
+}
+@article{Perdikaris2017,
+abstract = {Multi-fidelity modelling enables accurate inference of quantities of interest by synergistically combining realizations of low-cost/low-fidelity models with a small set of high-fidelity observations. This is particularly effective when the low-and high-fidelity models exhibit strong correlations, and can lead to significant computational gains over approaches that solely rely on high-fidelity models. However, in many cases of practical interest, low-fidelity models can only be well correlated to their high-fidelity counterparts for a specific range of input parameters, and potentially return wrong trends and erroneous predictions if probed outside of their validity regime. Here we put forth a probabilistic framework based on Gaussian process regression and nonlinear autoregressive schemes that is capable of learning complex nonlinear and space-dependent crosscorrelations between models of variable fidelity, and can effectively safeguard against low-fidelity models that provide wrong trends. This introduces a new class of multi-fidelity information fusion algorithms that provide a fundamental extension to the existing linear autoregressive methodologies, while still maintaining the same algorithmic complexity and overall computational cost. The performance of the proposed methods is tested in several benchmark problems involving both synthetic and real multifidelity datasets from computational fluid dynamics simulations.},
+author = {Perdikaris, P. and Raissi, M. and Damianou, A. and Lawrence, N. D. and Karniadakis, G. E.},
+doi = {10.1098/rspa.2016.0751},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Perdikaris 2017 Nonlinear information fusion algorithms for data efficient multi fidelity modelling.pdf:pdf},
+issn = {14712946},
+journal = {Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences},
+keywords = {Bayesian inference,Deep learning,Gaussian processes,Uncertainty quantifcation},
+number = {2198},
+title = {{Nonlinear information fusion algorithms for data-efficient multi-fidelity modelling}},
+volume = {473},
+year = {2017}
+}
+@book{Wang2023,
+abstract = {Bayesian optimization has emerged at the forefront of expensive black-box optimization due to its data efficiency. Recent years have witnessed a proliferation of studies on the development of new Bayesian optimization algorithms and their applications. Hence, this paper attempts to provide a comprehensive and updated survey of recent advances in Bayesian optimization that are mainly based on Gaussian processes and identify challenging open problems. We categorize the existing work on Bayesian optimization into nine main groups according to the motivations and focus of the proposed algorithms. For each category, we present the main advances with respect to the construction of surrogate models and adaptation of the acquisition functions. Finally, we discuss the open questions and suggest promising future research directions, in particular with regard to heterogeneity, privacy preservation, and fairness in distributed and federated optimization systems.},
+archivePrefix = {arXiv},
+arxivId = {2206.03301},
+author = {Wang, Xilu and Jin, Yaochu and Schmitt, Sebastian and Olhofer, Markus},
+booktitle = {ACM Computing Surveys},
+doi = {10.1145/3582078},
+eprint = {2206.03301},
+issn = {0360-0300},
+keywords = {2022,Bayesian optimization, Gaussian process, acquisition function,acm reference format,acquisition function,and markus olhofer,bayesian optimization,gaussian process,recent,sebastian schmitt,xilu wang,yaochu jin},
+publisher = {Association for Computing Machinery},
+title = {{Recent Advances in Bayesian Optimization}},
+volume = {1},
+year = {2023}
+}
+@article{Meng2021b,
+author = {Meng, Xuhui and Babaee, Hessam and Em, George},
+doi = {10.1016/j.jcp.2021.110361},
+issn = {0021-9991},
+journal = {Journal of Computational Physics},
+keywords = {hamiltonian monte carlo,nonlinear correlation,physics-informed neural networks},
+pages = {110361},
+publisher = {Elsevier Inc.},
+title = {{Multi-fidelity Bayesian neural networks : Algorithms and applications}},
+url = {https://doi.org/10.1016/j.jcp.2021.110361},
+volume = {438},
+year = {2021}
+}
+
+@article{Meng2020,
+author = {Meng, Xuhui and Em, George},
+doi = {10.1016/j.jcp.2019.109020},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/meng2020MFDNNs.pdf:pdf},
+issn = {0021-9991},
+journal = {Journal of Computational Physics},
+mendeley-groups = {afstuderen gebruikte papers},
+pages = {109020},
+publisher = {Elsevier Inc.},
+title = {{A composite neural network that learns from multi-fidelity data : Application to function approximation and inverse PDE problems}},
+url = {https://doi.org/10.1016/j.jcp.2019.109020},
+volume = {401},
+year = {2020}
+}
+
+
+@article{Sacks1989,
+author = {Sacks, Jerome},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Sacks 1989 - Design and Analysis of Computer Experiments.pdf:pdf},
+journal = {Statistical Science},
+number = {4},
+pages = {409--435},
+title = {{Design and Analysis of Computer Experiments}},
+volume = {4},
+year = {1989}
+}
+@article{Xiong2013,
+abstract = {A growing trend in engineering and science is to use multiple computer codes with different levels of accuracy to study the same complex system. We propose a framework for sequential design and analysis of a pair of high-accuracy and low-accuracy computer codes. It first runs the two codes with a pair of nested Latin hypercube designs (NLHDs). Data from the initial experiment are used to fit a prediction model. If the accuracy of the fitted model is less than a prespecified threshold, the two codes are evaluated again with input values chosen in an elaborate fashion so that their expanded scenario sets still form a pair of NLHDs. The nested relationship between the two scenario sets makes it easier to model and calibrate the difference between the two sources. If necessary, this augmentation process can be repeated a number of times until the prediction model based on all available data has reasonable accuracy. The effectiveness of the proposed method is illustrated with several examples. Matlab codes are provided in the online supplement to this article. {\textcopyright} 2013 American Statistical Association and the American Society for Quality.},
+author = {Xiong, Shifeng and Qian, Peter Z.G. and Wu, C. F.Jeff},
+doi = {10.1080/00401706.2012.723572},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Xiong 2013 Sequential Design and Analysis of High Accuracy and Low Accuracy Computer Codes.pdf:pdf},
+issn = {00401706},
+journal = {Technometrics},
+keywords = {Gaussian process model,Kriging,Nested Latin hypercube design},
+number = {1},
+pages = {37--46},
+title = {{Sequential design and analysis of high-accuracy and low-accuracy computer codes}},
+volume = {55},
+year = {2013}
+}
+@article{Zhou2020,
+abstract = {Multi-fidelity (MF) surrogate models have shown great potential in simulation-based design since they can make a trade-off between high prediction accuracy and low computational cost by augmenting the small number of expensive high-fidelity (HF) samples with a large number of cheap low-fidelity (LF) data. In this work, a generalized hierarchical co-Kriging (GCK) surrogate model is proposed for MF data fusion with both nested and non-nested sampling data. Specifically, a comprehensive Gaussian process (GP) Bayesian framework is developed by aggregating calibrated LF Kriging model and discrepancy stochastic Kriging model. The stochastic Kriging model enables the GCK model to consider the predictive uncertainty from the LF Kriging model at HF sampling points, making it possible to estimate the model parameter separately under both nested and non-nested sampling data. The performance of the GCK model is compared with three well-known Kriging-based MF surrogates, i.e., hybrid Kriging–scaling (HKS) model, KOH autoregressive (KOH) model, and hierarchical Kriging (HK) model, by testing them on two numerical examples and two real-life cases. The influence of correlations between LF and HF samples and the cost ratio between them are also analyzed. Comparison results on the illustrated cases demonstrate that the proposed GCK model shows great potential in MF modeling under non-nested sampling data, especially when the correlations between LF and HF samples are weak.},
+author = {Zhou, Qi and Wu, Yuda and Guo, Zhendong and Hu, Jiexiang and Jin, Peng},
+doi = {10.1007/s00158-020-02583-7},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEBRUIKTE PAPERS/Zhou2020_Article_AGeneralizedHierarchicalCo-Kri.pdf:pdf},
+issn = {16151488},
+journal = {Structural and Multidisciplinary Optimization},
+keywords = {Black-box function,Co-Kriging model,Multi-fidelity surrogate model,Non-nested sampling data},
+number = {4},
+pages = {1885--1904},
+publisher = {Structural and Multidisciplinary Optimization},
+title = {{A generalized hierarchical co-Kriging model for multi-fidelity data fusion}},
+volume = {62},
+year = {2020}
+}
+@article{SMT2019,
+	Author = {Mohamed Amine Bouhlel and John T. Hwang and Nathalie Bartoli and Rémi Lafage and Joseph Morlier and Joaquim R. R. A. Martins},
+	Journal = {Advances in Engineering Software},
+	Title = {A Python surrogate modeling framework with derivatives},
+	pages = {102662},
+	year = {2019},
+	issn = {0965-9978},
+	doi = {https://doi.org/10.1016/j.advengsoft.2019.03.005}}
+
+@article{Picheny2013,
+abstract = {Responses of many real-world problems can only be evaluated perturbed by noise. In order to make an efficient optimization of these problems possible, intelligent optimization strategies successfully coping with noisy evaluations are required. In this article, a comprehensive review of existing kriging-based methods for the optimization of noisy functions is provided. In summary, ten methods for choosing the sequential samples are described using a unified formalism. They are compared on analytical benchmark problems, whereby the usual assumption of homoscedastic Gaussian noise made in the underlying models is meet. Different problem configurations (noise level, maximum number of observations, initial number of observations) and setups (covariance functions, budget, initial sample size) are considered. It is found that the choices of the initial sample size and the covariance function are not critical. The choice of the method, however, can result in significant differences in the performance. In particular, the three most intuitive criteria are found as poor alternatives. Although no criterion is found consistently more efficient than the others, two specialized methods appear more robust on average. {\textcopyright} 2013 Springer-Verlag Berlin Heidelberg.},
+author = {Picheny, Victor and Wagner, Tobias and Ginsbourger, David},
+doi = {10.1007/s00158-013-0919-4},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/infill sampling methods - criterion/Picheny2013_ABenchmarkOfKriging-basedInfillCriteriaForNoisyOptimization.pdf:pdf},
+issn = {16151488},
+journal = {Structural and Multidisciplinary Optimization},
+keywords = {EGO,Metamodeling,Noise},
+mendeley-groups = {afstuderen gebruikte papers},
+number = {3},
+pages = {607--626},
+title = {{A benchmark of kriging-based infill criteria for noisy optimization}},
+volume = {48},
+year = {2013}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% OVERIG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{Alternating_harmonic,
+ ISSN = {00029890, 19300972},
+ URL = {http://www.jstor.org/stable/10.4169/000298910x485969},
+ author = {Ed Scheinerman and Francisco J. Freniche},
+ journal = {The American Mathematical Monthly},
+ number = {5},
+ pages = {442--448},
+ publisher = {Mathematical Association of America},
+ title = {On Riemann's Rearrangement Theorem for the Alternating Harmonic Series},
+ volume = {117},
+ year = {2010}
+}
+
+@article{CFL,
+author = {Courant, R and Friedrichs, K and Lewy, H},
+doi = {10.1007/BF01342943},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/CFD papers/courant-friedrichs-lewy.pdf:pdf},
+issn = {00255831},
+journal = {Mathematische Annalen},
+mendeley-groups = {afstuderen gebruikte papers/CFD only},
+number = {2},
+pages = {179--202},
+title = {{On the Partial Difference Equations of Mathematical Physics}},
+volume = {138},
+year = {1928}
+}
+@article{Rosenbrock,
+    author = {Rosenbrock, H. H.},
+    title = "{An Automatic Method for Finding the Greatest or Least Value of a Function}",
+    journal = {The Computer Journal},
+    volume = {3},
+    number = {3},
+    pages = {175-184},
+    year = {1960},
+    month = {01},
+    abstract = "{The greatest or least value of a function of several variables is to be found when the variables are restricted to a given region. A method is developed for dealing with this problem and is compared with possible alternatives. The method can be used on a digital computer, and is incorporated in a program for Mercury.}",
+    issn = {0010-4620},
+    doi = {10.1093/comjnl/3.3.175},
+    url = {https://doi.org/10.1093/comjnl/3.3.175},
+    eprint = {https://academic.oup.com/comjnl/article-pdf/3/3/175/988633/030175.pdf},
+}
+
+@book{roache1998_RichardsonExtrapolation,
+  title={Verification and Validation in Computational Science and Engineering},
+  author={Roache, P.J.},
+  isbn={9780913478080},
+  lccn={98096214},
+  url={https://books.google.nl/books?id=ENRlQgAACAAJ},
+  year={1998},
+  publisher={Hermosa Publishers}
+}
+
+
+
+@mastersthesis{Eijkvander2018,
+author = {van der Eijk, Martin},
+school = {Delft University of Technology},
+title = {{Numerical Modelling of Homogeneous Aerated-Water Wave Impacts}},
+url = {http://resolver.tudelft.nl/uuid:9778a824-6d72-4960-a812-4615a53c2c41},
+year = {2018}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IRA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@phdthesis{Kleefsman2005,
+abstract = {In this thesis, numerical simulations to calculate water impact loading on offshore structures are presented. The simulations are based on a discrete version of the Navier-Stokes equations that describe the motion of a fluid. Special attention has been paid to the green water problem, where water exceeds the deck level of a ship and flows onto the deck. The results of the simulations have been compared extensively with experimental measurements.},
+author = {Kleefsman, Theresa},
+booktitle = {Dissertations.Ub.Rug.Nl},
+school = {Rijks-Universiteit Groningen},
+isbn = {903672385X},
+pages = {149},
+title = {{Water Impact Loading on Offshore Structures A Numerical Study}},
+url = {http://irs.ub.rug.nl/ppn/288227360},
+year = {2005}
+}
+
+@phdthesis{Fekken2004,
+author = {Fekken, Geert},
+number = {2},
+pages = {103},
+title = {{Numerical Simulation of Free-Surface Flow with Moving Rigid Bodies}},
+volume = {6},
+year = {2004},
+school = {Rijks-Universiteit Groningen}
+}
+
+@article{Eijk2022,
+abstract = {The numerical prediction of two-phase flows with an interface is challenging. The high-density ratio at the interface and inconsistency in the numerical scheme is part of the challenge. A lack of attention to the numerical implementation of these aspects can lead to non-physical results. The result becomes affected by momentum losses, diverging spurious interface velocities, free surface distortion, and even numerical instability. To prevent the non-physical results, Rudman (1998) introduced a numerical technique using a consistent flux-corrected transport algorithm for the momentum advection. Based on this technique, Zuzio et al. (2020) found a consistent mass-momentum transport (CMOM) scheme with an additional mass equation reducing the computational costs. In this article, the new addition of fluid-structure interaction is presented with a consistent numerical technique. The presented method is a combination of the CMOM scheme, a cut-cell method, and two-way coupling. The CMOM scheme is translated to the application for the method presented by van der Eijk and Wellens (2020) using a full geometric Volume of Fluid method on a fixed staggered Cartesian grid (EVA). EVA shows comparable results with Zuzio et al. (2020). Verification cases for fluid-structure interaction with EVA showed improved results concerning momentum conservation ; the consistent approach with CMOM is closer to 2D experimental results than for the non-consistent one. The merit of consistent modeling with and without fluid-structure interaction becomes especially apparent for two-phase flows with air and water involved.},
+author = {van der Eijk, Martin and Wellens, Peter},
+keywords = {CFD,Consistent modeling,Fluid-structure interaction,Interfacial flows,Two-phase flows,Volume of Fluid},
+title = {{Two-phase free-surface flow interaction with moving bodies with a momentum preserving VoF cut-cell method}},
+year = {2022},
+journal = {Journal of Computational Physics}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Realistic case
+%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{Eijk2021wedge,
+author = {van der Eijk, Martin and Wellens, Peter},
+title = {{Experimental, numerical and analytical comparison of a 2D buoyant falling and emerging wedge}},
+year = {2023},
+journal = {Journal of Fluids Mechanics},
+publisher = {Cambridge University Press}
+}
+
+@article{bingol2019geomdl,
+  title={{NURBS-Python}: An open-source object-oriented {NURBS} modeling framework in {Python}},
+  author={Bingol, Onur Rauf and Krishnamurthy, Adarsh},
+  journal={{SoftwareX}},
+  volume={9},
+  pages={85--94},
+  year={2019},
+  publisher={Elsevier},
+  doi={https://doi.org/10.1016/j.softx.2018.12.005}
+}
+@article{Zhao1996,
+abstract = {i ABSTRACT Two different theoretical methods for predicting slam-ming loads on two-dimensional sections bave been devel-oped. One of the methods is a fully nonlinear numerical simulation, that includes flow separation from knuckles or fixed separation points of abody with continuously curved surface. The other method is an extension of Wagner's so-lution(1932). It is an approximate solution and does not include flow separation. The numerical methods are val-idated by comparing with new experimental results from drop tests of ship cross-sections. 2 INTRODUCTION Many experimental, analytical and numerical studies of slamming loads have been reported since the pioneering works by von Karman(1929) and Wagner(1932). A strip theory approach is common to use in the analyses of slam-ming loads on ship hull sections. This is also implicitly assumed in this paper. Thre&dimensional flow effects are present in reality. However the many challenging physi-cal and numerical problems are obviously easier to study properly by a two-dimensional method. This will also give guidance on how to treat the three-dimensional flow prop-erly during water entry. Two different two-dimensional methods are presented together with new experimental re-sults. One of the methods represents a fully nonlinear solution. This is a further development of the work by Zhao and Faltinsen(l993). They studied slamming loads on two-dimensional symmetrical sections without the ef-fect of flow separation. The problem was solved as an ini-tial value problem. The exact body boundary condition and fully nonlinear free-surface conditions without gravity were used in the numerical analysis. A local jet flow was introduced near the intersections between the body and the free-surface. The method was verified by Thao and Faitinsen(1993) by comparing with analytical and asymp-totic solutions for water entry of symmetrical wedges with deadrise angles from 40 to 81°. Faltinsen(1993) applied the method with good results for a bow flare section. The numerical method of Zbao and Faltinsen(l993) is in this paper extended to general asymmetric bodies. Flow sepa-ration from knuckles and bodies with continuously curved surfaces has been included. When separation occurs from a continuously curved surface, the separation points are determined empirically. The separation mechanism has to be better understood in this case. Viscous boundary layer effects are not believed to be important. Some insight can be gained by studying solutions for steady cavity flow past cylinders. An approximate solution based on a generalization of Wagner's solution(1932) is also presented. The effect of flow separation is not included. The problem is solved numerically in the time domain by using Green's second identity for each time step. The body boundary condition is satisfied exactly. The piled-up water around the in ter-section between the free surface and the body surface is calculated by a similar approach as Wagner(1932) used. The dynamic free-surface condition is zero velocity pa-ten rial on horizontal lines that go through the intersection points between the free surface and body surface. The ap-proximate solution has been compared with the similarity solution for wedges and the fully nonlinear numerical so-lution. Satisfactory prediction of the maximum pressure and total slamming loads are documented. This approx-iinate solution is fast to calculate and more easy to use},
+author = {Zhao, R and Faltinsen, O and Aarsnes, J},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/CFD papers/Water entry of arbitrary two-dimensional sections with and without flow separation,.pdf:pdf},
+isbn = {0309058791},
+journal = {Proc. 21th Symp. on Naval Hydrodynamics},
+mendeley-groups = {afstuderen gebruikte papers/CFD only,afstuderen gebruikte papers/case},
+pages = {408--423},
+title = {{Water Entry of Arbitrary Two-Dimensional Sections with and Without Flow Separation}},
+year = {1996}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% GEK
+%%%%%%%%%%%%%%%%%%%
+
+@article{Morris1993,
+abstract = {This article is concerned with the problem of predicting a deterministic response function yo over a multidimensional domain T, given values of yo and all of its first derivatives at a set of design sites (points) in T. The intended application is to computer experiments in which yo is an output from a computer model of a physical system and each point in T represents a particular configuration of the input parameters. It is assumed that the first derivatives are already available (e.g., from a sensitivity analysis) or can be produced by the code that implements the model. A Bayesian approach in which the random function that represents prior uncertainty about yo is taken to be a stationary Gaussian stochastic process is used. The calculations needed to update the prior given observations of yo and its first derivatives at the design sites are given and are illustrated in a small example. The issue of experimental design is also discussed, in particular the criterion of maximizing the reduction in entropy, which leads to a kind of D optimality. It is shown that, for certain classes of correlation functions in which the intersite correlations are very weak, D-optimal designs necessarily maximize the minimim distance between design sites. A simulated annealing algorithm is described for constructing such maximin distance designs. An example is given based on a demonstration model of eight inputs and one output, in which predictions based on a maximin design, a Latin hypercube design, and two compromise designs are evaluated and compared. {\textcopyright} 1993 American statistical association and the American society for quality control.},
+author = {Morris, Max D. and Mitchell, Toby J. and Ylvisaker, Donald},
+doi = {10.1080/00401706.1993.10485320},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEK/Bayesian Design and Analysis of Computer Experiments Use of Derivatives in Surface Prediction.pdf:pdf},
+issn = {15372723},
+journal = {Technometrics},
+keywords = {Bayesian prediction,Computer model,Interpolation,Latin hypercube design,Maximin distance design,Sensitivity analysis},
+mendeley-groups = {afstuderen gebruikte papers/GEK},
+number = {3},
+pages = {243--255},
+title = {{Bayesian design and analysis of computer experiments: Use of derivatives in surface prediction}},
+volume = {35},
+year = {1993}
+}
+@article{Dwight2006,
+abstract = {An exact discrete adjoint of an unstructured finite-volume solver for the Reynolds-averaged Navier-Stokes equations has been developed. The adjoint is exact in the sense of being based on the full linearization of all terms in the solver, including all turbulence model contributions. From this starting point various approximations to the adjoint are derived with the intention of simplifying the development and memory requirements of the method; considered are many approximations already seen in the literature. The effect of these approximations on the accuracy of the resulting design gradients, and the convergence and final solution of optimizations is studied, as it applies to a two-dimensional high-lift configuration.},
+author = {Dwight, Richard P. and Brezillon, Jo{\"{e}}l},
+doi = {10.2514/1.21744},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEK/Effect of Approximations of the Discrete Adjoint on Gradient-Based Optimization.pdf:pdf},
+issn = {00011452},
+journal = {AIAA Journal},
+mendeley-groups = {afstuderen gebruikte papers/GEK},
+number = {12},
+pages = {3022--3031},
+title = {{Effect of approximations of the discrete adjoint on gradient-based optimization}},
+volume = {44},
+year = {2006}
+}
+@article{Dwight2009,
+abstract = {A flexible non-intrusive approach to parametric uncertainty quantification problems is developed, aimed at problems with many uncertain parameters, and for applications with a high cost of functional evaluations. It employs a Kriging response surface in the parameter space, augmented with gradients obtained from the adjoint of the deterministic equations. The Kriging correlation parameter optimization problem is solved using the Subplex algorithm, which is robust for noisy functionals, and whose effort typically increases only linearly with problem dimension. Integration over the resulting response surface to obtain statistical moments is performed using sparse grid techniques, which are designed to scale well with dimensionality. The efficiency and accuracy of the proposed method is compared with probabilistic collocation, direct application of sparse grid methods, and Monte-Carlo initially for model problems, and finally for a 2d compressible Navier-Stokes problem with a random geometry parameterized by 4 variables. Copyright {\textcopyright} 2009 by Richard P. Dwight.},
+author = {Dwight, Richard P. and Han, Zhong Hua},
+doi = {10.2514/6.2009-2276},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEK/Efficient Uncertainty Quantification using GEK.pdf:pdf},
+isbn = {9781563479731},
+issn = {02734508},
+journal = {Collection of Technical Papers - AIAA/ASME/ASCE/AHS/ASC Structures, Structural Dynamics and Materials Conference},
+mendeley-groups = {afstuderen gebruikte papers/GEK},
+number = {May},
+pages = {2276},
+title = {{Efficient uncertainty quantification using gradient-enhanced kriging}},
+year = {2009},
+volume = {50}
+}
+@article{DeBaar2012,
+abstract = {Techniques for Uncertainty Quantification (UQ) suffer from the 'curse of dimensionality': the number of required evaluations of the simulation code increases rapidly as the number of uncertain variables increases. Fluid-Structure Interaction (FSI) problems can involve complex physics as well as a large number of random input variables. The objective of the current work is to mitigate the curse of dimensionality by including adjoint-based gradient information from the FSI problem. For a FSI problem we increase the number of random structure variables from 1 to 16. We apply a UQ response surface technique known as Kriging, and observe the computational effort that is required to obtain a certain target accuracy. When including gradient information - a technique known as Gradient-Enhanced Kriging (GEK) - we find a speedup that increases with the number of random variables. For example, for 4 random variables we observe a speedup of 3.0, while for 16 random variables we observe a speedup of 9.8. We conclude that including gradient information can lead to significant speedups.},
+author = {{De Baar}, Jouke H.S. and Scholcz, Thomas P. and Verhoosel, Clemens V. and Dwight, Richard P. and {Van Zuijlen}, Alexander H. and Bijl, Hester},
+doi = {10.13140/2.1.2484.7048},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEK/Efficient uncertainty quantification with gradient-enhanced Kriging Applications in FSI.pdf:pdf},
+isbn = {9783950353709},
+journal = {ECCOMAS 2012 - European Congress on Computational Methods in Applied Sciences and Engineering, e-Book Full Papers},
+keywords = {Adjoint gradients,Fluid-Structure Interaction,Gradient-Enhanced Kriging,Response surfaces,Uncertainty Quantification},
+mendeley-groups = {afstuderen gebruikte papers/GEK},
+number = {November 2014},
+pages = {1268--1279},
+title = {{Efficient uncertainty quantification with gradient-enhanced kriging: Applications in FSI}},
+year = {2012}
+}
+
+@article{DeBaar2014,
+abstract = {Cokriging is a flexible tool for constructing surrogate models on the outputs of computer models. It can readily incorporate gradient information, in which form it is named gradient-enhanced Kriging (GEK), and promises accurate surrogate models in >10 dimensions with a moderate number of sample locations for sufficiently smooth responses. However, GEK suffers from several problems: poor robustness and ill-conditionedness of the surface. Furthermore it is unclear how to account for errors in gradients, which are typically larger than errors in values. In this work we derive GEK using Bayes' Theorem, which gives an useful interpretation of the method, allowing construction of a gradienterror contribution. The Bayesian interpretation suggests the “observation error” as a proxy for errors in the output of the computer model. From this point we derive analytic estimates of robustness of the method, which can easily be used to compute upper bounds on the correlation range and lower bounds on the observation error. We thus see that by including the observation error, treatment of errors and robustness go hand in hand. The resulting GEK method is applied to uncertainty quantification for two test problems.},
+author = {de Baar, Jouke H.S. and Dwight, Richard P. and Bijl, Hester},
+doi = {10.1615/Int.J.UncertaintyQuantification.2013006809},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEK/improvements to GEK using a Bayesian interpretation.pdf:pdf},
+issn = {21525099},
+journal = {International Journal for Uncertainty Quantification},
+keywords = {Fluid mechanics,Gaussian random fields,Maximum likelihood},
+mendeley-groups = {afstuderen gebruikte papers/GEK},
+number = {3},
+pages = {205--223},
+title = {{Improvements to gradient-enhanced kriging using a Bayesian interpretation}},
+volume = {4},
+year = {2014}
+}
+@article{DeBaar2015b,
+author = {{De Baar}, J. H.S. and Scholcz, T. P. and Dwight, R. P.},
+doi = {10.2514/1.J053678},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/GEK/Exploiting Adjoint Derivatives in High-Dimensional Metamodels.pdf:pdf},
+issn = {00011452},
+journal = {AIAA Journal},
+mendeley-groups = {afstuderen gebruikte papers/GEK},
+number = {5},
+pages = {1391--1395},
+title = {{Exploiting adjoint derivatives in high-dimensional metamodels}},
+volume = {53},
+year = {2015}
+}
+
+@article{Ulaganathan2015,
+abstract = {Multi-fidelity surrogate modelling offers an efficient way to approximate computationally expensive simulations. In particular, Kriging-based surrogate models are popular for approximating deterministic data. In this work, the performance of Kriging is investigated when multi-fidelity gradient data is introduced along with multi-fidelity function data to approximate computationally expensive black-box simulations. To achieve this, the recursive CoKriging formulation is extended by incorporating multi-fidelity gradient information. This approach, denoted by Gradient-Enhanced recursive CoKriging (GECoK), is initially applied to two analytical problems. As expected, results from the analytical benchmark problems show that additional gradient information of different fidelities can significantly improve the accuracy of the Kriging model. Moreover, GECoK provides a better approximation even when the gradient information is only partially available. Further comparison between CoKriging, Gradient Enhanced Kriging, denoted by GEK, and GECoK highlights various advantages of employing single and multi-fidelity gradient data. Finally, GECoK is further applied to two real-life examples.},
+author = {Ulaganathan, Selvakumar and Couckuyt, Ivo and Ferranti, Francesco and Laermans, Eric and Dhaene, Tom},
+doi = {10.1007/s00158-014-1192-x},
+file = {:C\:/Users/RobertWenink/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Ulaganathan et al. - 2015 - Performance study of multi-fidelity gradient enhanced kriging.pdf:pdf},
+isbn = {0015801411},
+issn = {16151488},
+journal = {Structural and Multidisciplinary Optimization},
+keywords = {Gradient enhancement,Multi-fidelity modelling,Recursive CoKriging,Surrogate modelling},
+mendeley-groups = {kriging,kriging/multi-fidelity,afstuderen gebruikte papers/GEK},
+number = {5},
+pages = {1017--1033},
+title = {{Performance study of multi-fidelity gradient enhanced kriging}},
+volume = {51},
+year = {2015}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+%%%%%%%%%%%%%%%%%%%
+% MARITIEM
+%%%%%%%%%%%%%%%%%%%
+@article{An2021,
+abstract = {Autonomous Underwater Helicopter (AUH) is a disk-shaped Autonomous Underwater Vehicle (AUV), and it has comparative advantage of near-bottom hovering and whole-direction turn- around ability over the traditional slender AUV. An optimization design of its irregular geometric profile is essential to improve its hydrodynamic performance. A parametric representation of its profile is proposed in this paper using Non-Uniform Rational B-spline (NURBS) curve. The paramet- ric representation of AUH profile is described with two decision variables and several data points. Based on this parametric curve, Computational Fluid Dynamics (CFD) simulation is carried out to evaluate its hydrodynamic performance with various parameters. A predication model is established over variables' design space using Kriging surrogate model with CFD simulation results and a Genetic Algorithm (GA) procedure is conducted to find optimal design variables, which can produce an optimum lift-drag ratio. CFD verification results confirm that AUH profile with optimized design variables can increase its lift-drag ratio by 2.11 times compared with that of non-optimized ones. It demonstrates that the parametric representation and optimization procedure of AUH profile proposed in this paper is feasible, and it has a great potential in improving AUH's performance.},
+author = {An, Xinyu and Chen, Ying},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/AFSTUD$\sim$1/INFOEN$\sim$1/MARITI$\sim$1/EXTRAW$\sim$1/AN2021$\sim$1.PDF:PDF},
+keywords = {Autonomous Underwater Helicopter (AUH),Computational Fluid Dynamics (CFD),Non-Uniform Rational B-spline (NURBS),parametric design},
+mendeley-groups = {afstuderen gebruikte papers/maritime},
+title = {{Parametric Design and Optimization of the Profile of Autonomous Underwater Helicopter Based on NURBS}},
+year = {2021}
+}
+@article{Bonfiglio2017,
+abstract = {Hydrofoils operating in a stable super-cavitating regime present great promise in de- signing high-performance marine vehicles with cruising speeds exceeding 100 knots. Due to the inherent complexity and multi-phase nature of the turbulent flow, assessing the per- formance of such hydrofoils for a wide range of operating conditions becomes a formidable task. Here we address this challenge by putting forth a data-driven multi-fidelity framework that is able to combine simplified computational models with a small number high-fidelity simulations and/or experimental data. The compositional synthesis of these variable fi- delity information sources leads to significant computational expediency gains, and enables the construction of accurate predictive surrogates for a given hydrofoil performance metric. Using a Bayesian nonparametric approach based on Gaussian process priors, the resulting multi-fidelity surrogates can also naturally quantify uncertainty due to noisy or incomplete data. We demonstrate the effectiveness of the proposed framework by building stochastic response surfaces for the lift over drag ratio of a wedge-shaped super-cavitating hydrofoil operating in different flow regimes, as controlled by the angle of attack to the incoming flow and the cavitation index. In particular, we consider three information sources: 2D RANS simulations (low-fidelity), a 2D RANS solver corrected for spanwise effects through a reformulated lifting line theory (intermediate fidelity), and a fully 3D RANS solver (high- fidelity). We also show how noisy experimental data can be seamlessly incorporated in the workflow, and we validate our predictions against the cavitation tunnel experiments of Kermen et al},
+author = {Bonfiglio, Luca and Perdikaris, Paris and Brizzolara, Stefano and Karniadakis, George Em},
+doi = {10.2514/6.2017-1328},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/AFSTUD$\sim$1/INFOEN$\sim$1/MARITI$\sim$1/Scopus/BONFIG$\sim$1.PDF:PDF},
+mendeley-groups = {afstuderen gebruikte papers/maritime},
+number = {January},
+title = {{A multi-fidelity framework for investigating the performance of super-cavitating hydrofoils under uncertain flow conditions}},
+year = {2017}
+}
+
+@article{Coppede2019,
+abstract = {A computational framework for hydrodynamic shape optimization of complex ship hull form is proposed and applied to improve the calm water performance of the KRISO Container Ship (KCS). The framework relies on three key features: a novel shape morphing method based on a combination of subdivision surfaces and free form deformations, a robust three dimensional viscous computational fluid dynamic solver based on the openFOAM open-source libraries and a Gaussian process-response surface method (GP-RSM) based on ordinary Kriging model which has been created to speed-up the evaluation of the quantity of interest (QoI) of the design process. The accuracy of the hydrodynamic solver is proven by comparing the obtained results against available experimental measurements. A preliminary sensitivity analysis on the mesh size has been carried out aiming at reducing the computational burden required by the CFD predictions. Three GP-RSMs have been trained relying on increasing number of hull designs. Each surrogate model has been cross-validated by both leave-one-out and k-fold techniques. The behaviours of these multi-dimensional surfaces have been analyzed in details by sampling the investigated design space with 107 points according to a Full-Factorial algorithm, highlighting the regions of maximum deviation with respect to the resistance of the reference hull. The three optimum designs provided by the corresponding GP-RSM models have been verified by using high-fidelity CFD simulations with a refined mesh configuration. Calm water resistance, wave patterns and pressure distributions over the selected hull surfaces have been discussed in the light of the generated shape variations.},
+author = {Copped{\`{e}}, Antonio and Gaggero, Stefano and Vernengo, Giuliano and Villa, Diego},
+doi = {10.1016/j.apor.2019.05.026},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/Maritieme Kriging papers/Scopus/Coppede 2019 Hydrodynamic-shape-optimization-by-high-fidelity-CFD-solver-and-GP-based-RSM.pdf:pdf},
+issn = {0141-1187},
+journal = {Applied Ocean Research},
+keywords = {Free form deformation (FFD),Gaussian process (GP),Hydrodynamic shape optimization,KRISO Container Ship (KCS),Response surface method (RSM),Reynolds averaged Navier Stokes (RANS),ffd,free form deformation,hydrodynamic shape optimization,rans,reynolds averaged navier stokes},
+mendeley-groups = {afstuderen gebruikte papers/maritime},
+number = {May},
+pages = {101841},
+publisher = {Elsevier},
+title = {{Hydrodynamic shape optimization by high fi delity CFD solver and Gaussian process based response surface method}},
+url = {https://doi.org/10.1016/j.apor.2019.05.026},
+volume = {90},
+year = {2019}
+}
+@article{DeBaar2015,
+abstract = {Uncertainty quantification (UQ) for CFD-based ship design can require a large number of simulations, resulting in significant overall computational cost. Presently, we use an existing method, multi-fidelity Kriging, to reduce the number of simulations required for the UQ analysis of the performance of a sailing yacht hull, considering uncertainties in the tank blockage, mass and centre of gravity. We compare the UQ results with experimental values.},
+author = {de Baar, Jouke and Roberts, Stephen and Dwight, Richard and Mallol, Benoit},
+doi = {10.1016/j.compfluid.2015.10.004},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/multi-fidelity kriging/Jouke de Baar 2015 - Uncertainty quantification for a sailing yacht hull, using multi-fidelitykriging.pdf:pdf},
+issn = {00457930},
+journal = {Computers and Fluids},
+keywords = {Free-surface,Kriging,Multi-fidelity,RANS,Uncertainty quantification},
+mendeley-groups = {afstuderen gebruikte papers/maritime},
+pages = {185--201},
+publisher = {Elsevier Ltd},
+title = {{Uncertainty quantification for a sailing yacht hull, using multi-fidelity kriging}},
+url = {http://dx.doi.org/10.1016/j.compfluid.2015.10.004},
+volume = {123},
+year = {2015}
+}
+@article{Demo2021,
+abstract = {This contribution describes the implementation of a data-driven shape optimization pipeline in a naval architecture application. We adopt reduced order models in order to improve the efficiency of the overall optimization, keeping a modular and equation-free nature to target the industrial demand. We applied the above mentioned pipeline to a realistic cruise ship in order to reduce the total drag. We begin by defining the design space, generated by deforming an initial shape in a parametric way using free form deformation. The evaluation of the performance of each new hull is determined by simulating the flux via finite volume discretization of a two-phase (water and air) fluid. Since the fluid dynamics model can result very expensive—especially dealing with complex industrial geometries—we propose also a dynamic mode decomposition enhancement to reduce the computational cost of a single numerical simulation. The real-time computation is finally achieved by means of proper orthogonal decomposition with Gaussian process regression technique. Thanks to the quick approximation, a genetic optimization algorithm becomes feasible to converge towards the optimal shape. B},
+author = {Demo, Nicola and Ortali, Giulio and Gustin, Gianluca and Rozza, Gianluigi and Lavini, Gianpiero},
+doi = {10.1007/s40574-020-00263-4},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/Maritieme Kriging papers/Scopus/Demo 2020 effi-comp-framew-for-naval-shapedesign-and-opt-probs-by-datadriven-reduced-order-modeling.pdf:pdf},
+issn = {2198-2759},
+journal = {Bollettino dell'Unione Matematica Italiana},
+keywords = {Computational fluid dynamics,Data-driven reduced order modeling,Finite volume method,Free form deformation,Shape optimization},
+mendeley-groups = {afstuderen gebruikte papers/maritime},
+number = {1},
+pages = {211--230},
+publisher = {Springer International Publishing},
+title = {{An efficient computational framework for naval shape design and optimization problems by means of data-driven reduced order modeling techniques}},
+url = {https://doi.org/10.1007/s40574-020-00263-4},
+volume = {14},
+year = {2021}
+}
+@article{Demo2021b,
+abstract = {In the field of parametric partial differential equations, shape optimization represents a challenging problem due to the required computational resources. In this contribution, a data-driven framework involving multiple reduction techniques is proposed to reduce such computational burden. Proper orthogonal decomposition (POD) and active subspace genetic algorithm (ASGA) are applied for a dimensional reduction of the original (high fidelity) model and for an efficient genetic optimization based on active subspace property. The parameterization of the shape is applied directly to the computational mesh, propagating the generic deformation map applied to the surface (of the object to optimize) to the mesh nodes using a radial basis function (RBF) interpolation. Thus, topology and quality of the original mesh are preserved, enabling application of POD-based reduced order modeling techniques, and avoiding the necessity of additional meshing steps. Model order reduction is performed coupling POD and Gaussian process regression (GPR) in a data-driven fashion. The framework is validated on a benchmark ship.},
+author = {Demo, Nicola and Tezzele, Marco and Mola, Andrea},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/AFSTUD$\sim$1/INFOEN$\sim$1/MARITI$\sim$1/EXTRAW$\sim$1/DEMO20$\sim$1.PDF:PDF},
+keywords = {computational fluid dynamics,high-dimensional optimization,parameter space reduction,reduced order modeling,shape optimization},
+mendeley-groups = {afstuderen gebruikte papers/maritime},
+title = {{Hull Shape Design Optimization with Parameter Space and Model Reductions , and Self-Learning Mesh Morphing}},
+year = {2021}
+}
+
+@inproceedings{Korondi2019,
+abstract = {This paper proposes to apply multi-fidelity learning for reliability-based design op- timisation of a ducted propeller. Theoretically, the efficiency of a propeller can be increased by placing the propeller into a duct. The increased efficiency makes the ducted propeller an appealing option for electrical aviation where optimal electricity consumption is vital. The electricity consumption is mainly dictated by the required power to reach the required thrust force. Recent design optimisation techniques such as machine learning can help us to reach high thrust to power ratios. Due to the expensive computational fluid dynamics simulations a multi-fidelity learning algorithm is investigated here for the application of ducted propeller design. The limited number ofhigh-fidelity numerical experiments cannot provide sufficient in- formation about the landscape ofthe design field and probability field. Therefore, information from lower fidelity simulations is fused into the high-fidelity surrogate using the recently pub- lished recursive co-Kriging technique augmented with Gaussian-Markov Random Fields. At each level the uncertainty can be modelled via a polynomial chaos expansion which provides a variable-fidelity quantification technique of the uncertainty. This facilitates the calculation of risk measures, like conditional Value-at-Risk, for reliability-based design optimisation. The multi-fidelity surrogate model can be adaptively refined following a similar strategy to the Effi- cient Global Optimisation using the expected improvement measure. The proposed combination of techniques provides an efficient manner to conduct reliability-based optimisation on expen- sive realistic problems using a multi-fidelity learning technique.},
+author = {Korondi, P{\'{e}}ter Z{\'{e}}n{\'{o}} and Parussini, Lucia and Marchi, Mariapia and Poloni, Carlo},
+doi = {10.7712/120219.6363.18806},
+keywords = {Co-Kriging,Ducted Propeller,Gaussian Markov Random Fields,Multi-fidelity Learning,Reliability-based Design Optimisation,Risk Averseness},
+title = {{RELIABILITY-BASED DESIGN OPTIMISATION OF A DUCTED PROPELLER THROUGH MULTI-FIDELITY LEARNING}},
+year = {2019},
+booktitle = {UNCECOMP (2019)},
+organization = {Eccomas Proceedia},
+pages = {600-619}
+}
+
+@article{Kunasekaran2021,
+abstract = {Winglets on a turbine blade can modify flow features and improve a marine current turbine (MCT). In this work, to maximize the power coefficient (CP) and torque (T), cant angle ($\alpha$), and height (h) of a winglet of an MCT were modified. The problem was solved using a high-fidelity solver code Fluent 2019R2 containing Reynolds- Averaged Navier–Stokes (RANS) equations. The flow domain meshed with tetrahedral elements. Nine different designs were produced to fill the design space for optimization. A set of low fidelity models such as second-order regression, kriging, and neural network models were used to approximate the high-fidelity results. The optimal designs further validated with the high-fidelity simulated results. The optimal design, increased CP by 7\% for $\alpha$ = 33.2o and h = 2.04\% of the turbine radius, reduced the recirculation zone at the trailing edge, increased the pressure gradient, and reduced the tip vortex.},
+author = {Kunasekaran, Murali and Hyung, Shin and Venkatesan, Nithya and Samad, Abdus},
+doi = {10.1016/j.oceaneng.2021.109877},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/Maritieme Kriging papers/extra WoS/Kunesekaran 2021 Design optimization of a marine current turbine having winglet on blade.pdf:pdf},
+issn = {0029-8018},
+journal = {Ocean Engineering},
+keywords = {Blade winglet,Marine current turbine,Optimization,Tidal energy},
+number = {March},
+pages = {109877},
+publisher = {Elsevier Ltd},
+title = {{Design optimization of a marine current turbine having winglet on blade}},
+url = {https://doi.org/10.1016/j.oceaneng.2021.109877},
+volume = {239},
+year = {2021}
+}
+
+@article{Leifsson2013,
+abstract = {Hydrodynamic shape optimization of axisymmetric bodies is presented. A surrogate-based optimization algorithm is described that exploits a computationally cheap low-fidelity model to construct a surrogate of an accu- rate but CPU-intensive high-fidelity model. The low-fidelity model is based on the same governing equations as the high-fidelity one, but exploits coarser discretization and relaxed convergence criteria. A multiplicative response correction is applied to the low-fidelity CFD model output to yield an accurate and reliable surrogate model. The approach is implemented for both direct and in- verse design. In the direct design approach the optimal hull shape is found by minimizing the drag, whereas in the inverse approach a target pressure dis- tribution is matched. Results show that optimized designs are obtained at substantially lower computational cost (over 94\%) when compared to the direct high-fidelity model optimization},
+author = {Leifsson, Leifur and Koziel, Slawomir and Ogurtsov, Stanislav},
+keywords = {axisymmetric body,cfd,direct design,inverse design,modeling,multi-fidelity,shape optimization,surrogate-based optimization},
+pages = {209--223},
+title = {{Hydrodynamic Shape Optimization of Axisymmetric Bodies Using Multi-fidelity Modeling}},
+year = {2013},
+publisher = {Springer-Verlag Berlin Heidelberg},
+journal = {Simulation \& Modeling Methodologies, Technologies \& Applications, AISC 197}
+}
+
+@article{Liu2017,
+abstract = {Increasingly, more parameters to express and modify ship hull forms are used as variables to identify bet- ter designs; however, such proliferation of parameters may result in inefficient and impractical optimization. Dimen- sion reduction by sensitivity analysis (SA) is a feasible way to alleviate this problem. The widely applied variance- based SA is able to determine uninfluential variables for the descending dimension. Sobol and kriging model-based tensor-product basis function (TPBF) methods are stud- ied as representatives of the classical and metamodeling approach of variance-based SA, respectively. The Sobol method is improved by new integrals with less variance and quasi-random numbers with lower star discrepancy for increasing SA accuracy. New integrals reduce the vari- ance of estimation for conditional variance, which results in higher accuracy as demonstrated from the perspective of the Monte Carlo method. More uniform quasi-random numbers generated by uniform design instead of a conven- tional Sobol sequence potentially improve the accuracy of the quasi Monte Carlo method. A function indicates that both measures can effectively increase the accuracy of SA. The kriging model-based TPBF method is extended from the original ordinary kriging model to linear and quadratic kriging models to extend its application in hull form opti- mization. A numerical example demonstrates that the accu- racy of the kriging model-based TPBF method is higher than that of the improved Sobol method. Nevertheless, it is vulnerable to ill-conditioned correlation matrices. Finally, both methods are implemented in a ship hull form optimization model, and an uninfluential variable for dimension reduction is determined. Both methods should be applied simultaneously if possible due to the higher accuracy of the kriging model-based TPBF method and better robustness of the improved Sobol method.},
+author = {Liu, Qiang and Feng, Baiwei and Liu, Zuyuan and Zhang, Heng},
+doi = {10.1007/s00773-017-0439-9},
+issn = {1437-8213},
+journal = {Journal of Marine Science and Technology},
+keywords = {Dimension reduction,Kriging model,Ship hull optimization,Sobol method,Tensor-product basis function,Variance-based sensitivity analysis,dimension,kriging model,method,reduction,ship hull optimization,sobol,tensor-product basis function,variance-based sensitivity analysis},
+number = {4},
+pages = {694--709},
+publisher = {Springer Japan},
+title = {{The improvement of a variance-based sensitivity analysis method and its application to a ship hull optimization model}},
+volume = {22},
+year = {2017}
+}
+@article{Liu2017a,
+abstract = {As ocean resources received considerable attention, the autonomous underwater vehicle (AUV) has been more widely applied due to its excellent flexibility and adaptability, and the optimization design of AUV has becoming a more important issue. The heavier-than-water underwater vehicle (HUV) is a new conceptual AUV, and its design is a typical multidisciplinary problem, but heavily dependent on the experience with naval architects at the present engineering design. To realize the opti- mization design of HUV, the multidisciplinary design optimization (MDO) method is applied to the multiple objective MDO design of an HUV. In this paper, a system synthesis model of the HUV has been set up. To predict the hydrodynamic characteristics accurately, the computational fluid dynamics (CFD) method is used. In the MDO process, the all-in-one (AIO) method has been adopted with non- dominated sorting genetic algorithms (NSGA)-II and a Kriging model for constructing global approximations to reduce the cost of the CFD numerical simulation. According to the multiple objective MDO design, the Pareto-optimal solutions are analyzed and verified by the numerical simulation, and it is found that the optimal design of HUV has better performance than that of prototype.},
+author = {Liu, Xiaoyi and Yuan, Qingqing and Zhao, Min},
+doi = {10.1007/s00773-016-0399-5},
+issn = {1437-8213},
+journal = {Journal of Marine Science and Technology},
+keywords = {Approximation model,Computational fluid dynamics (CFD),Heavier-than-water underwater vehicle (HUV),Multidisciplinary design optimization (MDO),Multiple objective,cfd,dynamics,heavier-than-water underwater vehicle,huv,mdo,multidisciplinary design optimization,objective {\'{a}} computational fluid,{\'{a}},{\'{a}} multiple},
+mendeley-groups = {afstuderen gebruikte papers/maritime},
+number = {1},
+pages = {135--148},
+publisher = {Springer Japan},
+title = {{Multiple objective multidisciplinary design optimization of heavier-than-water underwater vehicle using CFD and approximation model}},
+volume = {22},
+year = {2017}
+}
+
+@article{Liu2022,
+abstract = {For the simulation-based hull form optimization design, there are many methods to evaluate the hydrodynamic performance of the hull form. Although the high fidelity of the surrogate model can be guaranteed by evaluating a large number of new sample hulls based on viscous flow theory, the computational cost can be too high. Therefore, in order to release the burden of calculation, based on the traditional single-fidelity Kriging surrogate model, the multi-fidelity Co-Kriging surrogate model gives attention to both high accuracy and efficiency by combining the accuracy advantage of high-fidelity sample evaluation with the efficiency advantage of low-fidelity sample evaluation. This paper first introduces the construction process of the multi-fidelity Co-Kriging surrogate model, and then uses a series of numerical examples to illustrate the advantages of the multi-fidelity Co-Kriging surrogate model compared with the single-fidelity Kriging surrogate model in terms of fidelity and efficiency. Finally, a hull form optimization design for total drag of DTMB-5415 hull at the design speed is given in detail, where the viscous flow theory and potential flow theory are used for the hydrodynamic evaluations of the hull forms to obtain the high- and low-fidelity results respectively. Results show that the multi-fidelity Co-Kriging surrogate model can be established for hull form hydrodynamic performance optimization, which is superior to the single-fidelity Kriging surrogate model in accuracy, and the optimal hull obtained by Co-Kriging surrogate model has a better resistance optimization effect.},
+author = {Liu, Xinwang and Zhao, Weiwen and Wan, Decheng},
+doi = {10.1016/j.oceaneng.2021.110239},
+issn = {00298018},
+journal = {Ocean Engineering},
+keywords = {Co-Kriging surrogate model,Hull form optimization,Multi-fidelity,Potential flow,Viscous flow},
+number = {November 2021},
+pages = {110239},
+publisher = {Elsevier Ltd},
+title = {{Multi-fidelity Co-Kriging surrogate model for ship hull form optimization}},
+url = {https://doi.org/10.1016/j.oceaneng.2021.110239},
+volume = {243},
+year = {2022}
+}
+
+@article{Meng2021a,
+author = {Meng, Xuhui and Wang, Zhicheng and Fan, Dixia and Triantafyllou, Michael S. and Karniadakis, George Em},
+doi = {10.1016/j.cma.2021.114212},
+issn = {0045-7825},
+journal = {Computer Methods in Applied Mechanics and Engineering},
+keywords = {active learning,modal decomposition,multi-fidelity,uncertainty quantification,vortex-induced vibrations},
+pages = {114212},
+publisher = {Elsevier B.V.},
+title = {{A fast multi-fidelity method with uncertainty quantification for complex data correlations : Application to vortex-induced vibrations of marine risers}},
+url = {https://doi.org/10.1016/j.cma.2021.114212},
+volume = {386},
+year = {2021}
+}
+@article{Meng2021m,
+author = {Meng, Xuhui and Wang, Zhicheng and Fan, Dixia and Triantafyllou, Michael S. and Karniadakis, George Em},
+doi = {10.1016/j.cma.2021.114212},
+issn = {0045-7825},
+journal = {Computer Methods in Applied Mechanics and Engineering},
+keywords = {active learning,modal decomposition,multi-fidelity,uncertainty quantification,vortex-induced vibrations},
+pages = {114212},
+publisher = {Elsevier B.V.},
+title = {{A fast multi-fidelity method with uncertainty quantification for complex data correlations : Application to vortex-induced vibrations of marine risers}},
+url = {https://doi.org/10.1016/j.cma.2021.114212},
+volume = {386},
+year = {2021}
+}
+
+@article{Miao2020,
+abstract = {A computational fluid dynamics (CFD)-based multi-objective optimisation procedure is proposed for the de- velopment and application of the in-house solver OPTShip-SJTU. A free-form deformation (FFD) method is adopted to modify the non-uniform rational basis-spline (NURBS) surfaces of a ship and thus automatically reconstruct ship hull form. A Reynolds-averaged Navier–Stokes (RANS) solver, naoe-FOAM-SJTU, is applied to evaluate the hydrodynamic performance of a ship in the complex flow phenomena. The Non-Dominated Sorting Genetic Algorithm-II (NSGA-II) is used to search a global optimal set (called Pareto front) in approximation models constructed by the Kriging method. In this study, a S60 catamaran is optimised for resistance reduction based on a consideration of the demihull shape and separation. Three free-form deformation (FFD)-related parameters and the separation distance of the demihulls are selected as four design variables with two geometric constraints imposed. The total resistance for Froude numbers (Fr) = 0.4 and 0.45 are taken as the two objective functions. The optimal catamarans are obtained through an optimisation process and three of these are selected for further validation by a RANS-based method. The hydrodynamic performance of the initial and optimal catamarans is compared in terms of resistance, wave elevation, pressure distribution, cross flow, interference factors and longitudinal wave cuts, which confirms the reliability of the ship design optimisation.},
+author = {Miao, Aiqin and Zhao, Min and Wan, Decheng},
+doi = {10.1016/j.apor.2020.102071},
+file = {:C\:/Users/RobertWenink/OneDrive - Delft University of Technology/Documents/TUDelft/Master/Afstuderen/Info en papers/Maritieme Kriging papers/Scopus/Miao 2020 CFDbased-multiobjective-optimisation-of-S60-Catamaran-considering-Demihull-shape-and-separation.pdf:pdf},
+issn = {0141-1187},
+journal = {Applied Ocean Research},
+keywords = {CFD-based multi-objective optimisation,FFD method for NURBS surfaces,OPTShip-SJTU solver,S60 catamaran,cfd-based multi-objective optimisation,demihull shape and separation,ffd method for nurbs,naoe-FOAM-SJTU solver,surfaces},
+mendeley-groups = {afstuderen gebruikte papers/maritime},
+number = {May 2019},
+pages = {102071},
+publisher = {Elsevier},
+title = {{CFD-based multi-objective optimisation of S60 Catamaran considering Demihull shape and separation}},
+url = {https://doi.org/10.1016/j.apor.2020.102071},
+volume = {97},
+year = {2020}
+}
+@article{Nouri2018,
+abstract = {In this research, optimization of a marine contra-rotating propellers (CRP) set is investigated using RANS-based CFD, genetic algorithm and kriging method. The CFD tool is applied for determining the hydrodynamic per- formance of CRPs. The Kriging algorithm is coupled with the genetic optimization tool in order for performing the optimization process. In this paper, the performed optimization process was an iterative one. It means that, the extracted geometry of the previous step is simulated using CFD tool and the results are added to the initial population used for the next optimization step. In this way, the added points reduce the number of simulations. The obtained results presented an acceptable efficiency for the utilized algorithm as an optimization package for marine propellers.},
+author = {Nouri, Nowrouz Mohammad and Mohammadi, Saber and Zarezadeh, Masoud},
+doi = {10.1016/j.oceaneng.2018.05.067},
+issn = {0029-8018},
+journal = {Ocean Engineering},
+keywords = {CFD,Contra-rotating propellers,Genetic algorithm,Kriging method,Optimization},
+mendeley-groups = {afstuderen gebruikte papers/maritime},
+number = {September},
+pages = {397--404},
+publisher = {Elsevier Ltd},
+title = {{Optimization of a marine contra-rotating propellers set}},
+url = {https://doi.org/10.1016/j.oceaneng.2018.05.067},
+volume = {167},
+year = {2018}
+}
+
+@article{Raven2017,
+abstract = {A practical and efficient system is described for ship hull form optimisation and its application for minimising wave resistance. Parametric hull form deformations are defined in a CAD system, specific for the case considered and related with flow aspects to be addressed. Surrogate-based global optimisation is applied for multi-objective problems, such as optimisation for a ship's operational profile.},
+author = {Raven, Hoyte C. and Scholcz, Thomas},
+isbn = {9788494690983},
+journal = {7th International Conference on Computational Methods in Marine Engineering, MARINE 2017},
+keywords = {Multi-objective,Optimisation,Surrogate-based,Wave resistance},
+pages = {131--142},
+title = {{Wave resistance minimisation in practical ship design}},
+volume = {2017-May},
+year = {2017}
+}
+
+@inproceedings{Raven2018,
+abstract = {A system for wave resistance minimisation of ship hull forms has been developed before. It uses surrogatebased global optimisation, with hull form variations by a parametric blending of basis hull forms; and wave resistance calculation by a potential flow solver. This procedure is briefly summarised. The paper then describes a study on the use of a similar system together with a free-surface RANS solver, for minimisation of the stern wave system. Multiobjective optimisation for the stern of a slender ship at 2 speeds is performed. Multi-fidelity methods, with response surfaces based on a dense set of potentialflow results and a coarse set of RANS data, are applied and compared with the single-fidelity formulation. The response surfaces and their dependence on the number of high-fidelity data points are studied. The multifidelity methods appear to hold promise for a reduction of the required number of high-fidelity computations. For the present case, the potential-flow solver already was quite accurate; further studies for less slender hull forms, to get a clearer view of the actual advantage of multi-fidelity methods in practice, are in progress},
+author = {Raven, H C},
+booktitle = {32nd Symposium on Naval Hydrodynamics, Hamburg, Germany},
+month = {August},
+pages = {5--10},
+title = {{Minimising ship afterbody wave making using multifidelity techniques}},
+year = {2018}
+}
+
+@inproceedings{Raven2019,
+abstract = {Progress in the assessment of multifidelity techniques for ship hull form optimisation at MARIN is described. Surrogate-based optimisation is used, with response surfaces found from a combination of free-surface potential-flow and free-surface RANS computations. A substantial level of correspondence of the trends of the low and high-fidelity methods appears to be required. Applications of multifidelity stern design optimisation for a fast displacement ship and a containership are reviewed. Alternative low-fidelity formulations are considered},
+author = {Raven, Hoyte and Scholcz, Thomas},
+keywords = {Ship design,multifidelity,optimisation},
+booktitle = {VIII International Conference on Computational Methods in Marine Engineering (MARINE 2019)},
+year = {2019},
+month = {05},
+pages = {},
+title = {An assessment of multifidelity procedures for ship hull form optimisation},
+}
+
+@inproceedings{Scholcz2015,
+author = {Scholcz, Thomas and Gornicz, Tomasz and Veldhuis, Christian},
+year = {2015},
+month = {06},
+title = {Multi-objective hull-form optimization using Kriging on noisy computer experiments},
+booktitle = {VI International Conference on Computational Methods in Marine Engineering (MARINE 2015)},
+doi = {10.13140/RG.2.1.4173.5124},
+abstract = {Meta-modelling is a key technique for efficient multi-objective optimization in ship design projects using CFD. However, objective functions computed with CFD are not deterministic functions but contain random scatter about a smooth trend. Kriging is a meta-model technique that is well suited for numerical experiments with deterministic errors that can be perceived as random scatter due to varying input parameters. Sim- ple Kriging, universal kriging and polynomial regression are used to obtain approximate Pareto-fronts from the hull-form optimization of a chemical tanker including free-surface effects. Cross-validation is used to assess the quality of the meta-models and the meta- model approximations of the Pareto-fronts are verified. It is found that cross-validation can be used to select the best meta-model but should not be used to estimate the true error of the approximation in case the design of experiment is too coarse. The approach is used in practice in order to accelerate the ship design process and to obtain more efficient ships with less vibration hindrance.}
+}
+
+@inproceedings{Scholcz2017,
+abstract = {RANS-based optimization procedures for ship design become increasingly complex and require the development of more efficient optimization techniques. The four phases of the design procedure are: shape parameterization, global sensitivity analysis, multi-objective optimization and design review. The dimensions of the design space can be mitigated by a smart choice for the shape parameterization and by screening and ranking the design variables in the global sensitivity phase. Subsequently, Surrogate Based Global Optimization (SBGO) is used to reduce the cost of the multi-objective optimization phase. For a practical application it is shown that the computational time reduces from two weeks to only a day when using SBGO instead of applying a Multi-Objective Genetic Algorithm (MOGA) directly to the solver. The design review phase is then used to verify and further develop the optimal design. Here, we focus on automatic ship design techniques which comprises the first three steps of the design procedure. Accelerating the ship design process is subject of ongoing research at the Maritime Research Institute Netherlands, making it useful for practical applications with turnaround times of only a few weeks.},
+author = {Scholcz, Thomas and Veldhuis, Christian},
+year = {2017},
+month = {05},
+booktitle = {VII International Conference on Computational Methods in Marine Engineering (MARINE 2017)},
+title = {Multi-objective surrogate based hull-form optimization using high-fidelity RANS computations}
+}
+
+@article{Scholcz2019,
+abstract = {Maritime transport is responsible for an annual emission of around 1000 million tonnes of CO2, which is around 2.5\% of the global greenhouse gas emissions. Nowadays, ships are designed using simplified operational profiles representing the expected operational profile during the lifetime of the ship. However, there is a discrepancy between these simplified profiles used for design and the actual full operational profile of a ship during its lifetime. This discrepancy leads to inefficient hydrodynamic ship design resulting in a waste of fuel and an increase of greenhouse gas emissions. The amount of available data on actual operational conditions of ships is rapidly increasing. The Automatic Identification System (AIS) and onboard monitoring systems produce a huge amount of his- torical data on ship operations. These developments call for efficient data-driven methods that account for this data. Knowledge of operational conditions can be used for Computational Fluids Dynamics (CFD) -based probabilistic uncertainty quantification leading to robust design: A hull shape that is op- timal with respect to uncertain operational conditions. Robust design is a promising approach since it makes ships energy efficient for the real usage situation. Three UQ-methods are discussed: The perturbation method, the Polynomial Chaos Expansion (PCE) method and the multi-fidelity PCE method. The methods are applied to a simple one-dimensional test case to compute the stochastic moments of the effective power. The multi-fidelity Polynomial Chaos Method is found to be the most efficient UQ method. Moreover, the multi-fidelity PCE can be used as a surrogate for efficient Monte Carlo integration. This makes the method suitable for an Optimisation Under Uncertainty (OUU) algorithm leading to robust design. 1},
+author = {Scholcz, Thomas},
+keywords = {Robust ship design,computational fluid dynamics,data-driven,uncertainty quantification},
+number = {May},
+title = {{Data driven uncertainty quantification for computational fluid dynamics based ship design}},
+year = {2019}
+}
+
+@inproceedings{Scholcz2021,
+abstract = {Optimal operation during a ship's life cycle requires a balance of economy and operability. For most vessel types, economy is related to fuel consumption and therefore to powering, whereas operability is related to sea- keeping behavior. This defines a major goal in the early stage of ship design: a well-chosen balance of good powering and seakeeping behavior. However, in current design practice powering comes first, leaving little room for improve- ment of the seakeeping behavior. A simultaneous assessment of powering and seakeeping is required to find a well-balanced ship at the end of the multi- disciplinary design process. In this paper we present a surrogate-based method for multi-objective hull form optimisation for calm water resistance and seakeeping. MARIN's advanced tools for the calculation of calm water resistance and seakeeping behavior are used to assess the hydrodynamic objectives. The method is demonstrated for a naval ship. The validity of the method is checked by veri- fication of the Pareto-optimal hull forms. The results show that significant improvements over the original hull form can be made while respecting other design constraints.},
+author = {Scholcz, Thomas},
+doi = {10.1007/978-981-15-4624-2},
+isbn = {9789811546242},
+keywords = {Conceptual hull design,Multi-objective,Surrogate,conceptual hull design,global optimisation,multi-disciplinary,multi-objective,powering,seakeeping,surrogate-based},
+pages = {477--492},
+publisher = {Springer Nature Singapore},
+title = {{Surrogate-Based Multi-Objective Optimisation for Powering and Seakeeping}},
+url = {http://dx.doi.org/10.1007/978-981-15-4624-2_28},
+year = {2021}
+}
+
+@article{Shen2022,
+abstract = {To efficiently achieve an accurate trajectory of the ocean observation device with a spherical bottom when it is thrown into the sea in the airdrop deployment, a computational fluid dynamics (CFD) based Kriging model is established for predicting the impact force on the sphere bottom during the early-water entry stage which is considered as the beginning of a full immersion process. The early-water entry of a sphere is simulated using the Reynolds-Averaged Navier-Stokes (RANS) method and k–ϵ turbulent model and the validity of the CFD model is verified by the comparison with experimental data. A Kriging surrogate model is then established based on the results of CFD simulation and extensive sample points where a proper range for the correlation parameter of the Kriging model is achieved through a study on the effect of the correlation parameter on the results from the Kriging model. The comparison with the CFD simulation results shows that the established Kriging model significantly improves the computational efficiency while maintaining high numerical accuracy.},
+author = {Shen, Cong and Yu, Pengyao and Wang, Tianlin and Chen, Nian Zhong},
+doi = {10.1016/j.oceaneng.2021.110304},
+issn = {00298018},
+journal = {Ocean Engineering},
+keywords = {Computational fluid dynamics (CFD),Impact force,Kriging model,Water entry},
+number = {December 2021},
+pages = {110304},
+publisher = {Elsevier Ltd},
+title = {{A CFD based Kriging model for predicting the impact force on the sphere bottom during the early-water entry}},
+url = {https://doi.org/10.1016/j.oceaneng.2021.110304},
+volume = {243},
+year = {2022}
+}
+
+@article{Stern2017,
+abstract = {An overview is provided of stochastic uncertainty quantification (UQ) and validation methods for application to realistic problems in ship hydrodynamics. The paper summarizes the research activities conducted by the hydrodynamics team within the NATO Task Group AVT-191 “Application of Sensitivity Analysis and Uncertainty Quantification to Military Vehicle Design.” UQ methods assess the expected value (EV), standard deviation (SD) and cumulative distribution function or probability density function (CDF/PDF) of the hydrodynamic performance of interest. The hydrodynamic solvers include unsteady Reynolds-averaged Navier-Stokes and potential flow. Three UQ problems are presented. The first is a unit study, addressing the effects of stochastic Reynolds number on the lift and drag of a NACA 0012 2D hydrofoil at constant angle of attack. The second and the third are industrial problems of a high-speed catamaran, advancing in calm water and waves respectively, with stochastic operating conditions and geometry. Numerical validation benchmarks include the deterministic V&V for selected conditions, along with converged (quasi) Monte Carlo (MC) samples. Non-intrusive UQ methods are applied and discussed. MC simulations with direct CFD simulations and with metamodels are shown. Metamodels include linear and Hermite-cubic interpolation, inverse distance weighting, quadratic and cubic response surface, Hermite and Legendre polynomial expansions, least-square support vector machine, thin plate spline, radial basis functions network with multiquadric kernels, polyharmonic splines, Kriging using linear and exponential covariance functions, dynamic radial basis functions and dynamic Kriging. Polynomial chaos method and quadrature formulas (trapezoidal, Simpson's rule, Gaussian quadrature) are also assessed and compared to metamodel-based methods. Convergence criteria for UQ methods include deterministic and stochastic convergence criteria for MC simulation, along with convergence criteria for MC with metamodels, and quadrature formulas. UQ methods have shown their maturity for application to realistic stochastic design optimization problems. MC with dynamic metamodels is found the most promising method overall, due to its function-adaptation capability and high computational efficiency, which make the method also recommended for stochastic optimization. I.},
+author = {Stern, Frederick and Volpi, Silvia and Gaul, Nicholas J and Choi, K K},
+doi = {10.2514/6.2017-1654},
+number = {January},
+title = {{Development and Assessment of Uncertainty Quantification Methods for Ship Hydrodynamics}},
+year = {2017}
+}
+@article{Volpi2015,
+abstract = {ainty quantification (UQ). A metric for assessing metamodel efficiency is developed and used. The valida- tion includes comparisons with a dynamic implementation of Kriging (DKG) and static metamodels for both deter- ministic test functions (with dimensionality ranging from two to six) and industrial UQ problems with analytical and numerical benchmarks, respectively. DRBF extends stan- dard RBF using stochastic kernel functions defined by an uncertain tuning parameter whose distribution is arbitrary and whose effects on the prediction are determined using UQ methods. Auto-tuning based on curvature, adaptive sampling based on prediction uncertainty, parallel infill, and multiple response criteria are used. Industrial problems are two UQ applications in ship hydrodynamics using high- fidelity computational fluid dynamics for the high-speed Delft catamaran with stochastic operating and environmen- tal conditions: (1) calm water resistance, sinkage and trim with variable Froude number; and (2) mean value and root mean square of resistance and heave and pitch motions with variable regular head wave. The number of high-fidelity evaluations required to achieve prescribed error levels is S. Volpi {\textperiodcentered} M. Diez {\textperiodcentered} N. J. Gaul {\textperiodcentered} H. Song {\textperiodcentered} K. K. Choi {\textperiodcentered} F. Stern (?) The University of Iowa, Iowa City, IA, USA e-mail: frederick-stern@uiowa.edu S. Volpi {\textperiodcentered} U. Iemma Department of Engineering, Roma Tre University, Rome, Italy M. Diez {\textperiodcentered} E. F. Campana CNR-INSEAN, National Research Council-Marine Technology Research Institute, Rome, Italy considered as the efficiency metric, focusing on fitting accu- racy and UQ variables. DKG is found more efficient for fitting low-dimensional test functions and one-dimensional UQ, whereas DRBF has a greater efficiency for fitting higher-dimensional test functions and two-dimensional UQ.},
+author = {Volpi, Silvia and Diez, Matteo and Gaul, Nicholas J and Song, Hyeongjin and Iemma, Umberto and Campana, Emilio F and Stern, Frederick},
+doi = {10.1007/s00158-014-1128-5},
+isbn = {0015801411},
+keywords = {dynamic,function networks,kriging,metamodels,radial basis,simulation-based design,uncertainty quantification},
+pages = {347--368},
+title = {{Development and validation of a dynamic metamodel based on stochastic radial basis functions and uncertainty quantification}},
+year = {2015}
+}
+@article{Wang2021,
+abstract = {In the present work, a metamodeling with Computational Fluid Dynamics (CFD) method for the hydrodynamic optimisations of deflectors on the multi-wing trawl door is introduced. Then a comparative analysis of Kriging and Artificial Neural Networks metamodeling methods is carried out, using the effects of relative camber, thickness and the installed angles of deflectors on the hydrodynamics as a case study for optimisations. Based on CFD simulations (verified by the wind tunnel experiment), a strict procedure including metamodeling and Multi-Objective Genetic Algorithm is established. Efficiency and accuracy between the two methods are discussed. Finally, this study studied the flow patterns of the optimal otter board in the higher working efficiency state. The results showed that Kriging performs better than Artificial Neural Networks methods in 2-factor metamodeling. However, in the 3-factor investigation, Artificial Neural Networks has more advantages in the prediction of drag, while Kriging is better in the lift component of hydrodynamics. The relative camber has the considerable impacts on the hydrodynamics of the trawl door, whereas the thickness of deflectors shows the prominent influence on the resistances, followed by lift forces. The effect of installed angles on the hydrodynamic loadings is more remarkable than that of thickness and relative camber. In flow visualisation, the disappearance of the vortex on the deflector suction side indicates the rationality of the newly-proposed procedure used for optimisations.},
+author = {Wang, Gang and Huang, Liuyi and Wang, Lei and Zhao, Fenfang and Li, Yuyan and Wan, Rong},
+doi = {10.1016/j.oceaneng.2021.109045},
+issn = {0029-8018},
+journal = {Ocean Engineering},
+keywords = {Artificial Neural Networks,Hydrodynamics,Kriging,Metamodeling,Multi-Objective Genetic Algorithm,Trawl door},
+number = {March},
+pages = {109045},
+publisher = {Elsevier Ltd},
+title = {{A metamodeling with CFD method for hydrodynamic optimisations of deflectors on a multi-wing trawl door}},
+url = {https://doi.org/10.1016/j.oceaneng.2021.109045},
+volume = {232},
+year = {2021}
+}
+@article{Wang2022,
+abstract = {Knotless net panels are widely-adopted for traditional fish cages and offshore fish farms. A new screen force model based on numerical simulations of a portion of knotless net panels is proposed in this paper. At first, the hydrodynamic loads on knotless smooth and textile twisted net panels are studied using Improved Delayed Detached Eddy Simulations while varying the incoming velocity as well as the diameter and length of the net twines. The accuracy of the simulations is validated through a computational grid and domain independence study for the mean hydrodynamic loads on full-size net panels. The comparison of the hydrodynamic loads on a circular cylinder, cruciform and net panel reveals the unique hydrodynamics around net panels which emphasises the importance of studying complete panels. Then, a Kriging metamodel is established from the simulation-based data to generate response surfaces for the hydrodynamic load coefficients for a large range of flow and geometrical properties. Hence, this combination of high-fidelity CFD and Kriging metamodelling provides a more flexible approach than the common theoretical or experimental variations of screen force models. The metamodel predicts well the non-linear relation between drag coefficient, twine diameter and length of the twines. A second-order regression fitting is applied to generate a closed polynomial which is compared to existing approaches and physical measurements for validation. The proposed approach outperforms previous screen force models for the prediction of the drag and lift coefficients for a wide range of nets and inflow velocities due to the inclusion of different roughnesses and more geometrical properties of the net in the derivation. Finally, the proposed formula for the drag force coefficients is applied to a two-way coupled CFD method which is based on screen force models to determine the hydrodynamic loads. It can be shown that the new approach is superior to previously used screen force models for the simulation of the drag forces on and the velocity reduction behind net panels.},
+author = {Wang, Gang and Martin, Tobias and Huang, Liuyi and Bihs, Hans},
+doi = {10.1016/j.apor.2021.102965},
+issn = {0141-1187},
+journal = {Applied Ocean Research},
+keywords = {Fluid–structure interaction,Hyd,Screen force model,fluid,structure interaction},
+number = {December 2021},
+pages = {102965},
+publisher = {Elsevier Ltd},
+title = {{An improved screen force model based on CFD simulations of the hydrodynamic loads on knotless net panels}},
+url = {https://doi.org/10.1016/j.apor.2021.102965},
+volume = {118},
+year = {2022}
+}
+@article{Wu2017,
+abstract = {A numerical multi-objective optimization procedure is proposed here to describe the development and application of a practical hydrodynamic optimization tool, OPTShip-SJTU. Three components including hull form modification module, hydrodynamic performance evaluation module and optimization mod- ule consist of this tool. The free-form deformation (FFD) method and shifting method are utilized as parametric hull surface modification techniques to generate a series of realistic hull forms subjected to geometric constraints, and the Neumann-Michell (NM) theory is implemented to predict the wave drag. Moreover, NSGA-II, a muti-objective genetic algorithm, is adopted to produce pareto-optimal front, and kriging model is used for predicting the total resistance during the optimization process to reduce the computational cost. Additionally, the analysis of variance (ANOVA) method is introduced to represent the influence of each design variable on the objective functions. In present work, a surface combatant DTMB Model 5415 is used as the initial design, and optimal solutions with obvious drag reductions at specific speeds are obtained. Eventually, three of optimal hulls are analyzed by NM theory and a RANS- based CFD solver naoe-FOAM-SJTU respectively. Numerical results confirm the availability and reliability of this multi-objective optimization tool. {\textcopyright}},
+author = {Wu, Jianwei and Liu, Xiaoyi and Zhao, Min and Wan, Decheng},
+doi = {10.1016/j.apor.2017.01.007},
+issn = {0141-1187},
+journal = {Physics Procedia},
+keywords = {OPTShip-SJTU Multi-objective optimization NSGA-II},
+pages = {129--141},
+publisher = {Elsevier B.V.},
+title = {{Neumann-Michell theory-based multi-objective optimization of hull form for a naval surface combatant}},
+url = {http://dx.doi.org/10.1016/j.apor.2017.01.007},
+volume = {63},
+year = {2017}
+}
+@article{Xue2021,
+abstract = {Maritime transport plays a vital role in economic development. To establish a vessel scheduling model, accurate ship maneuvering models should be used to optimize the strategy and maximize the economic benefits. The use of nonparametric modeling techniques to identify ship maneuvering systems has attracted considerable attention. The Gaussian process has high precision and strong generalization ability in fitting nonlinear functions and requires less training data, which is suitable for ship dynamic model identification. Compared with other machine learning methods, the most obvious advantage of the Gaussian process is that it can provide the uncertainty of prediction. However, most studies on ship modeling and prediction do not consider the uncertainty propagation in Gaussian processes. In this paper, a moment-matching-based approach is applied to address the problem. The proposed identification scheme for ship maneuvering systems is verified by container ship simulation data and experimental data from the Workshop on Verification and Validation of Ship Maneuvering Simulation Methods (SIMMAN) database. The results indicate that the identified model is accurate and shows good generalization performance. The uncertainty of ship motion prediction is well considered based on the uncertainty propagation technology.},
+author = {Xue, Yifan and Liu, Yanjun and Xue, Gang and Chen, Gang},
+doi = {10.3390/jmse9080804},
+issn = {20771312},
+journal = {Journal of Marine Science and Engineering},
+keywords = {Gaussian process,Prediction uncertainty,Ship maneuvering model,System identification},
+number = {8},
+title = {{Identification and prediction of ship maneuvering motion based on a gaussian process with uncertainty propagation}},
+volume = {9},
+year = {2021}
+}
+@article{Yan2018,
+abstract = {Twin-skeg ship has better hydrodynamic performances than regular ship, however, it is still difficult to obtain an accurate relationship between skeg design and overall hydrodynamic performances. Resistance optimization is the major concern of developing twin-skeg ship. This paper proposes a combined approach for hull form design optimization of twin-skeg ship by using computational fluid dynamics (CFD) calculation and surrogate model. Main design parameters of skeg geometry and arrangement could be determined from the design domain by using the proposed method. Parametric modeling technology is adopted for performing design evaluations in an automatic manner with different design parameter combinations. A twin-skeg fishing vessel is selected as re- search object. In the proposed method, the sample set for constructing surrogate models is generated by using Optimal Latin Hypercube Sampling (OLHS) method, the corresponding responses are calculated through CFD simulations, and then the surrogate models are constructed by using Kriging modeling method, which represent the mathematical relationship between input design variables (skeg shape design variables) and output objective functions (resistance values under four different working conditions). The functional analysis of variance (ANOVA) is performed to investigate how much influence the design variables have on the objective functions. Finally, a multi-objective evolutionary algorithm (NSGA-II) is used to obtain the optimal solution, which shows 5.4\% average decrease in the total resistance than the original design. The CFD calculation results of the optimal solution show that the proposed method can achieve minimum resistance design with high accuracy and low time cost.},
+author = {Yan, Lin and Jingyi, He and Kai, Li},
+doi = {10.1016/j.advengsoft.2018.05.010},
+keywords = {ABSTRAC,Kriging modeling method Multi-objective optimizati,Twin-skeg Resistance optimization CFD},
+number = {May},
+pages = {38--50},
+title = {{Advances in Engineering Software Hull form design optimization of twin-skeg fi shing vessel for minimum resistance based on surrogate model}},
+volume = {123},
+year = {2018}
+}
+@article{Zhang2021,
+abstract = {Lift-drag ratio has an important impact on the horizontal range of Blended-Wing-Body Underwater Glider (BWBUG). It is significant to increase the lift-drag ratio of BWBUG for a longer horizontal range. In this paper, a Kriging-based shape optimization framework for the BWBUG with NURBS-based parametrization is proposed to maximize the lift-drag ratio and to improve the optimization efficiency. In this framework, a shape parame- terization method of BWBUG is presented based on the NURBS method, to precisely calculate the geometric constraints and their gradient information. The CFD method is applied to accurately compute the hydrodynamic parameters of BWBUG in the whole optimization design. A Kriging-based optimization framework is built with dynamically infilling sample points to update the Kriging model by the aid of the gradient information of geo- metric constraints, which further improves the optimization efficiency Finally, the effectiveness of the proposed optimization framework is verified by performing the shape optimization of a BWBUG.},
+author = {Zhang, Daiyu and Wang, Zhidong and Ling, Hongjie and Zhu, Xinyao},
+doi = {10.1016/j.oceaneng.2020.108212},
+issn = {0029-8018},
+journal = {Ocean Engineering},
+keywords = {Hydrodynamic analysis,Kriging model,Optimization design,Shape parameterization,Underwater glider},
+number = {October 2020},
+pages = {108212},
+publisher = {Elsevier Ltd},
+title = {{Kriging-based shape optimization framework for blended-wing-body underwater glider with NURBS-based parametrization}},
+url = {https://doi.org/10.1016/j.oceaneng.2020.108212},
+volume = {219},
+year = {2021}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Maritime without pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@INPROCEEDINGS{Chen2017,
+  author={Chen, Xu and Wang, Peng and Zhang, Daiyu},
+  booktitle={2017 16th International Symposium on Distributed Computing and Applications to Business, Engineering and Science (DCABES)}, 
+  title={Surrogate-Based Multidisciplinary Design Optimization of an Autonomous Underwater Vehicle Hull}, 
+  year={2017},
+  volume={},
+  number={},
+  pages={191-194},
+  doi={10.1109/DCABES.2017.48}}
+  
+@inproceedings{Gumley2016,
+  title={A Novel Method for Predicting the Motion of Moored Floating Bodies},
+  author={Jon Gumley and Michael J. Henry and Andrew E. Potts},
+  year={2016}
+}
+
+@proceedings{Damasceno2020,
+    author = {Damasceno, Marcelo and Neto, Hélio Ribeiro and Costa, Tatiane and Cavalini Júnior, Aldemir and Aguiar, Ludimar and Martins, Marcos},
+    title = "{Using Kriging Surrogate Models to Predict the Vibration Responses of a Submerged Riser}",
+    volume = {Volume 8: CFD and FSI},
+    series = {International Conference on Offshore Mechanics and Arctic Engineering},
+    year = {2020},
+    month = {08},
+    abstract = "{Fluid-structure interaction modeling tools based on computational fluid dynamics (CFD) produce interesting results that can be used in the design of submerged structures. However, the computational cost of simulations associated with the design of submerged offshore structures is high. There are no high-performance platforms devoted to the analysis and optimization of these structures using CFD techniques. In this context, this work aims to present a computational tool dedicated to the construction of Kriging surrogate models in order to represent the time domain force responses of submerged risers. The force responses obtained from high-cost computational simulations are used as outputs for training and validated the surrogate models. In this case, different excitations are applied in the riser aiming at evaluating the representativeness of the obtained Kriging surrogate model. A similar investigation is performed by changing the number of samples and the total time used for training purposes. The present methodology can be used to perform the dynamic analysis in different submerged structures with a low computational cost. Instead of solving the motion equation associated with the fluid-structure system, a Kriging surrogate model is used. A significant reduction in computational time is expected, which allows the realization of different analyses and optimization procedures in a fast and efficient manner for the design of this type of structure.}",
+    doi = {10.1115/OMAE2020-18915},
+    url = {https://doi.org/10.1115/OMAE2020-18915},
+    note = {V008T08A032},
+    eprint = {https://asmedigitalcollection.asme.org/OMAE/proceedings-pdf/OMAE2020/84409/V008T08A032/6607052/v008t08a032-omae2020-18915.pdf},
+}
+
+@proceedings{He2017,
+    author = {He, Jiayi and Chen, Hongmei and Yu, Hai and Xiong, Xiaoqing and Fan, Sheming and Sun, Rui},
+    title = "{Resistance Optimization of a Cruise Ship Using a Hybrid Approach}",
+    volume = {All Days},
+    series = {International Ocean and Polar Engineering Conference},
+    year = {2017},
+    month = {06},
+    abstract = "{In this paper, the hull form of a cruise ship is optimized with respect to the total resistance in calm water at three speeds, with the Froude number (equation) at 0.154, 0.207 and 0.234, where V is the ship speed, g is the gravitational acceleration and L is the length between perpendiculars. The original hull, which has resulted from several rounds of optimization processes, is already a good design in terms of the wave resistance at all three speeds. Besides, around 85-90\% of the calm water resistance is the frictional resistance, which may not change much because the wetted surface area largely remains unchanged during the optimization. In order to obtain further resistance-reduction benefits, both wave resistance and pressure viscous resistance are considered in the present optimization study. The viscous drag of the ship model is evaluated using a hybrid approach, where the free-surface waves are computed first using a nonlinear potential flow method and thereafter the viscous flow is calculated with the precomputed fixed wavy free surface using RANS method. Modifications of four of the most important hull features are considered: volume distribution of the forebody, bulb volume, volume distribution of the aftbody, and aftbilge elevation. The hull shape is modified via a partially parametric technique, in such a way that the hull features could be controlled with a few design variables. A multiobjective genetic algorithm is selected as the optimizer. To save computational effort, a Gaussian process regression model is constructed to approximate the objective functions to be evaluated by the optimization algorithm. The results show that optimal hull form's pressure resistance is reduced by 5.3\%, 9.5\% and 5.9\% for F = 0.154, 0.207 and 0.234, respectively. This optimization benefits are confirmed by the results of a complete RANS simulation for the free surface flow around the model ship. Model tests are now in progress.}",
+    note = {ISOPE-I-17-331},
+    eprint = {https://onepetro.org/ISOPEIOPEC/proceedings-pdf/ISOPE17/All-ISOPE17/ISOPE-I-17-331/1268280/isope-i-17-331.pdf},
+}
+
+@inproceedings{Kim2011,
+title = "Hull form design exploration based on response surface method",
+abstract = "In this study, a CFD-based ship hydrodynamic optimization tool has been further developed by integrating the response surface method into the optimization module. Specifically, one of the response surface models, Kriging model, is employed to represent the relationship between the objective functions (output) and design variables (input) using stochastic process in the CFD-based hydrodynamic optimization of hull forms. To extract design knowledge for a hull form configuration, a data mining technique is applied. Functional analysis of variance (ANOVA), which can show the interaction between each design variable and objective functions, is utilized. Based on the information from ANOVA, the influence of design variables on the objective functions can be easily analyzed. For the purpose of illustration, the present hydrodynamics optimization tool has been used in a hull form optimization application, where the Series-60 hull form is taken as an initial hull form and the hull form is optimized by minimizing the wave drag at a given speed range. Numerical results show that the present response surface method can greatly reduce the computational cost associated with the CFD runs.",
+keywords = "ANOVA, Kriging model, Radial basis function, Response surface method",
+author = "Hyunyul Kim and Shinkyu Jeong and Chi Yang and Francis Noblesse",
+note = "Copyright: Copyright 2011 Elsevier B.V., All rights reserved.; 21st International Offshore and Polar Engineering Conference, ISOPE-2011 ; Conference date: 19-06-2011 Through 24-06-2011",
+year = "2011",
+language = "English",
+isbn = "9781880653968",
+series = "Proceedings of the International Offshore and Polar Engineering Conference",
+pages = "816--825",
+booktitle = "Proceedings of the 21st (2011) International Offshore and Polar Engineering Conference, ISOPE-2011",
+}
+
+
+@proceedings{Sbragio2020,
+    author = {Sbragio, Ricardo and Moura, Alceu Jose dos Santos and Silva, Rubens Cavalcante da},
+    title = "{Design and CFD Self-Propulsion Analysis of a Ducted Propeller for a DARPA SUBOFF Hull Autonomous Underwater Vehicle}",
+    volume = {Volume 6A: Ocean Engineering},
+    series = {International Conference on Offshore Mechanics and Arctic Engineering},
+    year = {2020},
+    month = {08},
+    abstract = "{This paper presents the design and the CFD self-propulsion analysis of a ducted propeller to operate in a DARPA SUBOFF hull Autonomous Underwater Vehicle (AUV). The ducted propeller is of the pump jet type with 9 blades at the rotor and 11 blades at the stator. The interactive process of design and optimization uses the potential lifting line theory and CFD RANS analysis for obtaining the self-propulsion point, with the propeller placed behind the AUV hull. During the lifting line design, the rotor diameter, hub diameter, design rotation, blade section chord and length of the duct are modeled by a Kriging Metamodel technique and optimized through random sampling in order to maximize the quasi propulsive coefficient. The optimized configuration from the lifting line and Kriging Metamodel is analyzed using Ansys Fluent 2019 solver. The CFD analysis behind the hull allows including wake effects, thrust deduction factor and viscous effects directly into the model. The lifting line and CFD processes are used interactively to optimize the pitch, the circulation and the camber until the required thrust is achieved.}",
+    doi = {10.1115/OMAE2020-18226},
+    url = {https://doi.org/10.1115/OMAE2020-18226},
+    note = {V06AT06A041},
+    eprint = {https://asmedigitalcollection.asme.org/OMAE/proceedings-pdf/OMAE2020/84379/V06AT06A041/6606687/v06at06a041-omae2020-18226.pdf},
+}
+
+
+@proceedings{Liu2018,
+    author = {Liu, Xinwang and Wan, Decheng and Chen, Gang},
+    title = "{Kriging-Based Surrogate Model Combined With Weighted Expected Improvement for Ship Hull Form Optimization}",
+    volume = {Volume 7A: Ocean Engineering},
+    series = {International Conference on Offshore Mechanics and Arctic Engineering},
+    year = {2018},
+    month = {06},
+    abstract = "{The paper explores Kriging-based surrogate model combined with Weighted Expected Improvement approach and for the ship hull form optimization. The training dataset of the Kriging-based surrogate model is obtained by sampling the design space (Design of Experiments, DOE) and performing expensive high-fidelity computations on the selected points. Expected Improvement (EI) is used as a criterion to select one additional sample point in each iteration. The Weighted Expected Improvement (WEI) is derived from EI by adding a tunable parameter which can adjust the weights on exploration and exploitation in the Efficient Global Optimization (EGO).The proposed method selects more than one new sample point by changing the weight parameter for each optimization iteration, thus it can be performed by parallel computation or multi-computer runs which improves the computational efficiency distinctly. This makes it possible not only to improve the accuracy of the surrogate model, but also to explore the global optimum much more quickly. The present method is applied to mathematical test function and a ship hull form optimization design in order to find the optimal hull form with best resistance performance in calm water in different speeds.The result shows that the criterion of WEI can be applied in EGO for optimization design and can be easily extended to other hull form optimization design problems based on computational fluid dynamics.}",
+    doi = {10.1115/OMAE2018-78388},
+    url = {https://doi.org/10.1115/OMAE2018-78388},
+    note = {V07AT06A012},
+    eprint = {https://asmedigitalcollection.asme.org/OMAE/proceedings-pdf/OMAE2018/51265/V07AT06A012/2535660/v07at06a012-omae2018-78388.pdf},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DIMENSIONALITY REDUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{Ye2018,
+abstract = {For computationally expensive black-box problems, surrogate models are widely employed to reduce the needed computation time and efforts during the search of the global optimum. However, the construction of an effective surrogate model over a large design space remains a challenge in many cases. In this work, a new global optimization method using an ensemble of surrogates and hierarchical design space reduction is proposed to deal with the optimization problems with computation-intensive, black-box objective functions. During the search, an ensemble of three representative surrogate techniques with optimized weight factors is used for selecting promising sample points, narrowing down space exploration and identifying the global optimum. The design space is classified into: Original Global Space (OGS), Promising Joint Space (PJS), Important Local Space (ILS), using the newly proposed hierarchical design space reduction (HSR). Tested using eighteen representative benchmark and two engineering design optimization problems, the newly proposed global optimization method shows improved capability in identifying promising search area and reducing design space, and superior search efficiency and robustness in identifying the global optimum.},
+author = {Ye, Pengcheng and Pan, Guang and Dong, Zuomin},
+doi = {10.1007/s00158-018-1906-6},
+issn = {16151488},
+journal = {Structural and Multidisciplinary Optimization},
+keywords = {Ensemble of surrogates,Fuzzy clustering,Global optimization,Hierarchical design space reduction},
+number = {2},
+pages = {537--554},
+publisher = {Structural and Multidisciplinary Optimization},
+title = {{Ensemble of surrogate based global optimization methods using hierarchical design space reduction}},
+volume = {58},
+year = {2018}
+}
+
+@article{Shan2010,
+abstract = {The integration of optimization methodologies with computational analyses/simulations has a profound impact on the product design. Such integration, however, faces multiple challenges. The most eminent challenges arise from high-dimensionality of problems, computationally-expensive analysis/simulation, and unknown function properties (i.e., black-box functions). The merger of these three challenges severely aggravates the difficulty and becomes a major hurdle for design optimization. This paper provides a survey on related modeling and optimization strategies that may help to solve High-dimensional, Expensive (computationally), Blackbox (HEB) problems. The survey screens out 207 references including multiple historical reviews on relevant subjects from more than 1,000 papers in a variety of disciplines. This survey has been performed in three areas: strategies tackling high-dimensionality of problems, model approximation techniques, and direct optimization strategies for computationally-expensive black-box functions and promising ideas behind non-gradient optimization algorithms. Major contributions in each area are discussed and presented in an organized manner. The survey exposes that direct modeling and optimization strategies to address HEB problems are scarce and sporadic, partially due to the difficulty of the problem itself. Moreover, it is revealed that current modeling research tends to focus on sampling and modeling techniques themselves and neglect studying and taking the advantages of characteristics of the underlying expensive functions. Based on the survey results, two promising approaches are identified to solve HEB problems. Directions for future research are also discussed. Copyright {\textcopyright} 2009 Springer-Verlag.},
+author = {Shan, Songqing and Wang, G. Gary},
+doi = {10.1007/s00158-009-0420-2},
+issn = {1615147X},
+journal = {Structural and Multidisciplinary Optimization},
+keywords = {Approximation,Black-box function,Computationally-expensive,Design optimization,High dimensional,Large-cale,Metamodeling,Surrogate},
+number = {2},
+pages = {219--241},
+title = {{Survey of modeling and optimization strategies to solve high-dimensional design problems with computationally-expensive black-box functions}},
+volume = {41},
+year = {2010}
+}
+@article{Wu2020,
+abstract = {Practicing design engineers often have certain knowledge about a design problem. However, in the last decades, the design optimization community largely treats design functions as black-boxes. This paper discusses whether and how knowledge can help with optimization, especially for large-scale optimization problems. Existing large-scale optimization methods based on black-box functions are first reviewed, and the drawbacks of those methods are briefly discussed. To understand what knowledge is and what kinds of knowledge can be obtained and applied in a design, the concepts of knowledge in both artificial intelligence (AI) and in the area of the product design are reviewed. Existing applications of knowledge in optimization are reviewed and categorized. Potential applications of knowledge for optimization are discussed in more detail, in hope to identify possible directions for future research in knowledge-assisted optimization (KAO).},
+author = {Wu, Di and Wang, G. Gary},
+doi = {10.1115/1.4044525},
+issn = {10500472},
+journal = {Journal of Mechanical Design, Transactions of the ASME},
+keywords = {Design automation,Design optimization,Engineering design,Expert systems,Knowledge,Knowledge base,Knowledge-assisted optimization,Large-scale problem,Multidisciplinary design,Optimization},
+number = {1},
+pages = {1--10},
+title = {{Knowledge-assisted optimization for large-scale design problems: A review and proposition}},
+volume = {142},
+year = {2020}
+}
+
+@article{Akbari2020,
+abstract = {Efficient Global Optimization (EGO) methodology over the entire design space can be considerably time-consuming as much as the expensive simulation computer codes on High-multimodal and computationally Expensive Black-box (HEB) constrained problems. This paper introduces a strategy specifically, the Kriging-based Adaptive Space Reduction Algorithm, named KASRA, to enhance the performance of EGO for HEB constrained optimization problems. A new measure is proposed according to the activity of the decision variables to adaptively reduce the size of design intervals centered at the current best solution. The shrunken intervals gradually are expanded to decrease the risk of missing the desirable region. The design sub-spaces are explored based on the weighed constrained expected improvement criterion. The weighting coefficients of exploration and exploitation dynamically are regulated according to the volume ratio of the current hyper-box-shaped region and the original one. The sequential quadratic programming and exponential tunneling algorithms as two local and global optimizers are employed on Kriging-based functions to achieve a more accurate solution at the end of the procedure if necessary. The genetic algorithm with different tuning strategies is used to defeat the extreme time challenge of constructing Kriging-based surrogates. The proposed algorithm is applicable even if there is no feasible point in the initial samples. The efficiency of KASRA is demonstrated on twenty-two mathematical and ten classical engineering benchmark problems. Experimental results and comparative studies confirm that the proposed approach has a promising performance to deal with HEB constrained optimization problems and generally performs better than the competitor methods on most of the benchmark problems.},
+author = {Akbari, Hossein and Kazerooni, Afshin},
+doi = {10.1016/j.asoc.2020.106154},
+issn = {15684946},
+journal = {Applied Soft Computing Journal},
+keywords = {Efficient global optimization,Expensive black-box problems,Kriging model,Space reduction approaches,Surrogate-based optimization},
+pages = {106154},
+publisher = {Elsevier B.V.},
+title = {{KASRA: A Kriging-based Adaptive Space Reduction Algorithm for global optimization of computationally expensive black-box constrained problems}},
+url = {https://doi.org/10.1016/j.asoc.2020.106154},
+volume = {90},
+year = {2020}
+}
+@article{Dong2018,
+abstract = {In this paper, a surrogate-based global optimization algorithm HSOSR is presented, which can solve expensive black-box optimization problems with box constraints. In order to decrease difficulty of the search in large-scale multimodal problems, a space reduction method based on hybrid surrogates is proposed. Kriging and Radial Basis Function (RBF) are employed to approximate the true expensive problems, respectively. A large number of samples are generated by Latin hypercube sampling to obtain the predictive values from the two surrogates. According to the size of these predictive values from kriging and RBF, all the samples are sorted, respectively. Subsequently, two potentially better regions from kriging and RBF are identified based on the ranks of these samples and two subspaces are also created. Since kriging and RBF models always produce multiple predictive optimal solutions, a multi-start optimization algorithm is proposed to capture the supplementary samples in the two subspaces alternately. Besides, the newly added samples need to satisfy a defined distance criterion for sampling diversity. Once the algorithm gets stuck in a local valley, the estimated mean square error of kriging is maximized by the multi-start optimization strategy to explore the sparsely sampled area. Eventually, 10 low-dimensional and 5 high-dimensional benchmark cases are used to test HSOSR. In addition, 5 surrogate-based global optimization algorithms are also tested as contrast. Compared with the well-known efficient global optimization (EGO) method, HSOSR achieves an improvement of more than 50\% on computational efficiency. To sum up, HSOSR has the high efficiency and strong robustness in dealing with multimodal expensive black-box optimization problems.},
+author = {Dong, Huachao and Song, Baowei and Wang, Peng and Dong, Zuomin},
+doi = {10.1016/j.asoc.2017.12.046},
+issn = {15684946},
+journal = {Applied Soft Computing Journal},
+keywords = {Kriging,Multi-start optimization,Multimodal problems,RBF,Space reduction},
+pages = {641--655},
+publisher = {Elsevier B.V.},
+title = {{Hybrid surrogate-based optimization using space reduction (HSOSR) for expensive black-box functions}},
+url = {http://dx.doi.org/10.1016/j.asoc.2017.12.046},
+volume = {64},
+year = {2018}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@article{Raven2017m,
+abstract = {A practical and efficient system is described for ship hull form optimisation and its application for minimising wave resistance. Parametric hull form deformations are defined in a CAD system, specific for the case considered and related with flow aspects to be addressed. Surrogate-based global optimisation is applied for multi-objective problems, such as optimisation for a ship's operational profile.},
+author = {Raven, Hoyte C. and Scholcz, Thomas},
+isbn = {9788494690983},
+journal = {7th International Conference on Computational Methods in Marine Engineering, MARINE 2017},
+keywords = {Multi-objective,Optimisation,Surrogate-based,Wave resistance},
+pages = {131--142},
+title = {{Wave resistance minimisation in practical ship design}},
+volume = {2017-May},
+year = {2017}
+}
+
+@inproceedings{Raven2018m,
+abstract = {A system for wave resistance minimisation of ship hull forms has been developed before. It uses surrogatebased global optimisation, with hull form variations by a parametric blending of basis hull forms; and wave resistance calculation by a potential flow solver. This procedure is briefly summarised. The paper then describes a study on the use of a similar system together with a free-surface RANS solver, for minimisation of the stern wave system. Multiobjective optimisation for the stern of a slender ship at 2 speeds is performed. Multi-fidelity methods, with response surfaces based on a dense set of potentialflow results and a coarse set of RANS data, are applied and compared with the single-fidelity formulation. The response surfaces and their dependence on the number of high-fidelity data points are studied. The multifidelity methods appear to hold promise for a reduction of the required number of high-fidelity computations. For the present case, the potential-flow solver already was quite accurate; further studies for less slender hull forms, to get a clearer view of the actual advantage of multi-fidelity methods in practice, are in progress},
+author = {Raven, H C},
+booktitle = {32nd Symposium on Naval Hydrodynamics, Hamburg, Germany},
+month = {August},
+pages = {5--10},
+title = {{Minimising ship afterbody wave making using multifidelity techniques}},
+year = {2018}
+}
+
+@inproceedings{Raven2019m,
+abstract = {Progress in the assessment of multifidelity techniques for ship hull form optimisation at MARIN is described. Surrogate-based optimisation is used, with response surfaces found from a combination of free-surface potential-flow and free-surface RANS computations. A substantial level of correspondence of the trends of the low and high-fidelity methods appears to be required. Applications of multifidelity stern design optimisation for a fast displacement ship and a containership are reviewed. Alternative low-fidelity formulations are considered},
+author = {Raven, Hoyte and Scholcz, Thomas},
+keywords = {Ship design,multifidelity,optimisation},
+booktitle = {VIII International Conference on Computational Methods in Marine Engineering (MARINE 2019)},
+year = {2019},
+month = {05},
+pages = {},
+title = {An assessment of multifidelity procedures for ship hull form optimisation},
+}
+
+@inproceedings{Scholcz2015m,
+author = {Scholcz, Thomas and Gornicz, Tomasz and Veldhuis, Christian},
+year = {2015},
+month = {06},
+title = {Multi-objective hull-form optimization using Kriging on noisy computer experiments},
+booktitle = {VI International Conference on Computational Methods in Marine Engineering (MARINE 2015)},
+doi = {10.13140/RG.2.1.4173.5124},
+abstract = {Meta-modelling is a key technique for efficient multi-objective optimization in ship design projects using CFD. However, objective functions computed with CFD are not deterministic functions but contain random scatter about a smooth trend. Kriging is a meta-model technique that is well suited for numerical experiments with deterministic errors that can be perceived as random scatter due to varying input parameters. Sim- ple Kriging, universal kriging and polynomial regression are used to obtain approximate Pareto-fronts from the hull-form optimization of a chemical tanker including free-surface effects. Cross-validation is used to assess the quality of the meta-models and the meta- model approximations of the Pareto-fronts are verified. It is found that cross-validation can be used to select the best meta-model but should not be used to estimate the true error of the approximation in case the design of experiment is too coarse. The approach is used in practice in order to accelerate the ship design process and to obtain more efficient ships with less vibration hindrance.}
+}
+
+@inproceedings{Scholcz2017m,
+abstract = {RANS-based optimization procedures for ship design become increasingly complex and require the development of more efficient optimization techniques. The four phases of the design procedure are: shape parameterization, global sensitivity analysis, multi-objective optimization and design review. The dimensions of the design space can be mitigated by a smart choice for the shape parameterization and by screening and ranking the design variables in the global sensitivity phase. Subsequently, Surrogate Based Global Optimization (SBGO) is used to reduce the cost of the multi-objective optimization phase. For a practical application it is shown that the computational time reduces from two weeks to only a day when using SBGO instead of applying a Multi-Objective Genetic Algorithm (MOGA) directly to the solver. The design review phase is then used to verify and further develop the optimal design. Here, we focus on automatic ship design techniques which comprises the first three steps of the design procedure. Accelerating the ship design process is subject of ongoing research at the Maritime Research Institute Netherlands, making it useful for practical applications with turnaround times of only a few weeks.},
+author = {Scholcz, Thomas and Veldhuis, Christian},
+year = {2017},
+month = {05},
+booktitle = {VII International Conference on Computational Methods in Marine Engineering (MARINE 2017)},
+title = {Multi-objective surrogate based hull-form optimization using high-fidelity RANS computations}
+}
+
+
+@inproceedings{Korondi2019m,
+abstract = {This paper proposes to apply multi-fidelity learning for reliability-based design op- timisation of a ducted propeller. Theoretically, the efficiency of a propeller can be increased by placing the propeller into a duct. The increased efficiency makes the ducted propeller an appealing option for electrical aviation where optimal electricity consumption is vital. The electricity consumption is mainly dictated by the required power to reach the required thrust force. Recent design optimisation techniques such as machine learning can help us to reach high thrust to power ratios. Due to the expensive computational fluid dynamics simulations a multi-fidelity learning algorithm is investigated here for the application of ducted propeller design. The limited number ofhigh-fidelity numerical experiments cannot provide sufficient in- formation about the landscape ofthe design field and probability field. Therefore, information from lower fidelity simulations is fused into the high-fidelity surrogate using the recently pub- lished recursive co-Kriging technique augmented with Gaussian-Markov Random Fields. At each level the uncertainty can be modelled via a polynomial chaos expansion which provides a variable-fidelity quantification technique of the uncertainty. This facilitates the calculation of risk measures, like conditional Value-at-Risk, for reliability-based design optimisation. The multi-fidelity surrogate model can be adaptively refined following a similar strategy to the Effi- cient Global Optimisation using the expected improvement measure. The proposed combination of techniques provides an efficient manner to conduct reliability-based optimisation on expen- sive realistic problems using a multi-fidelity learning technique.},
+author = {Korondi, P{\'{e}}ter Z{\'{e}}n{\'{o}} and Parussini, Lucia and Marchi, Mariapia and Poloni, Carlo},
+doi = {10.7712/120219.6363.18806},
+keywords = {Co-Kriging,Ducted Propeller,Gaussian Markov Random Fields,Multi-fidelity Learning,Reliability-based Design Optimisation,Risk Averseness},
+title = {{RELIABILITY-BASED DESIGN OPTIMISATION OF A DUCTED PROPELLER THROUGH MULTI-FIDELITY LEARNING}},
+year = {2019},
+booktitle = {UNCECOMP (2019)},
+organization = {Eccomas Proceedia},
+pages = {600-619}
+}
+
+@article{Leifsson2013m,
+abstract = {Hydrodynamic shape optimization of axisymmetric bodies is presented. A surrogate-based optimization algorithm is described that exploits a computationally cheap low-fidelity model to construct a surrogate of an accu- rate but CPU-intensive high-fidelity model. The low-fidelity model is based on the same governing equations as the high-fidelity one, but exploits coarser discretization and relaxed convergence criteria. A multiplicative response correction is applied to the low-fidelity CFD model output to yield an accurate and reliable surrogate model. The approach is implemented for both direct and in- verse design. In the direct design approach the optimal hull shape is found by minimizing the drag, whereas in the inverse approach a target pressure dis- tribution is matched. Results show that optimized designs are obtained at substantially lower computational cost (over 94\%) when compared to the direct high-fidelity model optimization},
+author = {Leifsson, Leifur and Koziel, Slawomir and Ogurtsov, Stanislav},
+keywords = {axisymmetric body,cfd,direct design,inverse design,modeling,multi-fidelity,shape optimization,surrogate-based optimization},
+pages = {209--223},
+title = {{Hydrodynamic Shape Optimization of Axisymmetric Bodies Using Multi-fidelity Modeling}},
+year = {2013},
+publisher = {Springer-Verlag Berlin Heidelberg},
+journal = {Simulation \& Modeling Methodologies, Technologies \& Applications, AISC 197}
+}
+
+@article{Liu2022m,
+abstract = {For the simulation-based hull form optimization design, there are many methods to evaluate the hydrodynamic performance of the hull form. Although the high fidelity of the surrogate model can be guaranteed by evaluating a large number of new sample hulls based on viscous flow theory, the computational cost can be too high. Therefore, in order to release the burden of calculation, based on the traditional single-fidelity Kriging surrogate model, the multi-fidelity Co-Kriging surrogate model gives attention to both high accuracy and efficiency by combining the accuracy advantage of high-fidelity sample evaluation with the efficiency advantage of low-fidelity sample evaluation. This paper first introduces the construction process of the multi-fidelity Co-Kriging surrogate model, and then uses a series of numerical examples to illustrate the advantages of the multi-fidelity Co-Kriging surrogate model compared with the single-fidelity Kriging surrogate model in terms of fidelity and efficiency. Finally, a hull form optimization design for total drag of DTMB-5415 hull at the design speed is given in detail, where the viscous flow theory and potential flow theory are used for the hydrodynamic evaluations of the hull forms to obtain the high- and low-fidelity results respectively. Results show that the multi-fidelity Co-Kriging surrogate model can be established for hull form hydrodynamic performance optimization, which is superior to the single-fidelity Kriging surrogate model in accuracy, and the optimal hull obtained by Co-Kriging surrogate model has a better resistance optimization effect.},
+author = {Liu, Xinwang and Zhao, Weiwen and Wan, Decheng},
+doi = {10.1016/j.oceaneng.2021.110239},
+issn = {00298018},
+journal = {Ocean Engineering},
+keywords = {Co-Kriging surrogate model,Hull form optimization,Multi-fidelity,Potential flow,Viscous flow},
+number = {November 2021},
+pages = {110239},
+publisher = {Elsevier Ltd},
+title = {{Multi-fidelity Co-Kriging surrogate model for ship hull form optimization}},
+url = {https://doi.org/10.1016/j.oceaneng.2021.110239},
+volume = {243},
+year = {2022}
+}

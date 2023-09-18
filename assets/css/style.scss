@@ -19,3 +19,7 @@
 @import "_core/media";
 
 @import "_custom";
+
+// added myself
+// <link rel="stylesheet" type="text/css" href="{{ "/hugo-cite.css" | relURL }}" />
+@import "themes/hugo-cite/static/hugo-cite"; 

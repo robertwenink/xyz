@@ -1,6 +1,7 @@
 # documentation for theme found in https://hugoloveit.com/categories/documentation/
 title = "Robert Wenink - Maritime Engineering and Computer Science"
 baseURL = "https://robertwenink.xyz/"
+theme = "hugo-cite"
 
 languageCode = "en"
 languageName = "English"
@@ -568,7 +569,7 @@ paginate = 12
       unsafe = true
   # Table Of Contents settings
   [markup.tableOfContents]
-    startLevel = 2
+    startLevel = 1
     endLevel = 6
 
 
