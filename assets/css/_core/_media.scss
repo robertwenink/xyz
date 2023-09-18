@@ -14,13 +14,6 @@
   // .header-wrapper .header-wrapper {
   //   padding-right: 1rem;
   // }
-
-  .search-dropdown.desktop {
-    right: 1rem;
-  }
-}
-
-@media only screen and (max-width: 960px) {
   #toc-auto {
     display: none;
   }
@@ -28,14 +21,28 @@
   #toc-static {
     display: block;
   }
+  .search-dropdown.desktop {
+    right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+// This used to work, but only for smaller tocs!
+//   #toc-auto {
+//     display: none;
+//   }
+
+//   #toc-static {
+//     display: block;
+//   }
 
   .page, .header-wrapper  {
     width: 90%;
   }
 
-  // #header-desktop .header-wrapper {
-  //   padding-left: 1rem;
-  // }
+//   // #header-desktop .header-wrapper {
+//   //   padding-left: 1rem;
+//   // }
 }
 
 @media only screen and (max-width: 680px) {
