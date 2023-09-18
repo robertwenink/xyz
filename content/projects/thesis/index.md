@@ -18,7 +18,6 @@ bibFile: "library-bib.json" # path relative to project root
 In June of 2023, I defended my thesis project to obtain both a master's degree in Marine Engineering and Computer Science, awarded a 8.5 in both disciplines. The complete thesis titled "Multi-Fidelity Kriging Extrapolation" can be found on the [TU Delft repository](https://repository.tudelft.nl/islandora/object/uuid%3Ad30374fd-8213-40c7-bd72-f17b108d7759?collection=education). In this article, I highlight some parts of this thesis that are of general interest.
 
 
-
 # Kriging
 Kriging, also known as Gaussian Process Regression, is at the core of the work of this thesis and should therefore be understood to some extent. In this section, the following subjects are treated:
 - The formulation of Ordinary Kriging, which mathematically introduces the core concepts of the Kriging predictor and the associated mean-squared-error estimate.
