@@ -15,7 +15,6 @@ featuredImagePreview: ""
 bibFile: "library-bib.json" # path relative to project root
 # citations, see : https://github.com/loup-brun/hugo-cite
 ---
-
 In June of 2023, I defended my thesis project to obtain both a master's degree in Marine Engineering and Computer Science, awarded a 8.5 in both disciplines. The complete thesis titled "Multi-Fidelity Kriging Extrapolation" can be found on the [TU Delft repository](https://repository.tudelft.nl/islandora/object/uuid%3Ad30374fd-8213-40c7-bd72-f17b108d7759?collection=education). In this article, I highlight some parts of this thesis that are of general interest.
 
 
@@ -74,7 +73,7 @@ The hat indicates an estimated quantity. Substituting these expression back into
 -\frac{n}{2} \ln \left(\widehat{\sigma}^{2}\right)-\frac{1}{2} \ln (|\boldsymbol{R}|) 
 \end{equation}
 
-With \eqref{eqn:concentrated_loglikelihood} being only a function of $\boldsymbol{R}$, we maximize this expression to retrieve the unknown hyperparameters $\Theta$ and $p$ of \cref{eqn:Kriging_kernel} for each dimension. This is a global optimisation problem in itself, but with much cheaper function evaluations. The tuning process is discussed in \cref{ssec:hyperparameter_tuning}.
+With this being a function of only $\boldsymbol{R}$, we maximize this expression to retrieve the unknown hyperparameters $\Theta$ and $p$ for each dimension. This is a global optimisation problem in itself, but with much cheaper function evaluations. The tuning process is discussed [later](#hyperparameter-tuning).
 
 We have now 'trained' the Kriging model using our data. Suppose we want to predict $y^* $at location $x^*$, adding their correlation to $\boldsymbol{R}$, then:
 
@@ -102,9 +101,9 @@ The associated MSE estimate is found directly from the Gaussian Process formulat
 s^{2}\left(\boldsymbol{x}^{*}\right)=\widehat{\sigma}^{2}\left[1-\boldsymbol{r}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r}+\frac{\left(1-\boldsymbol{1}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r}\right)^{2}}{\boldsymbol{1}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{1}}\right]
 \end{equation}
 
-The last term can be regarded as a very small correction due to uncertainty in the value of $\mu$ {{< cite "Jones2001" >}} and is not found when following the derivation of \cref{eqn:kriging_prediction}.
+The last term can be regarded as a very small correction due to uncertainty in the value of $\mu$ {{< cite "Jones2001" >}} and is not found when following the non-Gaussian derivation given here. This term is generally omitted.
 
-Note that if we calculate \cref{eqn:kriging_variance} at a sampled point $x^* = x_i$, then $r$ is a column of $R$ and thus $\boldsymbol{R}^{-1} \boldsymbol{r}$ is the \textit{i}th unit vector such that $\boldsymbol{r}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = r_i = 1$ (correlation with self is 1) and $\boldsymbol{1}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = 1$. Consequently, \cref{eqn:kriging_variance} equates to 0 at sampled locations and thus \cref{eqn:kriging_prediction} is an interpolating formulation.
+Note that if we calculate Eq. (11) at a sampled point $x^* = x_i$, then $r$ is a column of $R$ and thus $\boldsymbol{R}^{-1} \boldsymbol{r}$ is the $\textit{i}$th unit vector such that $\boldsymbol{r}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = r_i = 1$ (correlation with self is 1) and $\boldsymbol{1}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = 1$. Consequently, the prediction variance equates to 0 at sampled locations and thus Eq. (10) is an interpolating formulation.
 
 ## Including and handling noise
 In deterministic numerical experiments, contrary to physical experiments, we are involved with errors that are of a repeatable nature. When we vary the input during the experiment we can observe fluctuating errors in the output that \textit{appears to be} noise. {{< cite "Forrester2006noisy-" >}} determines three reasons that are the source of this type of noise:
@@ -114,14 +113,13 @@ In deterministic numerical experiments, contrary to physical experiments, we are
 
 Machine-precision round-off errors are of a lesser impact. Similar to {{< cite "Forrester2006noisy-" >}}, the last reason is of no concern to us. 
 
-Discretisation errors are numerical artefacts that are the result of the fact that we need to solve our governing equations on a discretized grid or mesh instead of being able to use a continuous analytic solution. For example, the volume of fluid (VoF) and cut-cell method of the CFD solver we use might produce local pressure peaks, see \cref{app:B} or {{< cite "Kleefsman2005;Fekken2004" >}}.
+Discretisation errors are numerical artefacts that are the result of the fact that we need to solve our governing equations on a discretized grid or mesh instead of being able to use a continuous analytic solution. For example, the volume of fluid (VoF) and cut-cell method of the CFD solver we use might produce local pressure peaks {{< cite "Kleefsman2005;Fekken2004" >}}.
 
 Errors due to incomplete convergence, or rather varying levels of convergence, might in our case be observed through the enforcement of the CFL criterium {{< cite "CFL" >}}, in which we ensure numerical stability by varying the timestep. Simulations where due to a slightly different problem a smaller time step was required, might for instance see a higher level of convergence in the part of the simulation domain where the CFL criterium would not have been violated either way.
 
-Would we keep using the interpolating formulation of \cref{sec:Ordinary_Kriging_Definition} in the presence of numerical noise we could encounter situations in which we overfit our data and we would retrieve spurious response surfaces. This would especially be apparent for samples very near to each other.
+Would we keep using the [interpolating formulation](#derivation-and-definition-of-ordinary-kriging), in the presence of numerical noise we could encounter situations in which we overfit our data and we would retrieve spurious response surfaces. This would especially be apparent for samples very near to each other.
 
-Therefore, to accommodate this apparent noise we adapt the correlation matrix such that each sample does not have an exact relation to itself. We do this by adding a regression constant $\lambda$ such that $R_{regression} = R + \lambda I$. The $\lambda$ can be simultaneously tuned together with the other hyperparameters to retrieve a data-informed estimate of the noise levels, see \cref{ssec:hyperparameter_tuning}. The adapted correlation matrix can directly be plugged into the expressions we saw earlier in \cref{sec:Ordinary_Kriging_Definition} to retrieve the set of equations:
-
+Therefore, to accommodate this apparent noise we adapt the correlation matrix such that each sample does not have an exact relation to itself. We do this by adding a regression constant $\lambda$ such that $R_{regression} = R + \lambda I$. The $\lambda$ can be simultaneously tuned together with the other hyperparameters to retrieve a data-informed estimate of the noise levels. The adapted correlation matrix can directly be plugged into the expressions we saw [earlier](#derivation-and-definition-of-ordinary-kriging) to retrieve the set of equations:
 
 \begin{equation}
 \hat{\mu}_{r}=\frac{\mathbf{1}^{\prime}(\mathbf{R}+\lambda \mathbf{I})^{-1} \mathbf{y}}{\mathbf{1}^{\prime}(\mathbf{R}+\lambda \mathbf{I})^{-1} \mathbf{1}}
@@ -141,7 +139,7 @@ Therefore, to accommodate this apparent noise we adapt the correlation matrix su
 {{< /raw >}}
 
 ## Universal Kriging: Taking a prior on the mean $\mu$
-In the second paragraph of \cref{sec:Ordinary_Kriging_Definition} we have chosen to use a constant mean in the formulation of our stochastic process $\boldsymbol{Y}$. Although the linear system of Ordinary Kriging is the best linear unbiased predictor {{< cite "Sacks1989" >}}, we can additionally replace the constant mean $\widehat{\mu}$ with a polynomial such that $\boldsymbol{Y}(x) = \mu(x) + \mathcal{N}(0,\sigma^2)$ where $\mu(x) = x^{\prime}\boldsymbol{w}$. The weights $w$ are fitted by means of the generalised least-squares method. This more general approach is called Universal Kriging and was already used in the original derivations of {{< cite "Sacks1989-" >}}. {{< cite "Korondi2021-" >}} gives a clear mathematical description. 
+In the second paragraph of [the Ordinary Kriging derivation](#derivation-and-definition-of-ordinary-kriging) we chose to use a constant mean in the formulation of our stochastic process $\boldsymbol{Y}$. Although the linear system of Ordinary Kriging is the best linear unbiased predictor {{< cite "Sacks1989" >}}, we can additionally replace the constant mean $\widehat{\mu}$ with a polynomial such that $\boldsymbol{Y}(x) = \mu(x) + \mathcal{N}(0,\sigma^2)$ where $\mu(x) = x^{\prime}\boldsymbol{w}$. The weights $w$ are fitted by means of the generalised least-squares method. This more general approach is called Universal Kriging and was already used in the original derivations of {{< cite "Sacks1989-" >}}. {{< cite "Korondi2021-" >}} gives a clear mathematical description. 
 <!-- %In a full Bayesian setting it is equivalent to taking a prior on the mean $\widehat{\mu}$ {{< cite "Rasmussen2006" >}}. -->
 
 The benefits of Universal Kriging over Ordinary Kriging are clearly observed when no correlating samples are near, in which case the response surface converges back to the Kriging mean $\widehat{\mu}$. For Ordinary Kriging, the response surface then converges to the 'naïve' constant mean, whereas with Universal Kriging it converges to another trend model which in this case is a GLS model. As a result, the resulting response surface will be smoother and more stable. 
@@ -149,7 +147,7 @@ The benefits of Universal Kriging over Ordinary Kriging are clearly observed whe
 Since the Kriging extrapolation method as proposed in this thesis is mainly dependent on proper noise estimates at sampled locations and not directly on the response surface estimates, in principle using either Ordinary- or Universal Kriging would suffice. However, since the Universal Kriging implementation of {{< cite "SMT2019-" >}} provides a more stable and reliable solution than the own Ordinary Kriging implementation provided, Universal Kriging will be used throughout this thesis.
 
 ## Hyperparameter tuning
-To obtain a correctly functioning and optimal Kriging correlation function and response surface, it is essential to well-tune the involved hyperparameters using (some form of) the concentrated log-likelihood function \cref{eqn:concentrated_loglikelihood}. If we are regressing noise, see \cref{sec:ok_noise}, we need to simultaneously tune a parameter $\lambda$, where $\lambda$ is a function of $\sigma$. If additionally Universal Kriging is used, the results of the Generalised Least Squares solution are to be included in the Kriging mean and correlation function, as {{< cite "Korondi2021-" >}} clearly describes. 
+To obtain a correctly functioning and optimal Kriging correlation function and response surface, it is essential to well-tune the involved hyperparameters using (some form of) the concentrated log-likelihood function Eq. (7). If we are [regressing noise](#including-and-handling-noise), we need to simultaneously tune a parameter $\lambda$, where $\lambda$ is a function of $\sigma$. If additionally Universal Kriging is used, the results of the Generalised Least Squares solution are to be included in the Kriging mean and correlation function, as {{< cite "Korondi2021-" >}} clearly describes. 
 
 The matrix inversion involved with solving the log-likelihood function many times during the hyperparameter optimisation process makes this process the main performance bottleneck for Kriging in either high dimensional input or large sample sizes. As a result, much research can be found on improving upon this aspect of Kriging. In our own implementation of Ordinary Kriging, a multi-start hill-climbing procedure had been used in combination with a genetic algorithm. However, since switching to the Universal Kriging solution of {{< cite "SMT2019" >}}, their much more refined routines are used. Since the hyperparameter tuning process is not the main subject of this thesis, I refer to {{< cite "SMT2019-" >}} for further reading.
 
@@ -186,15 +184,10 @@ s_{l}^{2}(\boldsymbol{x}_{l}^{\star}) = \hat{\rho}_{l-1}^{2} s_{l-1}^{2}(\boldsy
 \end{equation}
 {{< /raw >}}
 
-The effectiveness of this multi-fidelity formulation is typically exemplified using the somewhat contrived example of {{< cite "Forrester2007-" >}}, see \cref{fig:Forrester2007MFeffectiveness_example}.
+The effectiveness of this multi-fidelity formulation is typically exemplified using the somewhat contrived example of {{< cite "Forrester2007-" >}}:
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/Forrester2007MFshowcase.png}
-	\caption{Image from {{< cite "Forrester2007-" >}} }. By frequently sampling the cheap function ($y_c$) the Kriging approximation based on only four expensive data
-points ($y_e$) is significantly improved. Function definitions are provided in \cref{eqn:toy_case_base}, \cref{sec:MF_toycases_construction}}
-	\label{fig:Forrester2007MFeffectiveness_example}
-\end{figure} 
+{{< image src="Forrester2007MFshowcase.png" width="80%" alt="Forrester Example" caption="Image and function definition from {{< cite Forrester2007- >}}. By frequently sampling the cheap function ($y_c$) the Kriging approximation based on only four expensive datapoints ($y_e$) is significantly improved." linked=false >}}
+
 
 ## Usage conditions
 The implicit presumption of multi-fidelity Kriging is that the difference model $Z_{\mathrm{d}}(\boldsymbol{x})$ is simpler and thus easier to predict than the true response surface. For this to be true we require a high correlation between the fidelity levels. {{< cite "Toal2015-" >}} provides an indication of the conditions in which bi-fidelity Kriging is more efficient or effective than single-fidelity Kriging:
