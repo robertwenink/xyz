@@ -49,7 +49,7 @@ So, instead of random variables $\boldsymbol{Y}(x_{i}), \boldsymbol{Y}(x_{j})$ w
 L = p\left(y;\mu,\sigma^2,\boldsymbol{R}\right) = \frac{1}{(2 \pi)^{\frac{n}{2}}\left(\sigma^{2}\right)^{\frac{n}{2}}|\boldsymbol{R}|^{\frac{1}{2}}} \exp \left[\frac{-(\boldsymbol{y}-\mu)^{\prime} \boldsymbol{R}^{-1}(\boldsymbol{y}-\mu)}{2 \sigma^{2}}\right]
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eqn:loglikelihood}
 \ln (L) = -\frac{n}{2} \ln \left(\sigma^{2}\right)-\frac{1}{2} \ln (|\mathbf{R}|)-\frac{(\mathbf{y}-\mu)^{\prime} \mathbf{R}^{-1}(\mathbf{y}-\mu)}{2 \sigma^{2}}
 \end{equation}
 
@@ -64,7 +64,7 @@ Setting the derivatives of the log-likelihood with respect to the process varian
 \widehat{\sigma}^{2} =\frac{(\boldsymbol{y}-\hat{\mu})^{\prime} \boldsymbol{R}^{-1}(\boldsymbol{y}-\widehat{\mu})}{n}
 \end{equation}
 
-The hat indicates an estimated quantity. Substituting these expression back into the log-likelihood \cref{eqn:loglikelihood}, we retrieve the 'concentrated log-likelihood':
+The hat indicates an estimated quantity. Substituting these expression back into the log-likelihood $\cref{eqn:loglikelihood}{4}$, we retrieve the 'concentrated log-likelihood':
 
 \begin{equation}
 -\frac{n}{2} \ln \left(\widehat{\sigma}^{2}\right)-\frac{1}{2} \ln (|\boldsymbol{R}|) 
@@ -89,12 +89,12 @@ Using this augmented correlation matrix $\widetilde{\boldsymbol{R}}$ instead of 
 
 Solving for $y^*$, we finally retrieve the Kriging predictor:
 
-\begin{equation}
+\begin{equation}\label{eqn:kriging_prediction}
 \widehat{y}\left(\boldsymbol{x}^{*}\right)=\widehat{\mu}+\boldsymbol{r}^{\prime} \boldsymbol{R}^{-1}(\boldsymbol{y}-\widehat{\mu})
 \end{equation}
 
 The associated MSE estimate is found directly from the Gaussian Process formulation {{< cite "Sacks1989" >}}:
-\begin{equation}
+\begin{equation}\label{eqn:kriging_variance}
 s^{2}\left(\boldsymbol{x}^{*}\right)=\widehat{\sigma}^{2}\left[1-\boldsymbol{r}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r}+\frac{\left(1-\boldsymbol{1}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r}\right)^{2}}{\boldsymbol{1}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{1}}\right]
 \end{equation}
 
@@ -103,7 +103,7 @@ The last term can be regarded as a very small correction due to uncertainty in t
 Note that if we calculate Eq. (11) at a sampled point $x^* = x_i$, then $r$ is a column of $R$ and thus $\boldsymbol{R}^{-1} \boldsymbol{r}$ is the $\textit{i}$th unit vector such that $\boldsymbol{r}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = r_i = 1$ (correlation with self is 1) and $\boldsymbol{1}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = 1$. Consequently, the prediction variance equates to 0 at sampled locations and thus Eq. (10) is an interpolating formulation.
 
 ## Including and handling noise
-In deterministic numerical experiments, contrary to physical experiments, we are involved with errors that are of a repeatable nature. When we vary the input during the experiment we can observe fluctuating errors in the output that \textit{appears to be} noise. {{< cite "Forrester2006noisy-" >}} determines three reasons that are the source of this type of noise:
+In deterministic numerical experiments, contrary to physical experiments, we are involved with errors that are of a repeatable nature. When we vary the input during the experiment we can observe fluctuating errors in the output that *appears to be* noise. {{< cite "Forrester2006noisy-" >}} determines three reasons that are the source of this type of noise:
 - discretisation errors
 - incomplete convergence
 - inaccurate application of boundary conditions
@@ -114,7 +114,7 @@ Discretisation errors are numerical artefacts that are the result of the fact th
 
 Errors due to incomplete convergence, or rather varying levels of convergence, might in our case be observed through the enforcement of the CFL criterium {{< cite "CFL" >}}, in which we ensure numerical stability by varying the timestep. Simulations where due to a slightly different problem a smaller time step was required, might for instance see a higher level of convergence in the part of the simulation domain where the CFL criterium would not have been violated either way.
 
-Would we keep using the [interpolating formulation](#derivation-and-definition-of-ordinary-kriging), in the presence of numerical noise we could encounter situations in which we overfit our data and we would retrieve spurious response surfaces. This would especially be apparent for samples very near to each other.
+Would we keep using the interpolating formulation of $\cref{eqn:kriging_prediction}{10}$, in the presence of numerical noise we could encounter situations in which we overfit our data and we would retrieve spurious response surfaces. This would especially be apparent for samples very near to each other.
 
 Therefore, to accommodate this apparent noise we adapt the correlation matrix such that each sample does not have an exact relation to itself. We do this by adding a regression constant $\lambda$ such that $R_{regression} = R + \lambda I$. The $\lambda$ can be simultaneously tuned together with the other hyperparameters to retrieve a data-informed estimate of the noise levels. The adapted correlation matrix can directly be plugged into the expressions we saw [earlier](#derivation-and-definition-of-ordinary-kriging) to retrieve the set of equations:
 

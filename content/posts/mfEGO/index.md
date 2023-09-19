@@ -61,7 +61,7 @@ First, the expected variance reduction of sampling a level in a nested fashion i
 s_{\text{red}}^{2}\left(l, x^{\*}\right)=\sum_{i=0}^{l} s_{\delta, i}^{2}\left(x^{\*}\right) \prod_{j=i}^{l-1}\hat{\rho}_{j}^{2}
 \end{equation}
 
-Here $s_{\delta, i}^{2}$ is the prediction variance of level i, or the last term of \cref{eqn:Gratiet_formulation}. The term $\hat{\rho}_{j}^{2}$ can similarly be identified in \cref{eqn:Gratiet_formulation}. The cost of sampling a level is defined by:
+Here $s_{\delta, i}^{2}$ is the prediction variance of level i, or the last term of $\pcref{gratiet}{2}{/posts/mfkriging/}$. The term $\hat{\rho}_{j}^{2}$ can similarly be identified there. The cost of sampling a level is defined by:
 
 \begin{equation}
 cost_{total}(l)=\sum_{i=0}^{l} c_{i}

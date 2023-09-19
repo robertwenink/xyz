@@ -15,4 +15,7 @@ hugo serve  --themesDir ../..
 
 Regex replace voor latex cites:
 regex zoekterm: 	\\citet\{([a-z]+[0-9]{4})\}
+					\\citet\{(.{5,50})\}
+					\\citep\{(.{5,50})\}
+					\\cite\{(.{5,50})\}
 vervang met:		{{< cite "$1-" >}}

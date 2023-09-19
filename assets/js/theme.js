@@ -646,9 +646,8 @@ var Theme = /*#__PURE__*/function () {
     value: function initMath() {
       this.config.math.trust = (context) => ['\\htmlId', '\\href'].includes(context.command);
       this.config.math.macros = {
-        "\\eqref": "\\href{##eqn-#1}{(\\text{#1})}",
-        "\\ref": "\\href{##eqn-#1}{\\text{#1}}",
-        "\\cref": "\\href{##eqn-#1}{\\text{#1}}",
+        "\\cref": "\\href{##eqn-#1}{\\textnormal{Eq. (#2)}}",
+        "\\pcref": "\\href{#3##eqn-#1}{\\textnormal{Eq. (#2) of this post}}",
         "\\label": "\\htmlId{eqn-#1}{}"
       };
       this.config.math.strict = "ignore"
