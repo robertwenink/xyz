@@ -644,6 +644,15 @@ var Theme = /*#__PURE__*/function () {
   }, {
     key: "initMath",
     value: function initMath() {
+      this.config.math.trust = (context) => ['\\htmlId', '\\href'].includes(context.command);
+      this.config.math.macros = {
+        "\\eqref": "\\href{##eqn-#1}{(\\text{#1})}",
+        "\\ref": "\\href{##eqn-#1}{\\text{#1}}",
+        "\\cref": "\\href{##eqn-#1}{\\text{#1}}",
+        "\\label": "\\htmlId{eqn-#1}{}"
+      };
+      this.config.math.strict = "ignore"
+      console.log(this.config.math)
       if (this.config.math) renderMathInElement(document.body, this.config.math);
     }
   }, {
@@ -1045,23 +1054,48 @@ var Theme = /*#__PURE__*/function () {
       var _this15 = this;
 
       try {
+        console.log("Nothing loaded yet");
+        // Something can go wrong in initRaw() when server rendering! However, needs to be loaded before math. Best solution is to just escape characters like * _ >> by hand.
+        // UPDATE it seems it does work when the shortcode is directly connected/on the same line with the equation.
         this.initRaw();
-        this.initSVGIcon();
-        this.initTwemoji();
-        this.initMenuMobile();
-        this.initSwitchTheme();
-        this.initSearch();
-        this.initDetails();
-        this.initLightGallery();
-        this.initHighlight();
-        this.initTable();
-        this.initHeaderLink();
+        console.log("Raw loaded");
+      } catch (err) {
+        console.error(err);
+      }
+
+      try{
         this.initMath();
+        console.log("Math loaded");
         this.initMermaid();
+        console.log("Mermaid loaded");
+        this.initSVGIcon();
+        console.log("SVG loaded");
+        this.initTwemoji();
+        console.log("Twemoji loaded");
+        this.initMenuMobile();
+        console.log("Menu loaded");
+        this.initSwitchTheme();
+        console.log("Switch loaded");
+        this.initSearch();
+        console.log("Searc loaded");
+        this.initDetails();
+        console.log("Details loaded");
+        this.initLightGallery();
+        console.log("Lightgallery loaded");
+        this.initHighlight();
+        console.log("Highlight loaded");
+        this.initTable();
+        console.log("Table? loaded");
+        this.initHeaderLink();
+        console.log("Headerlink loaded");
         this.initEcharts();
+        console.log("Echarts loaded");
         this.initTypeit();
+        console.log("Typeit loaded");
         this.initMapbox();
+        console.log("Mapbox loaded");
         this.initCookieconsent();
+        console.log("Cookieconsent loaded");
       } catch (err) {
         console.error(err);
       }
