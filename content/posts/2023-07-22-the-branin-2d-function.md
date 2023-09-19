@@ -7,11 +7,8 @@ featuredImage: /images/uploads/branin_transformed_alternating.png
 tags: ["Test tag"]
 categories: ["Test Category"]
 
-draft: false
+draft: true
 
-toc:
-  enable: true
-  auto: true
 ---
 
 ## The Branin 2D function

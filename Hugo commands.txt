@@ -11,3 +11,8 @@ Om een example website te bekijken van een thema:
 cd themes/introduction/exampleSite/
 hugo serve  --themesDir ../..
 
+
+
+Regex replace voor latex cites:
+regex zoekterm: 	\\citet\{([a-z]+[0-9]{4})\}
+vervang met:		{{< cite "$1-" >}}

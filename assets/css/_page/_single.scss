@@ -3,7 +3,7 @@
 .single {
   .single-title {
     margin: 2rem 0 .5rem;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: bold;
     line-height: 140%;
   }
@@ -52,7 +52,9 @@
   }
 
   .content {
-    > h2 {
+    // h1 also in _normalize.scss for some reason
+    // all untill h6 was 0.125 bigger
+    > h1 {
       font-size: 1.5rem;
 
       & code {
@@ -60,7 +62,7 @@
       }
     }
 
-    > h3 {
+    > h2 {
       font-size: 1.375rem;
 
       & code {
@@ -68,7 +70,7 @@
       }
     }
 
-    > h4 {
+    > h3 {
       font-size: 1.25rem;
 
       & code {
@@ -76,8 +78,16 @@
       }
     }
 
-    > h5 {
+    > h4 {
       font-size: 1.125rem;
+
+      & code {
+        font-size: 1rem;
+      }
+    }
+
+    > h5 {
+      font-size: 1rem;
     }
 
     > h6 {
@@ -113,8 +123,9 @@
       }
     }
 
-    > h2 > .header-mark::before {
+    > h1 > .header-mark::before {
       content: "#";
+      margin-right: .3125rem;
     }
 
     p {
