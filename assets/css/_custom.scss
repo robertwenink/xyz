@@ -6,13 +6,6 @@
 
 .container {overflow: hidden;}
 
-.katex .textrm{
-    font-family: var(--global-font-family) !important;
-    font-weight: var(--global-font-weight);
-    font-size: var(--global-font-size);
-    line-height: var(--global-line-height);
-}
-
 .wrap-around {
     display: inline-block;
     width: 100%;

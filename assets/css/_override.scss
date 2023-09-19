@@ -3,9 +3,30 @@
 // 覆盖变量
 // ==============================
 
-.katex {
+.katex-html {
     overflow-x: auto;
     overflow-y: hidden;
-    // padding-block: 10px;
     padding: 3px;
+}
+
+.katex-html:has(span.tag) {
+  display: flex !important;
+  white-space: nowrap !important;
+  .base {
+    margin: 0 auto;
   }
+}
+
+.katex .textrm {
+  font-family: var(--global-font-family) !important;
+  font-weight: var(--global-font-weight);
+  font-size: var(--global-font-size);
+  line-height: var(--global-line-height);
+}
+
+.katex-display>.katex>.katex-html>.tag { 
+  position: relative !important;
+  // display: block;
+  float: right !important; 
+  margin-left:0.25rem;
+}
