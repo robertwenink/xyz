@@ -19,3 +19,7 @@ regex zoekterm: 	\\citet\{([a-z]+[0-9]{4})\}
 					\\citep\{(.{5,50})\}
 					\\cite\{(.{5,50})\}
 vervang met:		{{< cite "$1-" >}}
+
+Dit vervangt nog niet de , met ;!
+daarvoor:
+([a-z]+[0-9]{4}), -> $1;

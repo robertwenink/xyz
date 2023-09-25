@@ -17,11 +17,15 @@ bibFile: "library-bib.json"
 ---
 
 # Kriging
-Kriging, more known outside engineering as Gaussian Process Regression, is at the core of the work of this thesis and should therefore be understood to some extent. In this section, the following subjects are treated:
-- The formulation of Ordinary Kriging, which mathematically introduces the core concepts of the Kriging predictor and the associated mean-squared-error estimate.
-- How can the interpolating Kriging formulation be adapted to be regressing in the presence of noise in the input data.
-- How is the Ordinary Kriging formulation modified to retrieve Universal Kriging, the Kriging formulation used in the thesis.
-- A short consideration of the hyperparameter tuning process, an optimisation problem in itself and essential to the functioning of the Kriging surrogate.
+Kriging, also known as a form of Gaussian Process Regression {{< cite "Rasmussen2006" >}}, is a particularly popular surrogate modelling technique due to two reasons. First, Kriging provides the best linear unbiased prediction (BLUP) when the assumption of Gaussian correlations between data samples holds {{< cite "Sacks1989" >}}. Second, Kriging provides an estimation of the mean squared error corresponding to that prediction {{< cite "Forrester2008" >}}. 
+
+Kriging earns its name from {{< cite "Krige1951;Krige1952-" >}}, who used a precursor method to estimate gold concentrations based on only a few boreholes. It was further mathematically developed by {{< cite "Matheron1962-" >}} and has been popularised for use outside the field of geostatistics by {{< cite "Sacks1989-" >}}. {{< cite "Jones2001-" >}} and {{< cite "Forrester2008-" >}} provide a gentle and intuitive introduction to (Ordinary) Kriging, which will be used as the main reference material here. 
+
+In this post, the following subjects are treated:
+- The [formulation of Ordinary Kriging](#derivation-and-definition-of-ordinary-kriging), which mathematically introduces the core concepts of the Kriging predictor and the associated mean-squared-error estimate.
+- How to [regress noise](#including-and-handling-noise) while using Kriging.
+- How to modify the Ordinary Kriging formulation to retrieve [Universal Kriging](#universal-kriging-taking-a-prior-on-the-mean), which is a more generalised Kriging formulation.
+- A short consideration of the [hyperparameter tuning process](#hyperparameter-tuning), which is an optimisation problem in itself and essential to the correct functioning of the Kriging surrogate.
 
 
 ## Derivation and definition of Ordinary Kriging
@@ -146,9 +150,9 @@ Since the Kriging extrapolation method as proposed in this thesis is mainly depe
 ## Hyperparameter tuning
 To obtain a correctly functioning and optimal Kriging correlation function and response surface, it is essential to well-tune the involved hyperparameters using (some form of) the concentrated log-likelihood function Eq. (7). If we are [regressing noise](#including-and-handling-noise), we need to simultaneously tune a parameter $\lambda$, where $\lambda$ is a function of $\sigma$. If additionally Universal Kriging is used, the results of the Generalised Least Squares solution are to be included in the Kriging mean and correlation function, as {{< cite "Korondi2021-" >}} clearly describes. 
 
-The matrix inversion involved with solving the log-likelihood function many times during the hyperparameter optimisation process makes this process the main performance bottleneck for Kriging in either high dimensional input or large sample sizes. As a result, much research can be found on improving upon this aspect of Kriging. In our own implementation of Ordinary Kriging, a multi-start hill-climbing procedure had been used in combination with a genetic algorithm. However, since switching to the Universal Kriging solution of {{< cite "SMT2019" >}}, their much more refined routines are used. Since the hyperparameter tuning process is not the main subject of this thesis, I refer to {{< cite "SMT2019-" >}} for further reading.
+The matrix inversion involved with solving the log-likelihood function many times during the hyperparameter optimisation process makes this process the main performance bottleneck for Kriging in either high dimensional input or large sample sizes. As a result, much research can be found on improving upon this aspect of Kriging. In our own implementation of Ordinary Kriging, a multi-start hill-climbing procedure had been used in combination with a genetic algorithm. However, since switching to the Universal Kriging solution of {{< cite "SMT2019" >}}, their much more refined routines are used.
 
-Lastly, {{< cite "Toal2008-" >}} states that the hyperparameters should be re-tuned each or at least every other model update. Failing to do so could drastically deteriorate the performance of the model. Therefore, in this thesis, we re-tune the hyperparameters during each model update.
+Lastly, in [dynamic sampling optimisation](/posts/mfEGO/) routines {{< cite "Toal2008-" >}} states that the hyperparameters should be re-tuned each or at least every other model update. Failing to do so could drastically deteriorate the performance of the model. Therefore, in this thesis, we re-tune the hyperparameters during each model update.
 
 # Bibliography
 {{< bibliography cited >}}
