@@ -16,10 +16,10 @@ bibFile: "library-bib.json"
 ---
 
 <!--more-->
-# (Multi-fidelity) Efficient Global optimisation
-The development of the proposed method has been in coherence with some of the characteristics of the Efficient Global optimisation (EGO) algorithm and its paradigm will be used in this thesis. This section summarises its definition.
+# (Multi-fidelity) Efficient Global optimisationT
+he Efficient Global optimisation (EGO) algorithm {{< cite "Jones1998" >}} is a form of Bayesian optimisation. The EGO algorithm adaptively samples additional points based on the Expected Improvement criterion {{< cite "Jones1998" >}}, which is formulated using the estimated mean squared error that Kriging provides. Using this criterion, EGO provably converges to the global optimum in an optimisation process {{< cite "Locatelli1997" >}}, although it may exhaustively sample around local optima {{< cite "Forrester2007" >}}. An overview of the algorithmic procedure is given by [Algorithm 1](#algorithm).
 
-{{< image src="algorithm.png" alt="EGO algorithm" width="100%" linked=false >}}
+{{< image src="algorithm.png" alt="EGO algorithm" id="algorithm" width="100%" linked=false >}}
 
 ## Expected improvement
 The expected improvement is the expectation of those parts of the normally distributed variable $Y = N(\hat{y},s^2)$ of the Kriging estimator that retrieves a better result than the current best objective value $f_{min}$:
@@ -50,10 +50,10 @@ optimisation is found in {{< cite "Picheny2013-">}}. The expected improvement cr
 ## Infill search routine
 Searching the response surface for the maximum Expected Improvement is an auxiliary optimisation problem involved with the Efficient Global optimisation routine. This routine is not often described extensively since the Kriging prediction function and thereby the expected improvement are very cheap to evaluate when compared to for instance the hyperparameter tuning process.
 
-{{< cite "Jones2001-" >}} uses a multi-start hillclimbing algorithm with each starting point between a neighbouring pair of sample locations. This is a simple and effective strategy for single-objective design problems. In this thesis, a similar approach is used where the starting points are determined by an LHS DoE with a sample size of 40.
+{{< cite "Jones2001-" >}} uses a multi-start hillclimbing algorithm with each starting point between a neighbouring pair of sample locations. This is a simple and effective strategy for single-objective design problems. During my thesis, I used a similar approach where the starting points are determined by an LHS DoE with a sample size of 40.
 
 ## Multi-fidelity: Level selection strategy
-To extend the EGO algorithm to use a multi-fidelity surrogate and thereby improve the performance of SBGO, we should additionally provide a way to decide which fidelity level we should sample once we have selected a location by means of the expected improvement criterion. Otherwise, we will still be exhaustively sampling the high-fidelity, which we aimed to avoid by using a multi-fidelity approach. {{< cite "Meliani2019-" >}} proposes such a methodology using a fully nested DoE, which means all lower fidelities are sampled when and where a higher fidelity is sampled. We summarise their method here using the notation used in this thesis.
+To extend the EGO algorithm to use a multi-fidelity surrogate and thereby improve the performance of SBGO, we should additionally provide a way to decide which fidelity level we should sample once we have selected a location by means of the expected improvement criterion. Otherwise, we will still be exhaustively sampling the high-fidelity, which we aimed to avoid by using a multi-fidelity approach. {{< cite "Meliani2019-" >}} proposes such a methodology using a fully nested DoE, which means all lower fidelities are sampled whenever and where a higher fidelity is sampled.
 
 First, the expected variance reduction of sampling a level in a nested fashion is given:
 

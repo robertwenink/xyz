@@ -17,7 +17,7 @@ bibFile: "library-bib.json"
 ---
 
 # Kriging
-Kriging, also known as a form of Gaussian Process Regression {{< cite "Rasmussen2006" >}}, is a particularly popular surrogate modelling technique due to two reasons. First, Kriging provides the best linear unbiased prediction (BLUP) when the assumption of Gaussian correlations between data samples holds {{< cite "Sacks1989" >}}. Second, Kriging provides an estimation of the mean squared error corresponding to that prediction {{< cite "Forrester2008" >}}. 
+Kriging, also known as a form of Gaussian Process Regression {{< cite "Rasmussen2006" >}}, is a particularly popular surrogate modelling technique due to two reasons. First, Kriging provides the best linear unbiased prediction (BLUP) when the assumption of Gaussian correlations between data samples holds {{< cite "Sacks1989" >}}. Second, Kriging provides an estimation of the mean squared error corresponding to that prediction {{< cite "Forrester2008" >}}. Kriging and Gaussian Process Regression are the most popular surrogate models for use in Bayesian optimisation {{< cite "Palar2019" >}}.
 
 Kriging earns its name from {{< cite "Krige1951;Krige1952-" >}}, who used a precursor method to estimate gold concentrations based on only a few boreholes. It was further mathematically developed by {{< cite "Matheron1962-" >}} and has been popularised for use outside the field of geostatistics by {{< cite "Sacks1989-" >}}. {{< cite "Jones2001-" >}} and {{< cite "Forrester2008-" >}} provide a gentle and intuitive introduction to (Ordinary) Kriging, which will be used as the main reference material here. 
 
@@ -74,7 +74,7 @@ The hat indicates an estimated quantity. Substituting these expression back into
 -\frac{n}{2} \ln \left(\widehat{\sigma}^{2}\right)-\frac{1}{2} \ln (|\boldsymbol{R}|) 
 \end{equation}
 
-With this being a function of only $\boldsymbol{R}$, we maximize this expression to retrieve the unknown hyperparameters $\Theta$ and $p$ for each dimension. This is a global optimisation problem in itself, but with much cheaper function evaluations. The tuning process is discussed [later](#hyperparameter-tuning).
+With this being a function of only $\boldsymbol{R}$, we maximize this expression to retrieve the unknown hyperparameters $\Theta$ and $p$ for each dimension. This is a global optimisation problem in itself, but with much cheaper function evaluations. The tuning process is discussed [later](#hyperparameter-tuning) in this post.
 
 We have now 'trained' the Kriging model using our data. Suppose we want to predict $y^* $at location $x^*$, adding their correlation to $\boldsymbol{R}$, then:
 
@@ -104,15 +104,17 @@ s^{2}\left(\boldsymbol{x}^{*}\right)=\widehat{\sigma}^{2}\left[1-\boldsymbol{r}^
 
 The last term can be regarded as a very small correction due to uncertainty in the value of $\mu$ {{< cite "Jones2001" >}} and is not found when following the non-Gaussian derivation given here. This term is generally omitted.
 
-Note that if we calculate Eq. (11) at a sampled point $x^* = x_i$, then $r$ is a column of $R$ and thus $\boldsymbol{R}^{-1} \boldsymbol{r}$ is the $\textit{i}$th unit vector such that $\boldsymbol{r}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = r_i = 1$ (correlation with self is 1) and $\boldsymbol{1}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = 1$. Consequently, the prediction variance equates to 0 at sampled locations and thus Eq. (10) is an interpolating formulation.
+Note that if we calculate $\cref{eqn:kriging_variance}{11}$ at a sampled point $x^* = x_i$, then $r$ is a column of $R$ and thus $\boldsymbol{R}^{-1} \boldsymbol{r}$ is the $\textit{i}$th unit vector such that $\boldsymbol{r}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = r_i = 1$ (correlation with self is 1) and $\boldsymbol{1}^{\prime} \boldsymbol{R}^{-1} \boldsymbol{r} = 1$. Consequently, the prediction variance equates to 0 at sampled locations and thus $\cref{eqn:kriging_prediction}{10}$ is an interpolating formulation.
 
 ## Including and handling noise
-In deterministic numerical experiments, contrary to physical experiments, we are involved with errors that are of a repeatable nature. When we vary the input during the experiment we can observe fluctuating errors in the output that *appears to be* noise. {{< cite "Forrester2006noisy-" >}} determines three reasons that are the source of this type of noise:
+In contrast to Gaussian Process Regression, Kriging in principle is an interpolating formulation, which causes problems in the presence of noisy data. To solve this, {{< cite "Forrester2006noisy-" >}} show how to introduce regression terms to the Kriging formulation in coherence with the EGO method through a process called re-interpolation. However, lets first discuss the sources of noise. 
+
+In deterministic numerical experiments (based on simulations that always retrieve the same answer), contrary to physical experiments, we are involved with errors that are of a repeatable nature. When we vary the input during the experiment we can observe fluctuating errors in the output that *appears to be* noise. {{< cite "Forrester2006noisy-" >}} determines three reasons that are the source of this type of noise:
 - discretisation errors
 - incomplete convergence
 - inaccurate application of boundary conditions
 
-Machine-precision round-off errors are of a lesser impact. Similar to {{< cite "Forrester2006noisy-" >}}, the last reason is of no concern to us. 
+Machine-precision round-off errors are of a lesser impact. Similar to {{< cite "Forrester2006noisy-" >}}, the last reason is normally not of a concern (assume the simulation tool and its setup is correct). 
 
 Discretisation errors are numerical artefacts that are the result of the fact that we need to solve our governing equations on a discretized grid or mesh instead of being able to use a continuous analytic solution. For example, the volume of fluid (VoF) and cut-cell method of the CFD solver we use might produce local pressure peaks {{< cite "Kleefsman2005;Fekken2004" >}}.
 
@@ -143,16 +145,14 @@ Therefore, to accommodate this apparent noise we adapt the correlation matrix su
 In the second paragraph of [the Ordinary Kriging derivation](#derivation-and-definition-of-ordinary-kriging) we chose to use a constant mean in the formulation of our stochastic process $\boldsymbol{Y}$. Although the linear system of Ordinary Kriging is the best linear unbiased predictor {{< cite "Sacks1989" >}}, we can additionally replace the constant mean $\widehat{\mu}$ with a polynomial such that $\boldsymbol{Y}(x) = \mu(x) + \mathcal{N}(0,\sigma^2)$ where $\mu(x) = x^{\prime}\boldsymbol{w}$. The weights $w$ are fitted by means of the generalised least-squares method. This more general approach is called Universal Kriging and was already used in the original derivations of {{< cite "Sacks1989-" >}}. {{< cite "Korondi2021-" >}} gives a clear mathematical description. 
 <!-- %In a full Bayesian setting it is equivalent to taking a prior on the mean $\widehat{\mu}$ {{< cite "Rasmussen2006" >}}. -->
 
-The benefits of Universal Kriging over Ordinary Kriging are clearly observed when no correlating samples are near, in which case the response surface converges back to the Kriging mean $\widehat{\mu}$. For Ordinary Kriging, the response surface then converges to the 'naïve' constant mean, whereas with Universal Kriging it converges to another trend model which in this case is a GLS model. As a result, the resulting response surface will be smoother and more stable. 
-
-Since the Kriging extrapolation method as proposed in this thesis is mainly dependent on proper noise estimates at sampled locations and not directly on the response surface estimates, in principle using either Ordinary- or Universal Kriging would suffice. However, since the Universal Kriging implementation of {{< cite "SMT2019-" >}} provides a more stable and reliable solution than the own Ordinary Kriging implementation provided, Universal Kriging will be used throughout this thesis.
+The benefits of Universal Kriging over Ordinary Kriging are clearly observed when no correlating samples are near, in which case the response surface converges back to the Kriging mean $\widehat{\mu}$. For Ordinary Kriging, the response surface then converges to the 'naïve' constant mean, whereas with Universal Kriging it converges to another trend model which usually is a Generalised Least Squares (GLS) model. As a result, the resulting response surface will be smoother and more stable. There are quite some Universal Kriging or GPR implementations available. I have used and contributed to that of {{< cite "SMT2019-" >}} ([github](https://github.com/SMTorg/smt)).
 
 ## Hyperparameter tuning
-To obtain a correctly functioning and optimal Kriging correlation function and response surface, it is essential to well-tune the involved hyperparameters using (some form of) the concentrated log-likelihood function Eq. (7). If we are [regressing noise](#including-and-handling-noise), we need to simultaneously tune a parameter $\lambda$, where $\lambda$ is a function of $\sigma$. If additionally Universal Kriging is used, the results of the Generalised Least Squares solution are to be included in the Kriging mean and correlation function, as {{< cite "Korondi2021-" >}} clearly describes. 
+To obtain a correctly functioning and optimal Kriging correlation function and response surface, it is essential to well-tune the involved hyperparameters using (some form of) the concentrated log-likelihood function $\cref{eqn:loglikelihood}{7}$. If we are [regressing noise](#including-and-handling-noise), we need to simultaneously tune a parameter $\lambda$, where $\lambda$ is a function of $\sigma$. If additionally Universal Kriging is used, the results of the Generalised Least Squares solution are to be included in the Kriging mean and correlation function, as {{< cite "Korondi2021-" >}} clearly describes. 
 
 The matrix inversion involved with solving the log-likelihood function many times during the hyperparameter optimisation process makes this process the main performance bottleneck for Kriging in either high dimensional input or large sample sizes. As a result, much research can be found on improving upon this aspect of Kriging. In our own implementation of Ordinary Kriging, a multi-start hill-climbing procedure had been used in combination with a genetic algorithm. However, since switching to the Universal Kriging solution of {{< cite "SMT2019" >}}, their much more refined routines are used.
 
-Lastly, in [dynamic sampling optimisation](/posts/mfEGO/) routines {{< cite "Toal2008-" >}} states that the hyperparameters should be re-tuned each or at least every other model update. Failing to do so could drastically deteriorate the performance of the model. Therefore, in this thesis, we re-tune the hyperparameters during each model update.
+Lastly, in [dynamic sampling optimisation](/posts/mfEGO/) routines {{< cite "Toal2008-" >}} states that the hyperparameters should be re-tuned each or at least every other model update. Failing to do so could drastically deteriorate the performance of the model. Therefore, it is best to re-tune the hyperparameters during each model update.
 
 # Bibliography
 {{< bibliography cited >}}

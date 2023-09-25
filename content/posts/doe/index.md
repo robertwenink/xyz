@@ -6,7 +6,7 @@ lastmod: 2023-09-18T17:41:23+02:00
 draft: false
 description: ""
 
-tags: [DoE, sampling, ]
+tags: [DoE, sampling]
 categories: [surrogate modelling]
 
 featuredImage: ""
@@ -32,11 +32,9 @@ In line 6 of the algorithm we multiply the distance by a factor of two. This is 
 {{< image src="example_doe_2d_2.png" alt="Nested DoE example" caption="Example of an iteratively optimised LHS experimental design (n = 20) with greedy maximin subset selection ($n_{subset} = 5$) according to Algorithm 1." width="80%" id="example_doe" linked=false >}}
 
 ## Size of the initial DoE
-The size of the initial Design of Experiments is of large importance to the accuracy of the initial surrogate model and the cost of (initial) sampling. Too many samples may turn out to be overly costly. On the other hand, too few samples provide us with an inaccurate initial surrogate model, causing a less effective optimisation stage. According to e.g. {{< cite "Toal2015;Forrester2008-" >}}, $N = 10 \cdot d$ is an effective rule of thumb, which consequently will be used throughout this thesis. 
+The size of the initial Design of Experiments is of large importance to the accuracy of the initial surrogate model and the cost of (initial) sampling. Too many samples may turn out to be overly costly. On the other hand, too few samples provide us with an inaccurate initial surrogate model, causing a less effective optimisation stage. According to e.g. {{< cite "Toal2015;Forrester2008-" >}}, $N = 10 \cdot d$ is an effective rule of thumb. 
 
 Furthermore, {{< cite "Picheny2013-" >}} states that the size of the initial DoE in noisy optimisation is not critical to the performance of that optimisation, meaning that the effect of having more initial samples is counterbalanced by having to do fewer sequential sampling steps and vice versa. 
-
-Since we will be able to make a fair comparison between our proposed method and another multi-fidelity method when the same DoE is used, the size of the initial DoE will not be further considered during this thesis.
 
 # Bibliography
 {{< bibliography cited >}}

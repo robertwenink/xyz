@@ -19,14 +19,12 @@ bibFile: "library-bib.json"
 
 
 # Multi-fidelity Kriging
-The word 'fidelity' can be interpreted as the closeness of a simulation method to the truth. Simulations of a lower fidelity can be obtained by reducing the number of mesh elements, using simpler governing equations, or by letting simulations only partially converge {{< cite "Palar2019" >}}. In general, a higher fidelity is more accurate but (much) more expensive than a lower fidelity solution. A multi-fidelity method tries to balance these different costs and accuracies to obtain a result that is more accurate and/or cheaper to obtain than a solution using only the highest fidelity. In the context of the EGO algorithm, it is said we can explore and exploit the objective function using the low- and high-fidelity levels respectively.
+The word 'fidelity' can be interpreted as the closeness of a simulation method to the truth. Simulations of a lower fidelity can for instance be obtained by reducing the number of mesh elements, using simpler governing equations, or by letting simulations only partially converge {{< cite "Palar2019" >}}. 
 
-Strictly speaking, in this thesis we will adopt a 'multi-level' approach since we will use the same solver at different levels of mesh coarseness. However, the methods provided here could be used by combining different fidelities or sources of information, as long as the main assumption equally holds. Therefore we justify the use of the term 'multi-fidelity', which is semantically often much clearer. 
-
-Throughout this report, we use three fidelities when considering the proposed method, which is the minimum amount required to observe grid convergence. We often refer to the 'two lower fidelities', alternatively called the low and medium fidelity, which are used to predict the 'high fidelity' truth.
+In general, a higher fidelity is more accurate but (much) more expensive than a lower fidelity solution. A multi-fidelity method tries to balance these different costs and accuracies to obtain a result that is more accurate and/or cheaper to obtain than a solution using only the highest fidelity. In the context of the [MF-EGO](/posts/mfego/) algorithm, it is said we can explore and exploit the objective function using the low- and high-fidelity levels respectively.
 
 ## Definition
-We could describe the relation between two constitutive Kriging levels in a simplified form as {{< cite "Forrester2007-" >}}:
+We could describe the relation between two constitutive Kriging levels in a simplified form as {{< cite "Forrester2007" >}}:
 
 \begin{equation}
 Z_{\mathrm{e}}(\boldsymbol{x})=\rho Z_{\mathrm{c}}(\boldsymbol{x})+Z_{\mathrm{d}}(\boldsymbol{x})
@@ -58,7 +56,7 @@ The implicit presumption of multi-fidelity Kriging is that the difference model 
 be converted to cheap evaluations, $0.1 < f_r < 0.8$. 
 - There should always be slightly more cheap data points than expensive with the inequality, $f_r > \frac{1.75}{1+\frac{1}{C_r}}$, giving a conservative bound for this condition
 
-Here $f_r$ denotes the fraction of the number of expensive evaluations over the number of cheap evaluations and similarly, $C_r$ denotes the ratio of simulation costs. Although these criteria are not all directly used in this thesis, we believe they provide some intuition to the practical use of multi-fidelity Kriging.
+Here $f_r$ denotes the fraction of the number of expensive evaluations over the number of cheap evaluations and similarly, $C_r$ denotes the ratio of simulation costs. Although these criteria might not always be accurate, they at least provide some intuition to the practical use of multi-fidelity Kriging.
 
 # Bibliography
 {{< bibliography cited >}}
