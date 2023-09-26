@@ -2,7 +2,6 @@
 title: "Design of Experiments"
 subtitle: ""
 date: 2023-09-18T17:41:23+02:00
-lastmod: 2023-09-18T17:41:23+02:00
 draft: false
 description: ""
 

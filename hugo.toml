@@ -11,6 +11,11 @@ enableEmoji = true
 # default amount of posts in each pages
 paginate = 12
 
+enableGitInfo = true
+[frontmatter]
+  lastmod = ['lastmod', ':fileModTime', ':default']
+  # lastmod = [':git', 'lastmod', 'modified', 'date', 'publishdate', 'pubdate', 'published']
+
 [author]
   name = "Robert Wenink"
   link  = "https://robertwenink.xyz/"

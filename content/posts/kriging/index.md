@@ -2,7 +2,6 @@
 title: "Kriging (Gaussian Process Regression)"
 subtitle: ""
 date: 2023-09-14T15:52:50+02:00
-lastmod: 2023-09-14T15:52:50+02:00
 draft: false
 description: ""
 

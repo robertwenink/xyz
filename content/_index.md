@@ -2,7 +2,6 @@
 title: "Robert Wenink - Maritime Engineering & Computer Science"
 subtitle: ""
 date: 2023-08-01T17:37:43+02:00
-lastmod: 2023-08-01T17:37:43+02:00
 draft: false
 description: ""
 
