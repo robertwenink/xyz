@@ -44,7 +44,7 @@ featuredImagePreview: ""
 
   - To read more about me, my skills and curriculum vitae, see the [About](/about/) section.
   - A project portfolio is found under [Projects](/projects/).
-  - A (personal) tech blog is maintained in [Posts](/posts/).
+  - A tech blog is maintained in [Posts](/posts/).
   </div>
 
   <div id="hire-me">
