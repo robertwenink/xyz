@@ -7,7 +7,7 @@ description: ""
 
 tags: []
 categories: [Surrogate modelling]
-series: "Master`s thesis"
+series: "Master's thesis"
 
 featuredImage: ""
 featuredImagePreview: ""
