@@ -83,6 +83,9 @@
     #pf_home {
         max-width: 100%;
     }
+    .wrap-around ul {
+        padding-left: 2.5rem !important;
+    }
 }
 
 // #hire-me{
@@ -92,6 +95,7 @@
     #contact-me{
         white-space:nowrap; 
         float: right;
+        font-size: $global-font-size;
     }
 }
 

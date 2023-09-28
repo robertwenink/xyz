@@ -12,40 +12,6 @@ featuredImage: ""
 featuredImagePreview: ""
 ---
 
-<!-- <script>
-function adjustClearProperty() {
-  var ul = document.querySelector("ul");
-  var image = document.querySelector(".wrap-around img");
-  var text = document.querySelector("#fronttext");
-
-  var ulHeight = ul.offsetHeight;
-  var imageHeight = image.offsetHeight;  
-  var textHeight = text.offsetHeight;  
-  var companyHeight = document.querySelector("#centered_company");
-  var companyHeight = companyHeight === null ? 0 : companyHeight.offsetHeight;
-  
-  var diff = imageHeight - textHeight - companyHeight;
-  console.log(ulHeight, diff)
-
-  if (diff < ulHeight * 1 / 2) {
-    ul.style.clear = "left";
-  } else if (diff > ulHeight) {
-    ul.style.clear = "none";
-  } else {
-    ul.style.clear = "none";
-  }
-
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  adjustClearProperty(); // Initial adjustment on load
-
-  window.addEventListener("resize", function() {
-    adjustClearProperty(); // Adjust on window resize
-  });
-});
-</script> -->
-
 # About me and this website
 
 <div class="wrap-around">
@@ -72,22 +38,22 @@ document.addEventListener("DOMContentLoaded", function() {
   You can hire me for projects related to process automation or code optimisation.
   </div>
 
-</div>
-<!-- padding om de ul binnen de div te houden -->
-<div id="ul" style="padding:1px;">
+  </div>
+  <!-- padding om de ul binnen de div te houden -->
+  <div id="ul" style="padding:1px;">
 
-- To read more about me, my skills and curriculum vitae, see the [About](/about/) section.
-- A project portfolio is found under [Projects](/projects/).
-- A (personal) tech blog is maintained in [Posts](/posts/).
-</div>
+  - To read more about me, my skills and curriculum vitae, see the [About](/about/) section.
+  - A project portfolio is found under [Projects](/projects/).
+  - A (personal) tech blog is maintained in [Posts](/posts/).
+  </div>
 
-<div id="hire-me">
+  <div id="hire-me">
 
-Want to hire me, or have any suggestions?
+  Want to hire me, or have any suggestions?
 
-<span id="contact-me">Contact me: <robertwenink@gmail.com>.</span>
+  <span id="contact-me">Contact me: <robertwenink@gmail.com>.</span>
+  </div>
 
-</div>
 </div>
 
 # Projects
