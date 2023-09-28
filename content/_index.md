@@ -12,7 +12,7 @@ featuredImage: ""
 featuredImagePreview: ""
 ---
 
-<script>
+<!-- <script>
 function adjustClearProperty() {
   var ul = document.querySelector("ul");
   var image = document.querySelector(".wrap-around img");
@@ -44,33 +44,33 @@ document.addEventListener("DOMContentLoaded", function() {
     adjustClearProperty(); // Adjust on window resize
   });
 });
-</script>
+</script> -->
 
 # About me and this website
 
-<div id="text-before-image">
-My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both. 
-</div>
 <div class="wrap-around">
-{{< image src="images/pf.tif" width="45%" alt="Me on top of a mountain/hill in the black forest, Germany."  linked=false >}}
+  <div id="my-name-is-before">
+  
+  My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both.
+  </div>
+  <div id="hire-text-before">
+
+  You can hire me for projects related to process automation or code optimisation.
+  </div>
+
+{{< image src="images/pf.tif" id="pf_home" alt="Me on top of a mountain/hill in the black forest, Germany."  linked=false >}}
 
 <div id="fronttext">
-<div id="text-after-image">
-My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both.
-</div>
-<!-- 
-<span style="white-space:nowrap;">In 2022, I started freelancing</span> using a most self-explanatory company name:
-</br>
-<div id="centered_company">
-<div class = "flex-center">
-<i>Robert Wenink -</i>
-<i>&nbsp;Maritime Engineering&nbsp;</i>
-<i>& Computer Science.</i> 
-</div></div> -->
 
-<!-- Hi, I'm Robert, an engineer using computer science for optimized maritime engineering. -->
+  <div id="my-name-is-after">
 
-<span id="hire_text">You can hire me for projects related to process automation or code optimisation.</span>
+  My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both.
+  </div>
+
+  <div id="hire-text-after">
+
+  You can hire me for projects related to process automation or code optimisation.
+  </div>
 
 </div>
 <!-- padding om de ul binnen de div te houden -->
@@ -79,9 +79,13 @@ My name is Robert Wenink. I specialise in the fusion between the fields of Compu
 - To read more about me, my skills and curriculum vitae, see the [About](/about/) section.
 - A project portfolio is found under [Projects](/projects/).
 - A (personal) tech blog is maintained in [Posts](/posts/).
+</div>
 
-Want to hire me, or have any suggestions? 
-<span style="white-space:nowrap; float: right;">Contact me: <robertwenink@gmail.com>. </span>
+<div id="hire-me">
+
+Want to hire me, or have any suggestions?
+
+<span id="contact-me">Contact me: <robertwenink@gmail.com>.</span>
 
 </div>
 </div>

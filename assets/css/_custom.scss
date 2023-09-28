@@ -51,17 +51,47 @@
             width: 100% !important;
         }
     }
-    #text-before-image {
-        display: block;
-        margin-bottom: $global-line-height;
-    }
+    // tot 740px breed gaat het goed \ past perfect
+}
 
-    #text-after-image {
+#my-name-is-before, #hire-text-before{
+    display: none;
+}
+@media only screen and (max-width: 630px) {
+    #my-name-is-after{
         display: none;
     }
+    #my-name-is-before{
+        display: block;
+    }
+}
 
-    #hire_text {
-        margin-top: 0;
+@media only screen and (max-width: 590px) {
+    #hire-text-after{
+        display: none;
+    }
+    #hire-text-before{
+        display: block;
+    }
+}
+
+#pf_home {
+    max-width: 45%;
+}
+
+@media only screen and (max-width: 450px) {
+    #pf_home {
+        max-width: 100%;
+    }
+}
+
+// #hire-me{
+//     display: block;
+// }
+@media only screen and (max-width: 478px) {
+    #contact-me{
+        white-space:nowrap; 
+        float: right;
     }
 }
 
@@ -79,5 +109,4 @@
         }
     
       }
-
   }
