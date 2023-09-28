@@ -10,6 +10,7 @@
     overflow: hidden;
 }
 
+
 .wrap-around {
     display: inline-block;
     width: 100%;
@@ -25,6 +26,7 @@
     ul {
         overflow: auto;
         margin-top: 0 !important;
+        padding-left: 1.5rem !important;
     }
 
     #ul {
@@ -36,12 +38,30 @@
     }
 
 }
-
+#text-before-image {
+    display: none;
+}
+#hire_text {
+    margin-top: $global-line-height;
+    display: block;
+}
 @media only screen and (max-width: 680px) {
     #content {
         #about_image {
             width: 100% !important;
         }
+    }
+    #text-before-image {
+        display: block;
+        margin-bottom: $global-line-height;
+    }
+
+    #text-after-image {
+        display: none;
+    }
+
+    #hire_text {
+        margin-top: 0;
     }
 }
 
