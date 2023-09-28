@@ -86,6 +86,9 @@
     .wrap-around ul {
         padding-left: 2.5rem !important;
     }
+    .wrap-around img {
+        margin-bottom: $global-line-height;
+    }
 }
 
 // #hire-me{
@@ -95,7 +98,8 @@
     #contact-me{
         white-space:nowrap; 
         float: right;
-        font-size: $global-font-size;
+        font-size: 1.1rem;
+
     }
 }
 
