@@ -23,9 +23,9 @@ featuredImagePreview: ""
 
   You can hire me for projects related to process automation or code optimisation.
   </div>
-
+<div id="img-container">
 {{< image src="images/pf.tif" id="pf_home" alt="Me on top of a mountain/hill in the black forest, Germany."  linked=false >}}
-
+</div>
 <div id="fronttext">
 
   <div id="my-name-is-after">
@@ -48,7 +48,6 @@ featuredImagePreview: ""
   </div>
 
   <div id="hire-me">
-
   Want to hire me, or have any suggestions?
 
   <span id="contact-me">Contact me: <robertwenink@gmail.com>.</span>

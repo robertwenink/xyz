@@ -38,13 +38,7 @@
     }
 
 }
-#text-before-image {
-    display: none;
-}
-#hire_text {
-    margin-top: $global-line-height;
-    display: block;
-}
+
 @media only screen and (max-width: 680px) {
     #content {
         #about_image {
@@ -57,7 +51,7 @@
 #my-name-is-before, #hire-text-before{
     display: none;
 }
-@media only screen and (max-width: 630px) {
+@media only screen and (max-width: 640px) {
     #my-name-is-after{
         display: none;
     }
@@ -76,30 +70,32 @@
 }
 
 #pf_home {
-    max-width: 45%;
+    max-width: 47.5%;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 480px) {
+    #hire-text-after{
+        display: block;
+        margin-top: 0.5rem;
+    }
+    #hire-text-before{
+        display: none;
+    }
+    #img-container {
+        height: 90vmin;
+        overflow: hidden;
+    }
     #pf_home {
         max-width: 100%;
+        width: 100%;
+        margin: -20vmin 0 0.5rem 0;
     }
     .wrap-around ul {
         padding-left: 2.5rem !important;
+        // margin-top: 0.5rem !important;
     }
     .wrap-around img {
         margin-bottom: $global-line-height;
-    }
-}
-
-// #hire-me{
-//     display: block;
-// }
-@media only screen and (max-width: 478px) {
-    #contact-me{
-        white-space:nowrap; 
-        float: right;
-        font-size: 1.1rem;
-
     }
 }
 
