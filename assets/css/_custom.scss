@@ -45,13 +45,18 @@
             width: 100% !important;
         }
     }
-    // tot 740px breed gaat het goed \ past perfect
 }
 
+
+
+// FRONTPAGE STYLING
 #my-name-is-before, #hire-text-before{
     display: none;
 }
-@media only screen and (max-width: 640px) {
+#my-name-is-after p {
+    margin-top: 0 !important;
+}
+@media only screen and (max-width: 704px) {
     #my-name-is-after{
         display: none;
     }
@@ -76,7 +81,6 @@
 @media only screen and (max-width: 480px) {
     #hire-text-after{
         display: block;
-        margin-top: 0.5rem;
     }
     #hire-text-before{
         display: none;
@@ -88,7 +92,7 @@
     #pf_home {
         max-width: 100%;
         width: 100%;
-        margin: -20vmin 0 0.5rem 0;
+        margin: -20vmin 0 0rem 0;
     }
     .wrap-around ul {
         padding-left: 2.5rem !important;
