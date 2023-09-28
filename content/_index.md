@@ -1,5 +1,5 @@
 ---
-title: "Robert Wenink - Maritime Engineering & Computer Science"
+title: "Home" # Robert Wenink - Maritime Engineering & Computer Science
 subtitle: ""
 date: 2023-08-01T17:37:43+02:00
 draft: false
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div id="fronttext">
 
-<!-- My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both.  -->
+My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both. 
 <!-- 
 <span style="white-space:nowrap;">In 2022, I started freelancing</span> using a most self-explanatory company name:
 </br>
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <i>& Computer Science.</i> 
 </div></div> -->
 
-Hi, I'm Robert, an engineer using computer science for optimized maritime engineering.
+<!-- Hi, I'm Robert, an engineer using computer science for optimized maritime engineering. -->
 
 You can hire me for projects related to process automation or code optimisation.
 

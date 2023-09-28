@@ -7,6 +7,7 @@ description: ""
 
 tags: [CFD, Gaussian Process Regression, GPR, Kriging, surrogate modelling]
 categories: [Surrogate modelling]
+series: "Master`s thesis"
 
 featuredImage: ""
 featuredImagePreview: ""

@@ -6,7 +6,8 @@ draft: false
 description: ""
 
 tags: []
-categories: []
+categories: [Surrogate modelling]
+series: "Master`s thesis"
 
 featuredImage: ""
 featuredImagePreview: ""

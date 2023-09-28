@@ -6,7 +6,8 @@ draft: false
 description: ""
 
 tags: []
-categories: []
+categories: [Surrogate modelling]
+series: "Master`s thesis"
 
 featuredImage: ""
 featuredImagePreview: ""
@@ -15,7 +16,11 @@ bibFile: "library-bib.json"
 ---
 
 <!--more-->
+In this thesis, we focus on the linear auto-regressive formulation of {{< cite "Gratiet2014-" >}}\footnote{Why the method of {{< cite "Perdikaris2017-" >}} is not used and the method of {{< cite "Gratiet2014-" >}} is the only multi-fidelity Kriging surrogate used as a reference is discussed in-depth in \cref{discussion:onlyGratiet}.} in the optimisation context of the EGO adaptive sampling algorithm, and are interested in the potential of this combination to reduce the costs of SBGO. {{< cite "Meliani2019;Korondi2021-" >}} use the recursive formulation of {{< cite "Gratiet2014-" >}} to introduce a multi-fidelity approach to the EGO algorithm and formulate level-selection criteria that balance the expected reduction of the prediction variance with the costs of sampling a given level. The multi-fidelity SBGO method of {{< cite "Meliani2019-" >}} will act as a reference to the method proposed in this thesis since both methods use a so-called nested Design of Experiments (DoE), a sampling strategy that provides the most complete information on the relation between the fidelities {{< cite "Kennedy2000" >}}.
 
+{{< cite "Jones2001-" >}} discusses the relation of Kriging with respect to other surrogate modelling methods and explores possible improvements to EGO and the Expected Improvement criterion. As one of the most promising directions for further work, he hinted towards multi-fidelity simulation: using expensive high-precision simulations together with simulations of a lower precision but a much lower cost. This enables us to respectively balance exploitation and exploration of the search space and thereby cut costs while improving the quality of the surrogate.
+
+Since then, Multi-Fidelity Kriging has received significant research effort, see for instance the review papers of {{< cite "Viana2014;Godino2016;Peherstorfer2018-" >}}. {{< cite "Kennedy2000-" >}} mathematically formulated the fundamentals, while {{< cite "Forrester2007-" >}} provides a more transparent overview. {{< cite "Gratiet2014-" >}} show that the model of {{< cite "Kennedy2000-" >}} can be equivalently but more cheaply formulated as recursively nested independent Kriging problems, one for each fidelity level. {{< cite "Perdikaris2017-" >}} improve upon this work by generalising the linear autoregressive\footnote{Meaning that the relations between fidelity levels and the regression parameters are directly solved in the linear system} formulation of {{< cite "Gratiet2014-" >}} to better accommodate non-linear-relations. 
 
 # Multi-fidelity Kriging
 The word 'fidelity' can be interpreted as the closeness of a simulation method to the truth. Simulations of a lower fidelity can for instance be obtained by reducing the number of mesh elements, using simpler governing equations, or by letting simulations only partially converge {{< cite "Palar2019" >}}. 

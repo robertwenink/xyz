@@ -2,7 +2,7 @@
 title: "Testproject"
 subtitle: ""
 date: 2023-08-03T13:40:50+02:00
-draft: false
+draft: true
 
 tags: ["testtag"]
 categories: ["projects"]
@@ -23,3 +23,13 @@ f(x) = \int_{-\infty}^\infty
     \hat{f}(\xi)\,e^{2 \pi i \xi x}
     \,d\xi
 \end{equation}
+
+<div class="details admonition abstract open">
+                    <div class="details-summary admonition-title">
+                        <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Series<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+                    </div>
+                    <div class="details-content">
+                        <div class="admonition-content">
+    lalalalal
+                    </div>
+                </div>

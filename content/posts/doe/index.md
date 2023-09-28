@@ -6,7 +6,8 @@ draft: false
 description: ""
 
 tags: [DoE, sampling]
-categories: [surrogate modelling]
+categories: [Surrogate modelling]
+series: "Master`s thesis"
 
 featuredImage: ""
 featuredImagePreview: "example_doe_2d_2.png"
