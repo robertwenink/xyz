@@ -82,11 +82,11 @@
     // set the text above or below
     #hire-text-after{
         display: none;
-        display: block;
+        // display: block;
     }
     #hire-text-before{
         display: block;
-        display: none;
+        // display: none;
     }
     #img-container {
         height: 90vmin;
@@ -101,9 +101,6 @@
         // padding-left: 2.5rem !important;
         padding-left: 1.5rem !important;
         // margin-top: 0.5rem !important;
-    }
-    .wrap-around img {
-        margin-bottom: $global-line-height;
     }
 }
 
@@ -122,3 +119,12 @@
     
       }
   }
+
+
+
+.hugo-cite-group
+  .hugo-cite-citation {
+    [theme=dark] & {
+        background-color: $search-background-color-dark;
+    }
+}

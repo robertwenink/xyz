@@ -16,7 +16,7 @@ bibFile: "library-bib.json"
 ---
 
 <!--more-->
-# (Multi-fidelity) Efficient Global optimisationT
+# (Multi-fidelity) Efficient Global optimisation
 he Efficient Global optimisation (EGO) algorithm {{< cite "Jones1998" >}} is a form of Bayesian optimisation. The EGO algorithm adaptively samples additional points based on the Expected Improvement criterion {{< cite "Jones1998" >}}, which is formulated using the estimated mean squared error that Kriging provides. Using this criterion, EGO provably converges to the global optimum in an optimisation process {{< cite "Locatelli1997" >}}, although it may exhaustively sample around local optima {{< cite "Forrester2007" >}}. An overview of the algorithmic procedure is given by [Algorithm 1](#algorithm).
 
 {{< image src="algorithm.png" alt="EGO algorithm" id="algorithm" width="100%" linked=false >}}

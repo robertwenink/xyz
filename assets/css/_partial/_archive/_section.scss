@@ -9,6 +9,9 @@
       font-weight: bold;
       margin: 0 -0.75rem 0 0;
       padding: .25rem 1.8rem;
+      [theme=dark] & {
+        background: darken($code-background-color-dark, 6%);
+      }
     }
   
     .admonition-content {
@@ -32,10 +35,21 @@
         &.#{$type} {
             background-color: $background-color;
             border-left-color: $color;
+            
+            // from _toc.scss
+            [theme=dark] & {
+                border-left-color: $global-border-color-dark;
+              }
 
             .admonition-title {
             border-bottom-color: $background-color;
             background-color: opacify($background-color, 0.15);
+            }
+
+            .admonition-title:hover{
+                [theme=dark] & {
+                    color: $global-link-hover-color-dark;
+                  }
             }
 
             &.open .admonition-title {
@@ -70,22 +84,37 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: pre;
+
+  [theme=dark] & {
+    color: $global-font-color-dark;
+    background-color: $search-background-color-dark;
+    border: 1px solid $search-background-color-dark;
+  }
 }
 
 .button-16:hover:not(.button_active) {
   border-color: #dadce0;
   box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
   color: #202124;
+  [theme=dark] & {
+    color: $global-font-color-dark;
+    border-color: $global-font-color-dark;
+    }
 }
 
 .button-16:focus {
-  border-color: #4285f4;
+  border-color: $global-link-hover-color;
   outline: none;
+  [theme=dark] & {
+    border: 1px solid $global-link-hover-color;
+  }
 }
 
 .button_active{
-    border-color: #4285f4;
-    // outline: none;
+    border-color: $global-link-hover-color;
+    [theme=dark] & {
+        border: 1px solid $global-link-hover-color;
+    }
 }
 
 .tag-buttons {
