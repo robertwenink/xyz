@@ -11,6 +11,8 @@ categories: []
 featuredImage: ""
 featuredImagePreview: ""
 
+layout: "special"
+
 ---
 
 <!--more-->
