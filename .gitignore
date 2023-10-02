@@ -1,7 +1,8 @@
-themes/LoveIt/exampleSite
 .hugo/*
 !.hugo/version
 public
 *.xlsm
 *.xlsx
 time_tracking.xlsm
+*.pdf
+!resume.pdf
