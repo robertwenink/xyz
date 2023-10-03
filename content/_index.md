@@ -21,7 +21,7 @@ featuredImagePreview: ""
   </div>
   <div id="hire-text-before">
 
-  You can hire me for projects related to process automation or code optimisation.
+  You can hire me for general coding tasks or projects related to process automation.
   </div>
 <div id="img-container">
 {{< image src="images/pf.tif" id="pf_home" alt="Me on top of a mountain/hill in the black forest, Germany."  linked=false >}}
@@ -35,7 +35,7 @@ featuredImagePreview: ""
 
   <div id="hire-text-after">
 
-  You can hire me for projects related to process automation or code optimisation.
+  You can hire me for general coding tasks or projects related to process automation.
   </div>
 
   </div>
