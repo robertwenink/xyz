@@ -5,7 +5,7 @@ date: 2023-08-03T13:40:50+02:00
 draft: true
 
 tags: ["testtag"]
-categories: ["projects"]
+categories: []
 
 featuredImage: mandelbrot_background.png
 ---
@@ -30,6 +30,5 @@ f(x) = \int_{-\infty}^\infty
                     </div>
                     <div class="details-content">
                         <div class="admonition-content">
-    lalalalal
                     </div>
                 </div>
