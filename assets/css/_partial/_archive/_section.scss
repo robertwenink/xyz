@@ -13,7 +13,14 @@
         background: darken($code-background-color-dark, 6%);
       }
     }
-  
+    
+    i.icon {
+      color: #00b0ff;
+      [theme=dark] & {
+        color: $global-font-color-dark !important;
+      }
+    }
+    
     .admonition-content {
       padding: .5rem 0;
     }
