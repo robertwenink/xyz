@@ -22,17 +22,17 @@ bibFile: "library-EVA-bib.json"
 }
 </style>
 
-This chapter provides a brief overview of the Computational Fluid Dynamics (CFD) solver used in this work, which is dubbed EVA and developed by {{< cite "EVA_Eijk2022-" >}}. EVA is able to solve two-phase (in-)compressible fluid flows and uses consistent two-way fluid-structure interactions (FSI), where applying this to moving bodies together with a Volume-of-Fluid (VoF) cut-cell method on a staggered arrangement of variables is a novelty of EVA {{< cite "EVA_Eijk2022" >}}.
+This post provides a brief overview of the Computational Fluid Dynamics (CFD) solver during my [thesis](../../projects/thesis/), which is dubbed EVA and developed by {{< cite "EVA_Eijk2022-" >}}. EVA is able to solve two-phase (in-)compressible fluid flows and uses consistent two-way fluid-structure interactions (FSI), where applying this to moving bodies together with a Volume-of-Fluid (VoF) cut-cell method on a staggered arrangement of variables is a novelty of EVA {{< cite "EVA_Eijk2022" >}}.
 
-The goal of this chapter is to provide sufficient insight into the CFD solver used in this work, such that there is some understanding of the simulation process and the related challenges encountered in this thesis.
-This chapter is not meant to provide details on the level of complete reproducibility of the CFD code. A more detailed and complete description of EVA is given by {{< cite "EVA_Eijk2022-" >}}.
+The goal of this post is to provide sufficient insight into the CFD solver used in this work, such that there is some understanding of the simulation process and the related challenges encountered in this thesis.
+This post is not meant to provide details on the level of complete reproducibility of the CFD code. A more detailed and complete description of EVA is given by {{< cite "EVA_Eijk2022-" >}}.
 
 <!-- %
 %- novelty of Eva: EVA is consistent: mass en momentum fluxes are matched; zuzio, but then for moving bodies / FSI
 %- omdat huidige velocityveld exact resultaat geeft, blijft EVA consistent -> novelty?
 % -->
 
-This chapter will consider some core concepts of EVA in the following order:
+This post will consider some core concepts of EVA in the following order:
 
 - [Governing equations](#governing-equations).
 - [Cell-labelling, interface reconstruction, and cut-cell definition](#cell-labelling-interface-reconstruction-and-cut-cell-definition).
