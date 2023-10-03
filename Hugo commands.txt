@@ -16,10 +16,26 @@ hugo serve  --themesDir ../..
 Regex replace voor latex cites:
 regex zoekterm: 	\\citet\{([a-z]+[0-9]{4})\}
 					\\citet\{(.{5,50})\}
-					\\citep\{(.{5,50})\}
 					\\cite\{(.{5,50})\}
 vervang met:		{{< cite "$1-" >}}
-
+					\\citep\{(.{5,50})\}
+					{{< cite "$1" >}}
+					
 Dit vervangt nog niet de , met ;!
 daarvoor:
 ([a-z]+[0-9]{4}), -> $1;
+
+
+.bib naar json converteren op https://www.vertopal.com/en/convert/bib-bibtex-to-json-csljson
+
+
+alle equation references als:
+$\cref{label}{handmatig eqn nummer}$
+
+dus: 
+\\cref\{(.{5,50})\}   ->   $\cref{$1}{TODO}$
+
+style consistency: type Fig. 1 or Fig. 1.1
+equations still are Eq. (1.1)
+
+vervang ` met '

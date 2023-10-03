@@ -1,0 +1,137 @@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIX B : EVA brief method overview
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{EVA_Comminal2015,
+abstract = {We present a cellwise conservative unsplit (CCU) advection scheme for the volume of fluid method (VOF) in 2D. Contrary to other schemes based on explicit calculations of the flux balances, the CCU advection adopts a cellwise approach where the pre-images of the control volumes are traced backwards through the flow map. The donating regions of the fluxes are calculated via the streaklines of the grid intersections, represented as polygonal chains whose vertices are determined by backward tracing of particles injected in the flow at different times. High order accuracy is obtained from the fourth-order Runge-Kutta method, where intermediate velocities along pathlines are determined with quadratic temporal and bicubic spatial interpolations. The volumes of the donating regions are corrected in order to fulfill the discrete continuity of incompressible flows. Consequently, the calculation produces non-overlapping donating regions and pre-images with conforming edges to their neighbors, resulting in the conservativeness and the boundedness (liquid volume fraction inside the interval [0, 1]) of the CCU advection scheme. Finally, the update of the liquid volume fractions is computed from the intersections of the pre-image polygons with the reconstructed interfaces.The CCU scheme is tested on several benchmark tests for the VOF advection, together with the standard piecewise linear interface calculation (PLIC). The geometrical errors of the CCU compare favorably with other unsplit VOF-PLIC schemes. Finally, potential improvements of the VOF method with the use of more precise interface representation techniques and the future extension of the CCU scheme to 3D are discussed.},
+author = {Comminal, Rapha{\"{e}}l and Spangenberg, Jon and Hattel, Jesper Henri},
+doi = {10.1016/j.jcp.2014.12.003},
+issn = {10902716},
+journal = {Journal of Computational Physics},
+keywords = {Cellwise approach,Donating region,Pre-image backward tracing,Unsplit advection scheme,Volume conservation,Volume of fluid},
+pages = {582--608},
+publisher = {Elsevier Inc.},
+title = {{Cellwise conservative unsplit advection for the volume of fluid method}},
+url = {http://dx.doi.org/10.1016/j.jcp.2014.12.003},
+volume = {283},
+year = {2015}
+}
+
+@book{EVA_Hirsch2007,
+ author = {Hirsch, Charles},
+ publisher = {Elsevier},
+ title = {Numerical computation of internal and external flows: The fundamentals of computational fluid dynamics},
+ year = {2007},
+ pages = {625--637}
+}
+
+
+@article{EVA_Youngs1984,
+author = {Youngs, D L},
+journal = {Awre},
+number = {Technical Report 44/92/35},
+title = {{An interface tracking method for a 3D Eulerian Hydrodynamics code}},
+year = {1984}
+}
+
+@article{EVA_Eijk2022,
+abstract = {The numerical prediction of two-phase flows with an interface is challenging. The high-density ratio at the interface and inconsistency in the numerical scheme is part of the challenge. A lack of attention to the numerical implementation of these aspects can lead to non-physical results. The result becomes affected by momentum losses, diverging spurious interface velocities, free surface distortion, and even numerical instability. To prevent the non-physical results, Rudman (1998) introduced a numerical technique using a consistent flux-corrected transport algorithm for the momentum advection. Based on this technique, Zuzio et al. (2020) found a consistent mass-momentum transport (CMOM) scheme with an additional mass equation reducing the computational costs. In this article, the new addition of fluid-structure interaction is presented with a consistent numerical technique. The presented method is a combination of the CMOM scheme, a cut-cell method, and two-way coupling. The CMOM scheme is translated to the application for the method presented by van der Eijk and Wellens (2020) using a full geometric Volume of Fluid method on a fixed staggered Cartesian grid (EVA). EVA shows comparable results with Zuzio et al. (2020). Verification cases for fluid-structure interaction with EVA showed improved results concerning momentum conservation ; the consistent approach with CMOM is closer to 2D experimental results than for the non-consistent one. The merit of consistent modeling with and without fluid-structure interaction becomes especially apparent for two-phase flows with air and water involved.},
+author = {Eijk, Martin Van Der and Wellens, Peter},
+keywords = {CFD,Consistent modeling,Fluid-structure interaction,Interfacial flows,Two-phase flows,Volume of Fluid},
+title = {Two-phase free-surface flow interaction with moving bodies with a consistent, momentum preserving method},
+year = {2022},
+journal = {Journal of Computational Physics},
+publisher = {Elsevier}
+}
+
+@PHDTHESIS{EVA_Fekken,
+author = {Fekken, Geert},
+number = {2},
+pages = {103},
+title = {{Numerical Simulation of Free-Surface Flow with Moving Rigid Bodies}},
+volume = {6},
+year = {2004}
+}
+
+@misc{EVA_Marnix,
+author = {Bockstael, Marnix},
+title = {Interactive wave-structure impacts in aerated water},
+school = {Technical University Delft},
+year = {2021},
+Howpublished = {\url{http://resolver.tudelft.nl/uuid:330d9c14-9947-40b0-8fd9-818684da8d56}},
+note = {Last checked on 29/09/2022},
+}
+
+@PHDTHESIS{EVA_Wemmenhove,
+author = {Wemmenhove, Rik},
+isbn = {9789036734271},
+number = {May 2008},
+pages = {131},
+title = {{Numerical simulation of two-phase flow in offshore environments}},
+url = {http://dissertations.ub.rug.nl/faculties/science/2008/r.wemmenhove/?pLanguage=en{\&}pFullItemRecord=ON},
+year = {2008}
+}
+
+
+@article{EVA_Zuzio,
+abstract = {Many two-phase flows relevant to natural and industrial applications are characterized by high density ratios and high shears at the interface. These peculiarities make numerical simulations of such kind of flows still challenging. In particular, incompressible Level-Set/Volume-of-Fluid-based solvers are affected by the onset of diverging spurious velocities close to the interface. In this paper a new strategy, able to overcome these numerical instabilities, is described for staggered Cartesian grids. In order to achieve a consistent mass-momentum advection, a new auxiliary continuity equation is introduced and resolved along the momentum equations in the velocity control volumes. The mass fluxes are evaluated through the Volume-of-Fluid color function and directly used to calculate the momentum convective term. Several high-density test cases (the density ratio going from 103 to 106) are presented: the new algorithm shows significant improvements in stability and accuracy over the standard velocity based advection methods, together with a very low increase in computational time, estimated at 5{\%}÷10{\%}. Therefore, it is suitable to simulate more complex and realistic high density ratio two-phase flows, such as the breakup of a liquid jet in cross-flow here described.},
+author = {Zuzio, Davide and Orazzo, Annagrazia and Estival{\`{e}}zes, Jean Luc and Lagrange, Isabelle},
+doi = {10.1016/j.jcp.2020.109342},
+issn = {10902716},
+journal = {Journal of Computational Physics},
+keywords = {Coupled Level-Set Volume of Fluid,High density ratio,Mass-momentum consistency,Momentum conservation,Navier-Stokes,Two-phase flows},
+title = {{A new efficient momentum preserving Level-Set/VOF method for high density and momentum ratio incompressible two-phase flows}},
+volume = {410},
+year = {2020}
+}
+
+@article{EVA_Kleefsman,
+abstract = {In this paper, some aspects of water impact and green water loading are considered by numerically investigating a dambreak problem and water entry problems. The numerical method is based on the Navier-Stokes equations that describe the flow of an incompressible viscous fluid. The equations are discretised on a fixed Cartesian grid using the finite volume method. Even though very small cut cells can appear when moving an object through the fixed grid, the method is stable. The free surface is displaced using the Volume-of-Fluid method together with a local height function, resulting in a strictly mass conserving method. The choice of boundary conditions at the free surface appears to be crucial for the accuracy and robustness of the method. For validation, results of a dambreak simulation are shown that can be compared with measurements. A box has been placed in the flow, as a model for a container on the deck of an offshore floater on which forces are calculated. The water entry problem has been investigated by dropping wedges with different dead-rise angles, a cylinder and a cone into calm water with a prescribed velocity. The resulting free surface dynamics, with the sideways jets, has been compared with photographs of experiments. Also a comparison of slamming coefficients with theory and experimental results has been made. Finally, a drop test with a free falling wedge has been simulated. {\textcopyright} 2005 Elsevier Inc. All rights reserved.},
+author = {Kleefsman, K. M.T. and Fekken, G. and Veldman, A. E.P. and Iwanowski, B. and Buchner, B.},
+doi = {10.1016/j.jcp.2004.12.007},
+issn = {10902716},
+journal = {Journal of Computational Physics},
+keywords = {Cartesian grid,Free-surface flow,Moving body,Numerical simulation,Volume-of-Fluid,Wave loading},
+number = {1},
+pages = {363--393},
+title = {{A Volume-of-Fluid based simulation method for wave impact problems}},
+volume = {206},
+year = {2005}
+}
+
+@article{EVA_Duz,
+abstract = {In this paper the attention is focused on the effect of various VOF methods on efficient and accurate simulation of free surface water waves. For this purpose, we will compare several VOF methods in numerical simulations of propagating waves where strong nonlinear behavior is dominant in the flow. Comparisons and discussions will be provided to underline the significance of free surface modeling on the accuracy of wave propagation.},
+author = {D{\"{u}}z, B{\"{u}}lent and Borsboom, Mart J.A. and Veldman, Arthur E.P. and Wellens, Peter R. and Huijsmans, Rene H.M.},
+journal = {9th International Conference on Computational Fluid Dynamics, ICCFD 2016 - Proceedings},
+keywords = {COSMIC schemes,Free surface modeling,MACHO,PLIC-VOF techniques,Spurious wave damping,Wave propagation},
+title = {{Efficient and accurate PLIC-VOF techniques for numerical simulations of free surface water waves}},
+year = {2016}
+}
+@article{EVA_Hirt1981,
+abstract = {Several methods have been previously used to approximate free boundaries in finite-difference numerical simulations. A simple, but powerful, method is described that is based on the concept of a fractional volume of fluid (VOF). This method is shown to be more flexible and efficient than other methods for treating complicated free boundary configurations. To illustrate the method, a description is given for an incompressible hydrodynamics code, SOLA-VOF, that uses the VOF technique to track free fluid surfaces. {\textcopyright} 1981.},
+author = {Hirt, C. W. and Nichols, B. D.},
+doi = {10.1016/0021-9991(81)90145-5},
+issn = {10902716},
+journal = {Journal of Computational Physics},
+number = {1},
+pages = {201--225},
+title = {{Volume of fluid (VOF) method for the dynamics of free boundaries}},
+volume = {39},
+year = {1981}
+}
+
+@article{EVA_CFL,
+author = {Courant, R and Friedrichs, K and Lewy, H},
+doi = {10.1007/BF01342943},
+issn = {00255831},
+journal = {Mathematische Annalen},
+number = {2},
+pages = {179--202},
+title = {{On the Partial Difference Equations of Mathematical Physics}},
+volume = {138},
+year = {1928}
+}
+
+
