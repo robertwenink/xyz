@@ -28,7 +28,7 @@ In the multi-fidelity setting, now that we have found an optimised DoE for our l
 
 {{< image src="algorithm1.png" alt="Nested DoE algorithm" width="100%" linked=false >}}
 
-In line 6 of the algorithm we multiply the distance by a factor of two. This is because our goal is to maximise the minimum distance to a source of information. Objective value information is supplied by two sources for distances between sampled locations. In the distance to the boundary, there is only one source of information. To compensate for this we should therefore divide the values of the distance matrix- or equivalently multiply the distances to the boundary by a factor of two. As an analogue for those familiarised with CFD, we effectively calculate the distance to a mirrored non-existing 'ghost point'.
+In line 6 of the algorithm I multiply the distance by a factor of two. This is because the goal is to maximise the minimum distance to a source of information. Objective value information is supplied by two sources for distances between sampled locations. In the distance to the boundary, there is only one source of information. To compensate for this we should therefore divide the values of the distance matrix- or equivalently multiply the distances to the boundary by a factor of two. As an analogue for those familiarised with CFD, we effectively calculate the distance to a mirrored non-existing 'ghost point'.
 
 {{< image src="example_doe_2d_2.png" alt="Nested DoE example" caption="Example of an iteratively optimised LHS experimental design (n = 20) with greedy maximin subset selection ($n_{subset} = 5$) according to Algorithm 1." width="80%" id="example_doe" linked=false >}}
 
