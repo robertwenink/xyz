@@ -29,6 +29,10 @@
   line-height: var(--global-line-height);
 }
 
+.katex>.katex-html:has(.textrm) {
+  padding: 0;
+}
+
 // no lightgallery subtitles, very ugly and sometimes I have very large captions
 .lg-sub-html {
   visibility: hidden;
