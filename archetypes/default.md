@@ -9,6 +9,7 @@ summary: ""
 tags: []
 categories: []
 series: ""
+weight: 0
 
 featuredImage: ""
 featuredImagePreview: ""

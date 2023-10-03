@@ -17,7 +17,7 @@
     
     img {
         float: left;
-        margin: 0.0rem 2.5% 2.5% 0; //0.5rem is perfect de text spacing
+        margin: 0.5rem 2.5% 2.5% 0; //0.5rem is perfect de text spacing
     }    
     p {
         text-align: left;
@@ -53,9 +53,7 @@
 #my-name-is-before, #hire-text-before{
     display: none;
 }
-#my-name-is-after p {
-    margin-top: 0 !important;
-}
+
 @media only screen and (max-width: 704px) {
     #my-name-is-after{
         display: none;
