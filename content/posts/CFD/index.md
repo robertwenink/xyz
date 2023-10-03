@@ -2,7 +2,7 @@
 title: "Computational Fluid Dynamics: brief method overview"
 subtitle: ""
 date: 2023-10-02T21:48:35+02:00
-draft: true
+draft: false
 description: ""
 summary: "" 
 
