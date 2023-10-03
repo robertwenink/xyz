@@ -28,3 +28,14 @@
   font-size: var(--global-font-size);
   line-height: var(--global-line-height);
 }
+
+// no lightgallery subtitles, very ugly and sometimes I have very large captions
+.lg-sub-html {
+  visibility: hidden;
+}
+
+.lg-img-wrap {
+  padding-top: 47px;
+  padding-bottom: 80px;
+  // bottom bar imgs is 60px hoog (+10 padding top/bottom nog), top bar 47px (27 van lineheight + 10padding beide zijden)
+}
