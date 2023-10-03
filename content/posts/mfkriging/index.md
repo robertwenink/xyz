@@ -8,6 +8,7 @@ description: ""
 tags: []
 categories: [Surrogate modelling]
 series: "Master's thesis"
+weight: 3
 
 featuredImage: ""
 featuredImagePreview: ""

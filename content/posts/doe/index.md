@@ -8,6 +8,7 @@ description: ""
 tags: [DoE, sampling]
 categories: [Surrogate modelling]
 series: "Master's thesis"
+weight: 5
 
 featuredImage: ""
 featuredImagePreview: "example_doe_2d_2.png"
