@@ -42,7 +42,7 @@ featuredImagePreview: ""
   <!-- padding om de ul binnen de div te houden -->
   <div id="ul" style="padding:1px;">
 
-  - To read more about me, my skills and curriculum vitae, see the [About](/about/) section.
+  - To read more about me, my skills and [Curriculum Vitae](/resume/), see the [About](/about/) section.
   - A project portfolio is found under [Projects](/projects/).
   - A tech blog is maintained in [Posts](/posts/).
   </div>
