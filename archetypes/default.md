@@ -8,6 +8,7 @@ summary: ""
 
 tags: []
 categories: []
+series: ""
 
 featuredImage: ""
 featuredImagePreview: ""
