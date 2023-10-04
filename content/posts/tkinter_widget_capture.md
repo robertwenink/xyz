@@ -1,5 +1,5 @@
 ---
-title: "Tkinter: how export a widget as image"
+title: "Tkinter: how to export a widget as an image"
 subtitle: ""
 date: 2023-10-03T17:05:25+02:00
 draft: false
