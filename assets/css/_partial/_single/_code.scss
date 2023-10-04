@@ -37,6 +37,22 @@ code, pre, .highlight table, .highlight tr, .highlight td {
   }
 }
 
+.code-inline {
+  font-family: var(--code-font-family);
+  font-size: var(--code-font-size);
+  padding: 0 0.1rem;
+
+  @each $class, $color in $code-highlight-color-map {
+    .#{$class} { color: $color; }
+  }
+
+  [theme=dark] & {
+    @each $class, $color in $code-highlight-color-map-dark {
+      .#{$class} { color: $color; }
+    }
+  }
+}
+
 .highlight {
   font-family: var(--code-font-family);
   font-size: var(--code-font-size);
