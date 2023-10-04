@@ -92,7 +92,7 @@
             Filter by category: 
             <button class="button-16">All</button>
             {{ range .Site.Taxonomies.categories }}
-            <button class="button-16">{{ .Page.Title }}</button>
+            <button class="button-16">{{ .Page.Title | humanize }}</button>
             {{ end }}
         </div>
         {{- /* Paginate */ -}}
