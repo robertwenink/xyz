@@ -17,7 +17,7 @@ featuredImagePreview: ""
 <div class="wrap-around">
   <div id="my-name-is-before">
   
-  My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both.
+  My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and (Maritime) Engineering, possessing a master's degree in both.
   </div>
   <div id="hire-text-before">
 
@@ -30,7 +30,7 @@ featuredImagePreview: ""
 
   <div id="my-name-is-after">
 
-  My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and Maritime Engineering, possessing a master's degree in both.
+  My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and (Maritime) Engineering, possessing a master's degree in both.
   </div>
 
   <div id="hire-text-after">
