@@ -48,7 +48,7 @@ Optimisation methods based on Multi-Fidelity Kriging hold promise in maritime en
 Although these are promising results, Multi-Fidelity Kriging still seems relatively rarely applied within maritime engineering, presumably because the increased complexity of the experimental setup is not plenty offset by the possible benefits, and the conditions for application seem very specific. There are still unresolved issues regarding when it is advantageous to use a multi-fidelity over the standard single-fidelity approach {{< cite "Toal2015;Godino2019;Korondi2021" >}} in terms of accuracy, cost, and assumed data characteristics. This work, through developing a new methodology, aims to increase the applicability of multi-fidelity surrogate modelling and SBGO in maritime engineering by providing clearer usage conditions while increasing the benefits of using these methodologies. Additionally, it is expected that the process of selecting the fidelities is simpler since the assumption of grid convergence as introduced in the [motivation](#motivation) implies restricting the scope of this process to a single CFD solver with simulations at different resolutions. 
 
 # Method description
-For the mathematical description of the method, I implore you to read the thesis. In the discussion and recommendations of the thesis I formulate ways to improve the method and avoid (all) the problems currently encountered during the method testing and results. I might still perform these since I believe there is plenty potential left on the table.
+For the mathematical description of the method, I implore you to read the [thesis](https://repository.tudelft.nl/islandora/object/uuid%3Ad30374fd-8213-40c7-bd72-f17b108d7759?collection=education). In the discussion and recommendations of the thesis I formulate ways to improve the method and avoid (all) the problems currently encountered during the method testing and results. I might still perform these since I believe there is plenty potential left on the table.
 
 # Experimental setup
 In the experimental setup to show the efficacy of the proposed method, I use two types of test cases:
@@ -56,11 +56,9 @@ In the experimental setup to show the efficacy of the proposed method, I use two
 {{< image src="Branin_Rosenbrock.png" id="BraninRosenbrock" alt="Branin and Rosenbrock synthetic objective functions." linked=false caption="Figure 1: From left to right, the full synthetic objective functions used for minimisation by surrogate modelling on a DoE with a limited amount of function evaluations: [2D Branin](https://www.sfu.ca/~ssurjano/branin.html), [2D and 5D Rosenbrock](https://www.sfu.ca/~ssurjano/rosen.html).">}}
 - One where the objective function is retrieved using actual [CFD simulations](../../posts/cfd/), adapted to my needs and limitations. The solver is in development and limited to 2D scenarios. Shape variations are produced using a one-to-one parameterisation using Non-Uniform Rational B-Splines (NURBS). Fidelity levels are realised by using various levels of grid resolution for simulations.
 
-
 For the complete experimental setup of the experiments using the synthetic objective functions I refer to my thesis document. 
 
-In this post I will focus on the workflow of the approach using CFD simulations. Below flowchart shows the aspects involved with creating the initial surrogate model (based on the initial DoE, without entering the optimisation loop).
-
+In this post I will focus on the workflow of the approach using CFD simulations. Below flowchart shows the aspects involved with creating the initial surrogate model (based on the initial DoE, without entering the optimisation loop). The further sections corresponding to the experimental setup will follow this flowchart.
 
 {{< mermaid >}}
 graph TD;
@@ -71,13 +69,95 @@ graph TD;
     C --> D(In-grid body reconstruction) 
     E --> F(Simulation)
     D --> F
-    F --> G(Data processing + filtering)
+    F --> G(Output data processing)
     end
     G --> H(Objective function)
     H --> K( )
     B --> K
     K --> Z{Surrogate model}
 {{< /mermaid >}}
+
+## Problem formulation
+The optimisation case mimics the shape optimisation of a free-fall lifeboat: a rescue vessel that drops off an offshore drilling platform into the sea in case of emergency. We only 'mimic' a complete optimisation because the used CFD solver, although specialised for these types of scenario, is under development and restricted to 2D problems. The optimisation goal is *to minimise the maximum (de-)acceleration* the lifeboat is subjected to when impacting with a flat body of water, to guarantee the safety of its passengers. This goal is achieved by chaning the bottom shape of the lifeboat.
+
+The main dimensions, dropping height (and thereby effective vessel speed at the moment of impact), and weight of this lifeboat are taken from the recordholding [FF1200 lifeboat of Palfinger Marine](https://www.palfingermarine.com/en/boats-and-davits/life-and-rescue-boats/free-fall-lifeboats#abd64e4eccollapse2).
+
+With the goal of testing the proposed method, two variations of the same scenario are used:
+1) The lifeboat falls perfectly vertically onto the water.
+2) The lifeboat ludricously falls horizontally onto the water.
+
+Setting up more scenarios was not feasible given the time constraints of the thesis.
+
+## Shape parameterisation
+The shape parameterisation of the lifeboat is done using Non-Uniform Rational B-Splines (NURBS, see {{< cite NURBSbook- >}}) using 2 parameters. The limitation of 2 parameters is due to the 2D nature of the CFD solver and the requirements of one-to-one shape mappings. [Figure 2](#fig-nurbs) shows the used range of possible shape variations of the 2D lifeboat bottom. To create the B-Splines I used the [geomdl](https://github.com/orbingol/NURBS-Python) python package. 
+
+{{< image width="60%" alt="Example NURBS Parameterisations" src="NURBSgrid.png" caption="Figure 2: Some example shape parameterisations, with the parameters $x_i$ in the interval $[0,1]$" id="fig-nurbs" >}}
+
+In the creation of these shapes, the numerical stability and feasibility of the CFD solver imposes some constraints:
+- The keel cannot be too flat, to avoid flat-plate impacts that impose extreme high pressures. Although this is already something occuring in the real-world, the CFD solver has the additional factor of an discretised grid with limited (vertical) resolutions able to capture the water displacements.
+- The keel cannot be too sharp, due to problems otherwise encountered during the [interface reconstruction calculations](../../posts/cfd/#interface-reconstruction).
+- The bilge cannot transition to be horizontal, again to avoid flat-plate impacts.
+The relevant outermost angles have therefore been reduced by 10 degrees.
+
+## In-grid body reconstruction
+The parameterised lifeboat shape must be mapped onto the numerical grid of the CFD solver, to enable actually simulating the impact of the falling lifeboat. The grid definition itself should be symmetric over the lifeboat and in a domain large enough to not inflict boundary effects, next to solver-specific requirements. 
+
+So, the continuous NURBS shape must be transformed to its counterpart in a discretised numerical grid. This is done through the following steps:
+
+{{< mermaid >}}
+graph LR;
+    A(NURBS) --> C("<a href=>Signed Distance Function (SDF)</a>")
+    C --> D(<a href='../../posts/cfd/#fig-cutcell_definition'>Body volume fraction per grid cell</a>)
+    D --> E(<a href='../../posts/cfd/#interface-reconstruction'>Interface reconstruction</a>)
+{{< /mermaid >}}
+
+From a NURBS shape parameterisation an Signed Distance Function ([SDF](https://www.labri.fr/perso/nrougier/python-opengl/#signed-distance-fields)) is created. This function provides the shortest distances to the
+body boundary with negative values defined to be inside the body and positive values outside the body. My implementation uses the {{< highlight-inline python compute_sdf >}} function of the [glumpy library](https://github.com/glumpy/glumpy).
+
+This SDF function is then used to project a body-fraction field upon the simulation grid corresponding to the NURBS shape. Lastly, based on this fraction field the body is reconstructed in the grid using the Piecewise Linear Interface Calculation ([PLIC](../../posts/cfd/#interface-reconstruction)) technique.
+
+## Output data processing \& Objective function
+With the simulation setup done, we can actually run a CFD simulation and generate output data relevant to our problem and objective function.
+
+## Fidelity level definition
+A necessary step to transform the process of the flowchart into its multi-fidelity counterpart is to determine how the fidelity levels are determined. By definition of the method proposed during my thesis, which assumes that the *grid-convergence* provides information we can use, the construction of these fidelity levels is done by varying the resolution of the numerical grid. The proposed method uses three such fidelity levels:
+- The lowest grid-resolution (low-fidelity) cannot be rougher than required for achieving numerical stability during the CFD simulation
+- The highest grid-resolution (high-fidelity) should be such that the result is converged and can be considered the 'truth'. In this choice, computational budget can also be a significant limiting factor.
+- The in-between grid-resolution (medium-fidelity) should be chosen such that there is some convergence of the objective value present over the fidelity levels.
+
+Like for any multi-fidelity experimental setup, this step is crucial, and turned out to be challenging.
+
+# Results
+
+## Synthetic cases \& structured experiments
+
+### Pedagogical example
+To show the use and effectiveness of the proposed method, I would like to re-iterate the example of {{< cite Forrester2007- >}}, and then slightly change their multi-fidelity transformation function.
+The promise of Multi-Fidelity Kriging (MFK) per the contrived example of {{< cite Forrester2007- >}} is shown by [Figure 3](#fig-mfk-promise).
+
+{{< image src="MFK_promise.png" caption="Figure 3: On the left we see two single-fidelity Kriging surrogate models created at the same budget, and on the right the MFK model that can reproduce the desired high fidelity function almost exactly, but at the same cost." id="fig-mfk-promise" >}}
+
+```python 
+def HF_function(x): # high-fidelity function
+    return ((6*x-2)**2)*np.sin((12 * x-4))  
+
+def LF_function(x): # low-fidelity function
+    return 0.5 * HF_function(x) + (x-0.5) * 10. - 5
+
+def LF_function_adapt(x):
+    return 0.5 * ((6*x-2)**2)*np.sin((12 * x-4.9)) + (x-0.5) * 10. - 5
+
+def MF_function(x):
+    return LF_function_adapt(x) + (HF_function(x) - LF_function_adapt(x))/2
+```
+
+
+
+# When to use the proposed method
+
+
+
+
 
 # Bibliography
 {{< bibliography cited >}}
