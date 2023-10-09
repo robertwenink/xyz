@@ -18,7 +18,7 @@ bibFile: "library-bib.json"
 ---
 In June of 2023, I defended my thesis project to obtain both a master's degree in Marine Engineering and Computer Science, awarded a 8.5 in both disciplines. This post provides a (shorter) adaptation of the thesis. The complete thesis titled "Multi-Fidelity Kriging Extrapolation" can be found on the [TU Delft repository](https://repository.tudelft.nl/islandora/object/uuid%3Ad30374fd-8213-40c7-bd72-f17b108d7759?collection=education). 
 
-Before reading this article, it might be good to read up on the following subjects:
+Before reading this article, it might be good to read up on the following subjects (from the post series "Master's thesis"):
 - [Surrogate modelling](../../posts/surrogate_modelling/): what is surrogate modelling and what is its typical application in engineering?
 - [Kriging](../../posts/kriging/), also known outside engineering as Gaussian Process Regression, is the surrugoate modelling technique at the core of the work of this thesis due to some beneficial characteristics with respect to its use together with expensive-to-evaluate objective functions.
 - [Multi-fidelity Kriging](../../posts/mfkriging/): extending the Kriging surrogate to beneficially combine multiple infromation sources of different precision and cost.
@@ -46,6 +46,18 @@ Optimisation methods based on Multi-Fidelity Kriging hold promise in maritime en
 {{< cite "Korondi2019-" >}} performs reliability-based optimisation of a ducted propeller using an EGO-like strategy and a multi-fidelity Kriging surrogate. Although performed under compressible flow conditions, the same techniques are interesting to incompressible flows. {{< cite "Liu2022-" >}} uses viscous and potential flow calculations as the high- and low-fidelity respectively and shows the multi-fidelity Kriging approach can obtain a more optimal hydrodynamic hull form than the single-fidelity model alone. 
 
 Although these are promising results, Multi-Fidelity Kriging still seems relatively rarely applied within maritime engineering, presumably because the increased complexity of the experimental setup is not plenty offset by the possible benefits, and the conditions for application seem very specific. There are still unresolved issues regarding when it is advantageous to use a multi-fidelity over the standard single-fidelity approach {{< cite "Toal2015;Godino2019;Korondi2021" >}} in terms of accuracy, cost, and assumed data characteristics. This work, through developing a new methodology, aims to increase the applicability of multi-fidelity surrogate modelling and SBGO in maritime engineering by providing clearer usage conditions while increasing the benefits of using these methodologies. Additionally, it is expected that the process of selecting the fidelities is simpler since the assumption of grid convergence as introduced in the [motivation](#motivation) implies restricting the scope of this process to a single CFD solver with simulations at different resolutions. 
+
+# Method description
+For the mathematical description of the method, I implore you to read the thesis. In the discussion and recommendations of the thesis I formulate ways to improve the method and avoid (all) the problems currently encountered during the method testing and results. I might still perform these since I believe there is plenty potential left on the table.
+
+# Experimental setup
+In the experimental setup to show the efficacy of the proposed method, I use two types of test cases:
+- One using synthetic optimisation (minimisation) functions, altered to include noise and transformed to multi-fidelity variants using various relationships between the fidelity levels. In total, around a 1000 variations were used of the analytical functions shown in [Figure 1](#BraninRosenbrock). 
+- One where the objective function is retrieved using actual [CFD simulations](../../posts/cfd/), adapted to my needs and limitations. The solver is in development and limited to 2D scenarios. Shape variations are produced using a one-to-one parameterisation using Non-Uniform Rational B-Splines (NURBS). Fidelity levels are realised by using various levels of grid resolution for simulations.
+
+{{< image src="Branin_Rosenbrock.png" id="BraninRosenbrock" alt="Branin and Rosenbrock synthetic objective functions." linked=false caption="Figure 1: From left to right, the full synthetic objective functions used for minimisation by surrogate modelling on a limited DoE: [2D Branin](https://www.sfu.ca/~ssurjano/branin.html), [2D and 5D Rosenbrock](https://www.sfu.ca/~ssurjano/rosen.html).">}}
+
+For the complete experimental setup of the experiments using the synthetic objective functions I refer to my thesis document. In this post I will focus on the workflow of the approach using CFD simulations.
 
 
 # Bibliography
