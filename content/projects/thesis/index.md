@@ -53,12 +53,31 @@ For the mathematical description of the method, I implore you to read the thesis
 # Experimental setup
 In the experimental setup to show the efficacy of the proposed method, I use two types of test cases:
 - One using synthetic optimisation (minimisation) functions, altered to include noise and transformed to multi-fidelity variants using various relationships between the fidelity levels. In total, around a 1000 variations were used of the analytical functions shown in [Figure 1](#BraninRosenbrock). 
+{{< image src="Branin_Rosenbrock.png" id="BraninRosenbrock" alt="Branin and Rosenbrock synthetic objective functions." linked=false caption="Figure 1: From left to right, the full synthetic objective functions used for minimisation by surrogate modelling on a DoE with a limited amount of function evaluations: [2D Branin](https://www.sfu.ca/~ssurjano/branin.html), [2D and 5D Rosenbrock](https://www.sfu.ca/~ssurjano/rosen.html).">}}
 - One where the objective function is retrieved using actual [CFD simulations](../../posts/cfd/), adapted to my needs and limitations. The solver is in development and limited to 2D scenarios. Shape variations are produced using a one-to-one parameterisation using Non-Uniform Rational B-Splines (NURBS). Fidelity levels are realised by using various levels of grid resolution for simulations.
 
-{{< image src="Branin_Rosenbrock.png" id="BraninRosenbrock" alt="Branin and Rosenbrock synthetic objective functions." linked=false caption="Figure 1: From left to right, the full synthetic objective functions used for minimisation by surrogate modelling on a limited DoE: [2D Branin](https://www.sfu.ca/~ssurjano/branin.html), [2D and 5D Rosenbrock](https://www.sfu.ca/~ssurjano/rosen.html).">}}
 
-For the complete experimental setup of the experiments using the synthetic objective functions I refer to my thesis document. In this post I will focus on the workflow of the approach using CFD simulations.
+For the complete experimental setup of the experiments using the synthetic objective functions I refer to my thesis document. 
 
+In this post I will focus on the workflow of the approach using CFD simulations. Below flowchart shows the aspects involved with creating the initial surrogate model (based on the initial DoE, without entering the optimisation loop).
+
+
+{{< mermaid >}}
+graph TD;
+    A(Problem formulation) --> B(<a href='../../posts/doe/'> Design of Experiments </a>)
+    A(Problem formulation) --> C(NURBS shape parameterisation)
+    A --> E(CFD environment setup)
+    subgraph CFD simulation routines
+    C --> D(In-grid body reconstruction) 
+    E --> F(Simulation)
+    D --> F
+    F --> G(Data processing + filtering)
+    end
+    G --> H(Objective function)
+    H --> K( )
+    B --> K
+    K --> Z{Surrogate model}
+{{< /mermaid >}}
 
 # Bibliography
 {{< bibliography cited >}}

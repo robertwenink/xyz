@@ -1,9 +1,11 @@
 // ==============================
 // Custom style
-// 自定义样式
 // ==============================
 
-
+.mermaid {
+    position: relative;
+    text-align: center;
+  }
 
 // for cites.
 .container {
@@ -122,3 +124,7 @@
         background-color: $search-background-color-dark;
     }
 }
+
+// .mermaid {
+//     position: relative;
+// }
