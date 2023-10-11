@@ -135,10 +135,10 @@ graph TD;
     K --> Z{Surrogate model}
 {{< /mermaid >}}
 
-## Problem formulation
+## Lifeboat case: Problem formulation
 The optimisation case mimics the shape optimisation of a free-fall lifeboat: a rescue vessel that drops off an offshore drilling platform into the sea in case of emergency. We only 'mimic' a complete optimisation because the used CFD solver, although specialised for these types of scenario, is under development and restricted to 2D problems. The optimisation goal is *to minimise the maximum (de-)acceleration* the lifeboat is subjected to when impacting with a flat body of water, to guarantee the safety of its passengers. This goal is achieved by changing the bottom shape of the lifeboat.
 
-The main dimensions, dropping height (and thereby effective vessel speed at the moment of impact), and weight of this lifeboat are taken from the recordholding [FF1200 lifeboat of Palfinger Marine](https://www.palfingermarine.com/en/boats-and-davits/life-and-rescue-boats/free-fall-lifeboats#abd64e4eccollapse2).
+The main dimensions, dropping height (and thereby effective vessel speed at the moment of impact), and weight of this lifeboat are taken from the recordholding [FF1200 lifeboat of Palfinger Marine](https://www.palfingermarine.com/en/boats-and-davits/life-and-rescue-boats/free-fall-lifeboats#abd64e4eccollapse2) (the lifeboat seen at the start of this page).
 
 With the goal of testing the proposed method, two variations of the same scenario are used:
 1) The lifeboat falls perfectly vertically onto the water.
@@ -185,32 +185,66 @@ A necessary step to transform the process of the flowchart into its multi-fideli
 
 Like for any multi-fidelity experimental setup, this step is crucial, and turned out to be challenging.
 
-# Results
 
+## Experimental method
+### Simulation starting conditions
+The surrogate model can be initialised in different ways depending on the surrogate modelling method used. 
+- The MFK method, due to limitations in solving the underlying GLS problem, needs to start with a minimum of 3 high-fidelity samples in the initial DoE. 
+- The proposed surrogate modelling method on the other hand can create a surrogate model with as little as 1 high-fidelity sample. To more fairly compare the proposed method with MFK but also consider this potential competetive capability, the proposed method is started using both 1 and 3 high-fidelity samples in the initial DoE.
+
+### Surrogate performance measurement
+The surrogate's accuracy is measured by comparing the predicted value with the real sampled results by using the Root Mean Squared Error (RMSE) as done in {{< cite Toal2015- >}}:
+
+\begin{equation}
+\mathrm{RMSE}=\sqrt{\frac{1}{n} \sum_{i=1}^{n}\left(y_{e_{i}}-y_{c_{i}}\right)^{2}}
+\end{equation}
+
+However, I prefer the normalised RMSE\% for better comparison between different optimisation cases:
+
+\begin{equation}\label{eqn:NRMSE}
+\mathrm{NRMSE}=\frac{\mathrm{RMSE}}{\max(y_e)-\min(y_e)}
+\end{equation}
+
+RMSEs are calculated using the high-fidelity `truth' sampled on the full initial DoE $y_e$, where subscript $i$ indexes such that high-fidelity samples used in the surrogate model are excluded to prevent a bias for surrogate models that use a lot of high-fidelity samples. 
+
+
+# Results
 <!-- Falling wedge best design: high specific mass -->
 <!-- {{< youtube id="-TzZRLxXXPQ" autoplay="true" >}} -->
 <!-- https://youtu.be/-TzZRLxXXPQ -->
+
 
 <!-- Falling wedge best design: low specific mass -->
 <!-- https://youtu.be/jgT5-tSlykU -->
 
 
-<script src="https://player.vimeo.com/api/player.js"></script>
-
 ## Synthetic cases \& structured experiments
+In short, in the synthetic toy-case experiments the proposed method consistently outperforms the reference SBGO methodology of {{< cite Meliani2019- >}} (multi-fidelity optimisation based on MFK) in terms of optimisation cost, NRMSE of the surrogate and closeness of the found design to the optimum, even when confronted with severe noise or when deteriorating the validity of the assumption upon which the proposed method relies. This is because the proposed method, as a surrogate, is more accurate under the given circumstances than the traditional multi-fidelity MFK surrogate of {{< cite Gratiet2014- >}}, the surrogate at the basis of the SBGO method of {{< cite Meliani2019- >}}. 
 
+These findings confirm the potential of the proposed method under a more varied and complex set of scenarios than was seen [before](#pedagogical-example).
 
 ## Lifeboat cases
+In this section, we will be looking at two things:
+- The quality of the optimisation result and its found designs
+- The competitiveness of optimisation the proposed surrogate modelling method compared to optimisation using the MFK surrogate.
 
+{{< image src="EVA_high_mass_fixed.png" caption="Plotted results at the optimisation end for the vertically dropping lifeboat. Left: The proposed method starting with 3 high-fidelity samples that was able to find a better design than all other setups. Right: The reference MFK method, which ends with a high NRMSE due to a wrongly inferred trend model for the additive differences. More samples in the initial DoE might decrease the issue." id="fig-eva-vertical" >}}
+
+{{< image src="EVA_low_mass_fixed.png" caption="Plotted results at the optimisation end of the low mass case with m = 1255 [kg/m]. On the left: The proposed method starting with 1 high-fidelity sample that has after optimisation has the best cost statistics and the best ending NRMSE. On the right: the reference method, which like the vertical case ends with a high NRMSE." id="fig-eva-horizontal" >}}
+
+In both scenarios, the 
+
+<!-- Falling wedge best design: low specific mass
 {{< vimeo 873147687 >}}
 {{< image src="filtered_low_mass.png" >}}
 
-{{< vimeo 873143175 >}}
-{{< image src="filtered_high_mass.png" >}}
+<!-- Falling wedge best design: high specific mass -->
+<!-- {{< vimeo 873143175 >}}
+{{< image src="filtered_high_mass.png" >}} -->
 
 
 # When to use the proposed method
-
+asdf
 
 
 <script src="https://player.vimeo.com/api/player.js"></script>
