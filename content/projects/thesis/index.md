@@ -176,6 +176,8 @@ This SDF function is then used to project a body-fraction field upon the simulat
 
 ## Output data processing \& Objective function
 With the simulation setup done, we can actually run a CFD simulation and generate output data relevant to our problem and objective function.
+<!-- TODO -->
+TODO
 
 ## Fidelity level definition
 A necessary step to transform the process of the flowchart into its multi-fidelity counterpart is to determine how the fidelity levels are determined. By definition of the method proposed during my thesis, which assumes that the *grid-convergence* provides information we can use, the construction of these fidelity levels is done by varying the resolution of the numerical grid. The proposed method uses three such fidelity levels:
@@ -213,7 +215,6 @@ RMSEs are calculated using the high-fidelity `truth' sampled on the full initial
 <!-- {{< youtube id="-TzZRLxXXPQ" autoplay="true" >}} -->
 <!-- https://youtu.be/-TzZRLxXXPQ -->
 
-
 <!-- Falling wedge best design: low specific mass -->
 <!-- https://youtu.be/jgT5-tSlykU -->
 
@@ -225,26 +226,35 @@ These findings confirm the potential of the proposed method under a more varied 
 
 ## Lifeboat cases
 In this section, we will be looking at two things:
-- The quality of the optimisation result and its found designs
 - The competitiveness of optimisation the proposed surrogate modelling method compared to optimisation using the MFK surrogate.
+- The quality of the optimisation result and its found designs
 
-{{< image src="EVA_high_mass_fixed.png" caption="Plotted results at the optimisation end for the vertically dropping lifeboat. Left: The proposed method starting with 3 high-fidelity samples that was able to find a better design than all other setups. Right: The reference MFK method, which ends with a high NRMSE due to a wrongly inferred trend model for the additive differences. More samples in the initial DoE might decrease the issue." id="fig-eva-vertical" >}}
+{{< image src="EVA_high_mass_fixed.png" caption="Plotted results at the optimisation end for the vertically dropping lifeboat. Left: The proposed method starting with 3 high-fidelity samples that was able to find a better design than all other setups. Right: The reference MFK method, which ends with a high NRMSE due to a wrongly inferred difference trend model. More samples in the initial DoE might decrease the issue." id="fig-eva-vertical" >}}
 
-{{< image src="EVA_low_mass_fixed.png" caption="Plotted results at the optimisation end of the low mass case with m = 1255 [kg/m]. On the left: The proposed method starting with 1 high-fidelity sample that has after optimisation has the best cost statistics and the best ending NRMSE. On the right: the reference method, which like the vertical case ends with a high NRMSE." id="fig-eva-horizontal" >}}
+{{< image src="EVA_low_mass_fixed.png" caption="Plotted results at the optimisation end for the horizontally dropping lifeboat. On the left: The proposed method starting with 1 high-fidelity sample that has after optimisation has the best cost statistics and the best ending NRMSE. On the right: the reference method, which like the vertical case ends with a high NRMSE." id="fig-eva-horizontal" >}}
 
-In both scenarios, the 
+In both cases, the MFK surrogate knows a large NMRSE (also visually), caused by a wrongly inferred difference trend model. Around the optimum, there is no to little convergence of the objective value (meaning a difference of $\approx 0$), while elsewhere there is convergence present (meaning differences $>0$) with differences that seem to stabalise when moving further from the optimum design. With three starting samples in the initial DoE, the MFK methodology therefore infers a parabolic difference model, and faultly maps this to the rest of the domain. 
 
-<!-- Falling wedge best design: low specific mass
-{{< vimeo 873147687 >}}
-{{< image src="filtered_low_mass.png" >}}
+The proposed surrogate on the other hand does not suffer from this problem. This is partly because the method recognises undesirable conditions and defaults to the medium-fidelity, which is this case is - especially around the optimum design where little to no convergence is present - a stable and accurate alternative.
+
+### Best designs per optimisation case and their hydrodynamic explanation
+The following shows renders of the simulations that correspond to the best designs found during the vertically and horizontally falling lifeboat cases, respectively.
+
+In the case of the 'vertically falling' case, the different orientation is encoded by a higher specific mass of the body in the simulation. We therefore do not actually see a more vertical structure as compared to the horizontally falling case. To the simulation outcome, both methods are completely equal.
 
 <!-- Falling wedge best design: high specific mass -->
-<!-- {{< vimeo 873143175 >}}
-{{< image src="filtered_high_mass.png" >}} -->
+#### Falling wedge: best vertically falling design
+{{< vimeo 873147687 >}}
+{{< image src="filtered_high_mass.png" >}}
+
+<!-- Falling wedge best design: low specific mass -->
+#### Falling wedge: best horizontally falling design
+{{< vimeo 873143175 >}}
+{{< image src="filtered_low_mass.png" >}}
 
 
 # When to use the proposed method
-asdf
+TODO
 
 
 <script src="https://player.vimeo.com/api/player.js"></script>

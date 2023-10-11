@@ -7,6 +7,13 @@
     text-align: center;
   }
 
+.mermaid > svg
+{   
+    // because mermaid assigns a height to the css that we need to override
+	height: inherit;
+}
+
+
 // for cites.
 .container {
     overflow: hidden;
