@@ -37,7 +37,7 @@ From these, {{< cite "Shan2010-" >}} mark mapping as a promising approach and no
 
 During my thesis, I recognise that the *grid convergence* property of CFD solvers is currently an unused source of information that could further improve the performance of the multi-fidelity surrogate model and the corresponding optimisation process. Grid convergence states that the simulation solution converges to the true simulation solution as the grid is refined. CFD simulations reported by for instance {{< cite "Eijk2021wedge-" >}} show the clear presence of grid convergence. Therefore, this thesis explores a novel hierarchical multi-fidelity mapping method exploiting this grid convergence information to relieve the effects of the curse of dimensionality at the expensive high fidelity. 
 
-# Relevance in Marine Engineering
+## Relevance in Marine Engineering
 <!-- % The latest and only {{< cite "Wang2023" >}} further methodological improvement on this work is given by {{< cite "Perdikaris2017-" >}} who generalise the linear autoregressive\footnote{Meaning that the relations between fidelity levels and the regression parameters are directly solved in the linear system} formulation of {{< cite "Gratiet2014-" >}} to better accommodate non-linear-relations.  -->
 
  <!-- % We do not use the method of {{< cite "Perdikaris2017-" >}} because the method of {{< cite "Gratiet2014-" >}} still is the most popular method {{< cite "Wang2023" >}} while having a ready-to-use implementation available {{< cite "SMT2019" >}}. -->
@@ -50,9 +50,67 @@ Although these are promising results, Multi-Fidelity Kriging still seems relativ
 # Method description
 For the mathematical description of the method, I implore you to read the [thesis](https://repository.tudelft.nl/islandora/object/uuid%3Ad30374fd-8213-40c7-bd72-f17b108d7759?collection=education). In the discussion and recommendations of the thesis I formulate ways to improve the method and avoid (all) the problems currently encountered during the method testing and results. I might still perform these since I believe there is plenty potential left on the table.
 
+It is however, important to understand the following assumption:
+
+*The objective value differences implied by the grid convergence property of a CFD solver are proportional from one point in the design space to another.*
+
+Remember the definition given in the motivation:
+Grid convergence states that the simulation solution converges to the true simulation solution as the grid is refined.
+
+The above assumption expresses that this convergence will progress in a similar fashion across the design space. 
+
+If no convergence is present at all for a design, we in fact have a converged and thus accurate solution already to which the proposed method will mathematically default.
+
+If, on the other hand, there is convergence but it does not fully conform to this assumption, the proposed method might not function as desired. However, this scenario is cheaply and reliably testable, as we will see [later](#when-to-use-the-proposed-method).
+
+Without further ado, I would like to give an non-mathematical example that gives some intuïtve insight in the proposed method's functioning and capability in the next subsection.
+
+## Pedagogical example
+To show the use and effectiveness of the proposed method, I would like to re-iterate the example of {{< cite Forrester2007- >}}, and then slightly change their multi-fidelity transformation function.
+The promise of Multi-Fidelity Kriging (MFK) per the contrived example of {{< cite Forrester2007- >}} is shown by [Fig. 3](#fig-mfk-promise).
+
+{{< image src="MFK_promise.png" caption="Figure 3: On the left we see two single-fidelity Kriging surrogate models created at the same budget, and on the right the MFK model that can reproduce the desired high fidelity function almost exactly, but at the same cost." id="fig-mfk-promise" >}}
+
+This result looks amazing! However, when we only slightly change the lower fidelity function (and thereby the relation between the levels), this result completely breaks down as is shown by [Fig. 4](#fig-changed-functions)
+
+{{< image src="changed_functions.png" caption="Figure 4: On the left we see the original synthetic functions per fidelity and on the right the same high fidelity fuction but a changed low fidelity function. The sampled DoE locations remain the same." id="fig-changed-functions">}}
+
+The accompanying change in functions is given by the following python snippet:
+
+```python 
+def HF_function(x): # high-fidelity function
+    return ((6*x - 2)**2)*np.sin((12*x - 4))  
+
+def LF_function(x): # low-fidelity function
+    return 0.5 * HF_function(x) + (x-0.5) * 10. - 5
+    # or:  0.5 * ((6*x - 2)**2)*np.sin((12*x - 4.0)) + (x - 0.5) * 10. - 5
+
+def LF_function_adapted(x):
+    return 0.5 * ((6*x - 2)**2)*np.sin((12*x - 4.9)) + (x - 0.5) * 10. - 5
+```
+
+So, with respect to the high-fidelity, the adapted low-fidelity function only experiences a small shift in the sinusoïdal term and a resulting shift in its minimum. This should not be a problem for a robust method, right?
+However, if we now use the same MFK methodology, we get quite bad results as shown in [Fig 5.](#fig-MFK-changed-functions)!
+
+{{< image src="MFKgoodtobad.png" caption="Figure 5: On the left we see the MFK solution on the original functions of {{< cite Forrester2007- >}}, while on the right we see the MFK surrogate on the adapted lower fidelity functions. The MFK surrogate now is far from the high-fidelity truth we wanted to predict, and so we have an undesirable inaccurate surrogate model." id="fig-MFK-changed-functions" >}}
+
+Now, normally one might say the lower fidelity does not represent the high fidelity truth enough, in which case we could opt for a level with a higher fidelity than the current low fidelity. So, let's pick a medium-fidelity, in this case a simple average between the medium- and high-fidelity. Corresponding formula is given by the python snippet below.  
+
+```python 
+def MF_function(x):
+    return LF_function_adapted(x) + (HF_function(x) - LF_function_adapted(x))/2
+```
+
+The result is shown by [Fig. 6](#fig-mfk-to-proposed). After adding the medium-fidelity, the MFK (left) surrogate performs as bad as seen before. What is worse: it believes it is quite accurate too! Clearly, the underlying relationships between the fidelity levels cannot be captured by the MFK method. This is were the proposed method comes in (right side of the image)! It is perfectly able to capture and leverage the relations between the fidelities to exactly re-create the high-fidelity truth. What is more: it can do so with less high-fidelity datapoints (cheaper!), given proper validity of the assumption the method makes on these fidelity relations.
+
+{{< image src="MFKtoProposed.png" caption="Figure 6" id="fig-mfk-to-proposed" >}}
+
+Sure enough, we trade one required data property for the other, but this will extent the applicable range of multi-fidelity modelling. Moreover, wether or not the proposed method's assumption on the fidelity relations is valid can be cheaply and reliably tested, as we will see [later](#when-to-use-the-proposed-method).
+
+
 # Experimental setup
 In the experimental setup to show the efficacy of the proposed method, I use two types of test cases:
-- One using synthetic optimisation (minimisation) functions, altered to include noise and transformed to multi-fidelity variants using various relationships between the fidelity levels. In total, around a 1000 variations were used of the analytical functions shown in [Figure 1](#BraninRosenbrock). 
+- One using synthetic optimisation (minimisation) functions, altered to include noise and transformed to multi-fidelity variants using various relationships between the fidelity levels. In total, around a 1000 variations were used of the analytical functions shown in [Fig. 1](#BraninRosenbrock). 
 {{< image src="Branin_Rosenbrock.png" id="BraninRosenbrock" alt="Branin and Rosenbrock synthetic objective functions." linked=false caption="Figure 1: From left to right, the full synthetic objective functions used for minimisation by surrogate modelling on a DoE with a limited amount of function evaluations: [2D Branin](https://www.sfu.ca/~ssurjano/branin.html), [2D and 5D Rosenbrock](https://www.sfu.ca/~ssurjano/rosen.html).">}}
 - One where the objective function is retrieved using actual [CFD simulations](../../posts/cfd/), adapted to my needs and limitations. The solver is in development and limited to 2D scenarios. Shape variations are produced using a one-to-one parameterisation using Non-Uniform Rational B-Splines (NURBS). Fidelity levels are realised by using various levels of grid resolution for simulations.
 
@@ -78,7 +136,7 @@ graph TD;
 {{< /mermaid >}}
 
 ## Problem formulation
-The optimisation case mimics the shape optimisation of a free-fall lifeboat: a rescue vessel that drops off an offshore drilling platform into the sea in case of emergency. We only 'mimic' a complete optimisation because the used CFD solver, although specialised for these types of scenario, is under development and restricted to 2D problems. The optimisation goal is *to minimise the maximum (de-)acceleration* the lifeboat is subjected to when impacting with a flat body of water, to guarantee the safety of its passengers. This goal is achieved by chaning the bottom shape of the lifeboat.
+The optimisation case mimics the shape optimisation of a free-fall lifeboat: a rescue vessel that drops off an offshore drilling platform into the sea in case of emergency. We only 'mimic' a complete optimisation because the used CFD solver, although specialised for these types of scenario, is under development and restricted to 2D problems. The optimisation goal is *to minimise the maximum (de-)acceleration* the lifeboat is subjected to when impacting with a flat body of water, to guarantee the safety of its passengers. This goal is achieved by changing the bottom shape of the lifeboat.
 
 The main dimensions, dropping height (and thereby effective vessel speed at the moment of impact), and weight of this lifeboat are taken from the recordholding [FF1200 lifeboat of Palfinger Marine](https://www.palfingermarine.com/en/boats-and-davits/life-and-rescue-boats/free-fall-lifeboats#abd64e4eccollapse2).
 
@@ -89,7 +147,7 @@ With the goal of testing the proposed method, two variations of the same scenari
 Setting up more scenarios was not feasible given the time constraints of the thesis.
 
 ## Shape parameterisation
-The shape parameterisation of the lifeboat is done using Non-Uniform Rational B-Splines (NURBS, see {{< cite NURBSbook- >}}) using 2 parameters. The limitation of 2 parameters is due to the 2D nature of the CFD solver and the requirements of one-to-one shape mappings. [Figure 2](#fig-nurbs) shows the used range of possible shape variations of the 2D lifeboat bottom. To create the B-Splines I used the [geomdl](https://github.com/orbingol/NURBS-Python) python package. 
+The shape parameterisation of the lifeboat is done using Non-Uniform Rational B-Splines (NURBS, see {{< cite NURBSbook- >}}) using 2 parameters. The limitation of 2 parameters is due to the 2D nature of the CFD solver and the requirement of one-to-one parameter-shape mappings. [Fig. 2](#fig-nurbs) shows the used range of possible shape variations of the 2D lifeboat bottom. To create the B-Splines I used the [geomdl](https://github.com/orbingol/NURBS-Python) python package. 
 
 {{< image width="60%" alt="Example NURBS Parameterisations" src="NURBSgrid.png" caption="Figure 2: Some example shape parameterisations, with the parameters $x_i$ in the interval $[0,1]$" id="fig-nurbs" >}}
 
@@ -129,34 +187,33 @@ Like for any multi-fidelity experimental setup, this step is crucial, and turned
 
 # Results
 
+<!-- Falling wedge best design: high specific mass -->
+<!-- {{< youtube id="-TzZRLxXXPQ" autoplay="true" >}} -->
+<!-- https://youtu.be/-TzZRLxXXPQ -->
+
+<!-- Falling wedge best design: low specific mass -->
+<!-- https://youtu.be/jgT5-tSlykU -->
+
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+
 ## Synthetic cases \& structured experiments
 
-### Pedagogical example
-To show the use and effectiveness of the proposed method, I would like to re-iterate the example of {{< cite Forrester2007- >}}, and then slightly change their multi-fidelity transformation function.
-The promise of Multi-Fidelity Kriging (MFK) per the contrived example of {{< cite Forrester2007- >}} is shown by [Figure 3](#fig-mfk-promise).
 
-{{< image src="MFK_promise.png" caption="Figure 3: On the left we see two single-fidelity Kriging surrogate models created at the same budget, and on the right the MFK model that can reproduce the desired high fidelity function almost exactly, but at the same cost." id="fig-mfk-promise" >}}
+## Lifeboat cases
 
-```python 
-def HF_function(x): # high-fidelity function
-    return ((6*x-2)**2)*np.sin((12 * x-4))  
+{{< vimeo 873147687 >}}
+{{< image src="filtered_low_mass.png" >}}
 
-def LF_function(x): # low-fidelity function
-    return 0.5 * HF_function(x) + (x-0.5) * 10. - 5
-
-def LF_function_adapt(x):
-    return 0.5 * ((6*x-2)**2)*np.sin((12 * x-4.9)) + (x-0.5) * 10. - 5
-
-def MF_function(x):
-    return LF_function_adapt(x) + (HF_function(x) - LF_function_adapt(x))/2
-```
-
+{{< vimeo 873143175 >}}
+{{< image src="filtered_high_mass.png" >}}
 
 
 # When to use the proposed method
 
 
 
+<script src="https://player.vimeo.com/api/player.js"></script>
 
 
 # Bibliography
