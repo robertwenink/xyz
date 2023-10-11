@@ -49,7 +49,7 @@ var Util = /*#__PURE__*/function () {
   }, {
     key: "isTocStatic",
     value: function isTocStatic() {
-      return window.matchMedia('only screen and (max-width: 960px)').matches;
+      return window.matchMedia('only screen and (max-width: 1200px)').matches;
     }
   }, {
     key: "animateCSS",
@@ -1065,8 +1065,6 @@ var Theme = /*#__PURE__*/function () {
       try{
         this.initMath();
         console.log("Math loaded");
-        this.initMermaid();
-        // console.log("Mermaid loaded");
         this.initSVGIcon();
         console.log("SVG loaded");
         this.initTwemoji();
@@ -1074,27 +1072,29 @@ var Theme = /*#__PURE__*/function () {
         this.initMenuMobile();
         console.log("Menu loaded");
         this.initSwitchTheme();
-        // console.log("Switch loaded");
+        console.log("Switch loaded");
         this.initSearch();
         console.log("Search loaded");
         this.initDetails();
-        // console.log("Details loaded");
-        this.initLightGallery();
-        // console.log("Lightgallery loaded");
+        console.log("Details loaded");
         this.initHighlight();
-        // console.log("Highlight loaded");
+        console.log("Highlight loaded");
+        this.initMermaid();
+        console.log("Mermaid loaded");
         this.initTable();
-        // console.log("Table? loaded");
+        console.log("Table? loaded");
         this.initHeaderLink();
-        // console.log("Headerlink loaded");
+        console.log("Headerlink loaded");
         this.initEcharts();
-        // console.log("Echarts loaded");
+        console.log("Echarts loaded");
         this.initTypeit();
-        // console.log("Typeit loaded");
+        console.log("Typeit loaded");
         this.initMapbox();
         // console.log("Mapbox loaded");
         this.initCookieconsent();
-        // console.log("Cookieconsent loaded");
+        console.log("Cookieconsent loaded");
+        this.initLightGallery();
+        console.log("Lightgallery loaded");
       } catch (err) {
         console.error(err);
       }
