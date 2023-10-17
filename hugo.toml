@@ -119,7 +119,7 @@ enableGitInfo = true
   [params.footer]
     enable = true
     # Custom content (HTML format is supported)
-    custom = "CoC no: <a href='https://www.kvk.nl/bestellen/#/87003279000052935140'>87003279</a>  |  VAT no: NL004343026B56  <br>Powered by hugo and netlify"
+    custom = "CoC no: <a href='https://www.kvk.nl/bestellen/#/87003279000052935140'>87003279</a>  |  VAT no: NL004343026B56 | <a href='GENERAL TERMS AND CONDITIONS Robert Wenink - Maritime Engineering &amp; Computer Science - online publishing size.pdf' target='_blank'>General Terms &amp; Conditions</a> <br>Powered by hugo and netlify"
 
     # whether to show Hugo and theme info
     hugo = false
