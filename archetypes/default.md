@@ -3,7 +3,7 @@ title: "{{ replace .TranslationBaseName "-" " " | title }}"
 subtitle: ""
 date: {{ .Date }}
 draft: true
-description: ""
+description: "" # important for proper SEO!!
 summary: "" 
 
 tags: []
@@ -15,6 +15,7 @@ featuredImage: ""
 featuredImagePreview: ""
 
 math: false
+lightgallery: false # only set true if linked images in post
 ---
 
 <!--more-->

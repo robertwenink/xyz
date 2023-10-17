@@ -14,6 +14,7 @@ featuredImage: ""
 featuredImagePreview: "example_doe_2d_2.png"
 
 bibFile: "library-bib.json" # path relative to project root
+lightgallery: false
 ---
 
 <!--more-->

@@ -13,7 +13,8 @@ series: "Master's thesis"
 featuredImage: ""
 featuredImagePreview: ""
 
-bibFile: "library-EVA-bib.json" 
+bibFile: "library-EVA-bib.json"
+lightgallery: true
 ---
 
 <style>

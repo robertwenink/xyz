@@ -268,7 +268,7 @@ enableGitInfo = true
     twemoji = false
 
     # whether to enable lightgallery
-    lightgallery = true
+    lightgallery = false
 
     # whether to enable the ruby extended syntax
     ruby = false

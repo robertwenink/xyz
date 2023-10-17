@@ -14,6 +14,7 @@ featuredImage: "lifeboat.png"
 # featuredImagePreview: "lifeboat.png"
 
 bibFile: "library-bib.json" 
+lightgallery: true
 # citations, see : https://github.com/loup-brun/hugo-cite
 ---
 
