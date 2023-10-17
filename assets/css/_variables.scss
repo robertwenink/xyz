@@ -6,6 +6,7 @@
   font-family: Emoji;
   src: local("Apple Color Emoji"), local("Segoe UI Emoji"), local("Segoe UI Symbol"), local("Noto Color Emoji");
   unicode-range: U+1F000-1F644, U+203C-3299;
+  font-display: swap;
 }
 
 // ========== Global ========== //
@@ -32,7 +33,7 @@ $global-link-color: #161209 !default;
 $global-link-color-dark: #a9a9b3 !default;
 
 // Color of the hover link
-$global-link-hover-color: #2d96bd !default;
+$global-link-hover-color: #2784a5 !default;
 $global-link-hover-color-dark: #fff !default;
 
 // Color of the border
@@ -81,7 +82,7 @@ $toc-title-font-size: 1.2rem !default;
 $toc-content-font-size: 1rem !default;
 
 // Color of the single link
-$single-link-color: #2d96bd !default;
+$single-link-color: #2784a5 !default;
 $single-link-color-dark: #55bde2 !default;
 
 // Color of the hover single link
@@ -103,7 +104,7 @@ $blockquote-color-dark: #59c5ec !default;
 
 // ========== Pagination ========== //
 // Color of the link in pagination
-$pagination-link-color: #2d96bd !default;
+$pagination-link-color: #2784a5 !default;
 $pagination-link-color-dark: #a9a9b3 !default;
 
 // Color of the hover link in pagination
