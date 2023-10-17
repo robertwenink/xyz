@@ -81,6 +81,7 @@ var Theme = /*#__PURE__*/function () {
     _classCallCheck(this, Theme);
 
     this.config = window.config;
+    console.log(window)
     this.data = this.config.data;
     this.isDark = document.body.getAttribute('theme') === 'dark';
     this.util = new Util();
@@ -644,15 +645,19 @@ var Theme = /*#__PURE__*/function () {
   }, {
     key: "initMath",
     value: function initMath() {
-      this.config.math.trust = (context) => ['\\htmlId', '\\href'].includes(context.command);
-      this.config.math.macros = {
-        "\\cref": "\\href{##eqn-#1}{\\textnormal{Eq. (#2)}}",
-        "\\pcref": "\\href{#3##eqn-#1}{\\textnormal{Eq. (#2) of this post}}",
-        "\\label": "\\htmlId{eqn-#1}{}"
-      };
-      this.config.math.strict = "ignore"
-      console.log(this.config.math)
-      if (this.config.math) renderMathInElement(document.body, this.config.math);
+      if (this.config.math) {
+        this.config.math.trust = (context) => ['\\htmlId', '\\href'].includes(context.command);
+        this.config.math.macros = {
+          "\\cref": "\\href{##eqn-#1}{\\textnormal{Eq. (#2)}}",
+          "\\pcref": "\\href{#3##eqn-#1}{\\textnormal{Eq. (#2) of this post}}",
+          "\\label": "\\htmlId{eqn-#1}{}"
+        };
+        this.config.math.strict = "ignore"
+        console.log(this.config.math)
+        renderMathInElement(document.body, this.config.math);
+      } else {
+        console.log("!! Math not enabled on page !!")
+      }
     }
   }, {
     key: "initMermaid",
