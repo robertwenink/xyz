@@ -3,7 +3,7 @@ title: "(Multi-fidelity) Bayesian Optimisation"
 subtitle: ""
 date: 2023-09-18T23:35:22+02:00
 draft: false
-description: ""
+description: "The Efficient Global optimisation (EGO) algorithm is a form of Bayesian Optimisation. A multi-fidelity extension of this methodology could further boost the optimistation perfomance."
 
 tags: []
 categories: [Surrogate modelling]
@@ -18,7 +18,7 @@ bibFile: "library-bib.json"
 
 <!--more-->
 # (Multi-fidelity) Efficient Global optimisation
-he Efficient Global optimisation (EGO) algorithm {{< cite "Jones1998" >}} is a form of Bayesian optimisation. The EGO algorithm adaptively samples additional points based on the Expected Improvement criterion {{< cite "Jones1998" >}}, which is formulated using the estimated mean squared error that Kriging provides. Using this criterion, EGO provably converges to the global optimum in an optimisation process {{< cite "Locatelli1997" >}}, although it may exhaustively sample around local optima {{< cite "Forrester2007" >}}. An overview of the algorithmic procedure is given by [Algorithm 1](#algorithm).
+The Efficient Global optimisation (EGO) algorithm {{< cite "Jones1998" >}} is a form of Bayesian optimisation. The EGO algorithm adaptively samples additional points based on the Expected Improvement criterion {{< cite "Jones1998" >}}, which is formulated using the estimated mean squared error that Kriging provides. Using this criterion, EGO provably converges to the global optimum in an optimisation process {{< cite "Locatelli1997" >}}, although it may exhaustively sample around local optima {{< cite "Forrester2007" >}}. An overview of the algorithmic procedure is given by [Algorithm 1](#algorithm).
 
 {{< image src="algorithm.png" alt="EGO algorithm" id="algorithm" width="100%" linked=false >}}
 
