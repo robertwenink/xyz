@@ -211,7 +211,7 @@
         }
 
         th, td {
-          padding: .3rem 1rem;
+          padding: .3rem 0.6rem;
           border: 1px solid darken($table-thead-color, 2%);
 
           [theme=dark] & {
