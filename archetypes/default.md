@@ -14,6 +14,7 @@ weight: 0
 featuredImage: ""
 featuredImagePreview: ""
 
+math: false
 ---
 
 <!--more-->

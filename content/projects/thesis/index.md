@@ -16,6 +16,7 @@ featuredImage: "lifeboat.png"
 bibFile: "library-bib.json" 
 # citations, see : https://github.com/loup-brun/hugo-cite
 ---
+
 In June of 2023, I defended my thesis project to obtain both a master's degree in Marine Engineering and Computer Science, awarded a 8.5 in both disciplines. This post provides a (shorter) adaptation of the thesis. The complete thesis titled "Multi-Fidelity Kriging Extrapolation" can be found on the [TU Delft repository](https://repository.tudelft.nl/islandora/object/uuid%3Ad30374fd-8213-40c7-bd72-f17b108d7759?collection=education). 
 
 Before reading this article, it might be good to read up on the following subjects (from the post series "Master's thesis"):

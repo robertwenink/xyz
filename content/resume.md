@@ -12,7 +12,8 @@ featuredImage: ""
 featuredImagePreview: ""
 
 layout: "special"
-
+lightgallery: false
+math: false
 ---
 
 <!--more-->

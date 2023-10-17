@@ -10,6 +10,9 @@ categories: []
 
 featuredImage: ""
 featuredImagePreview: ""
+
+lightgallery: false
+math: false
 ---
 
 # About me and this website
