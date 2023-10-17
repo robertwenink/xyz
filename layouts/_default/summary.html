@@ -11,7 +11,7 @@
     {{- end -}}
     {{- with $image -}}
         <div class="featured-image-preview">
-            <a href="{{ $.RelPermalink }}">
+            <a href="{{ $.RelPermalink }}">{{ $.RelPermalink }}
                 {{- dict "Src" . "Title" $.Description "Resources" $.Resources | partial "plugin/img.html" -}}
             </a>
         </div>
