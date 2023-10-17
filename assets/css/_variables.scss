@@ -25,7 +25,7 @@ $global-font-color: #161209 !default;
 $global-font-color-dark: #a9a9b3 !default;
 
 // Color of the secondary text
-$global-font-secondary-color: #a9a9b3 !default;
+$global-font-secondary-color: #757585 !default; // was a9a9b3 voor de lichte
 $global-font-secondary-color-dark: #5d5d5f !default;
 
 // Color of the link
@@ -46,7 +46,7 @@ $global-border-color-dark: #363636 !default;
 $scrollbar-color: #87878d !default;
 
 // Color of the hover scrollbar
-$scrollbar-hover-color: #a9a9b3 !default;
+$scrollbar-hover-color: #757585 !default;
 // ========== Scrollbar ========== //
 
 // ========== Selection ========== //
@@ -188,7 +188,7 @@ $code-type-list:
 // Color map of the code highlight
 $code-highlight-color-map: (
 /*#region*/
-  /* Parentheses */ "p": #a9a9b3,
+  /* Parentheses */ "p": #757585,
   /* Keyword */ "k": #b501a9,
   /* KeywordConstant */ "kc": #b501a9,
   /* KeywordDeclaration */ "kd": #b501a9,
