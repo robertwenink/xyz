@@ -88,12 +88,12 @@
 {{- if $math.enable -}}
     {{- $source := "lib/katex/katex.min.css" | default $cdn.katexCSS -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
-    {{- $source := "lib/katex/katex.min.js" | default $cdn.katexJS -}}
+    {{- $source := $cdn.katexJS | default "lib/katex/katex.min.js" -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- $source := "lib/katex/contrib/auto-render.min.js" | default $cdn.katexAutoRenderJS -}}
     {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- if $math.copyTex -}}
-        {{- $source := "lib/katex/contrib/copy-tex.min.js" | default $cdn.katexCopyTexJS -}}
+        {{- $source := $cdn.katexCopyTexJS | default "lib/katex/contrib/copy-tex.min.js" -}}
         {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
     {{- end -}}
     {{- if $math.mhchem -}}
