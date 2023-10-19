@@ -3,7 +3,7 @@ title: "Design of Experiments"
 subtitle: ""
 date: 2023-09-18T17:41:23+02:00
 draft: false
-description: ""
+description: "A Design of Experiments (DoE) determines at which locations in a parameter space experiments are conducted. In surrogate modelling, a proper DoE is important to get a uniform coverage of the parameter domain and get as much information about the objective value's variability per dimension with the least possible input data."
 
 tags: [DoE, sampling]
 categories: [Surrogate modelling]
@@ -18,7 +18,7 @@ lightgallery: false
 ---
 
 <!--more-->
-In surrogate modelling, to get a uniform coverage of the parameter domain and get as much information about the objective value's variability per dimension, we need an adequate design of experiments (DoE), also known as a sampling plan. Such a design is used to determine the inputs with which we run the initial set of simulations that will be used to construct our initial surrogate model(s). Since we are considering a deterministic computer experiment, the DoE does not consider re-sampling for the same input.
+In surrogate modelling, to get a uniform coverage of the parameter domain and get as much information about the objective value's variability per dimension with the least possible input data, we need an adequate design of experiments (DoE), also known as a sampling plan. Such a design is used to determine the inputs with which we run the initial set of simulations that will be used to construct our initial surrogate model(s). Since we are considering a deterministic computer experiment, the DoE does not consider re-sampling for the same input.
 
 # Latin Hypercube Sampling
 The most popular technique is called Latin Hypercube Sampling (LHS). In this method, each dimensional axis gets divided into a predefined amount of bins equal to the total amount of samples. In each bin, only one sample will be placed. In 2D this means one sample will occupy a row and a column and no other sample can be placed in that row and column.  

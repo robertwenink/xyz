@@ -3,7 +3,7 @@ title: "Surrogate modelling: introduction"
 subtitle: ""
 date: 2023-09-26T16:51:22+02:00
 draft: false
-description: ""
+description: "Surrogate modelling creates a computer model that can cheaply replace an expensive or otherwise hard to retrieve function. The surrogate model can be used in optimisation processes, sensitivity analysis or uncertainty quantification."
 
 tags: [surrogate modelling]
 categories: [Surrogate modelling]
@@ -15,7 +15,7 @@ featuredImagePreview: ""
 ---
 
 # What is surrogate modelling?
-To understand what surrogate modelling is, I would like to use a somewhat intuïtive example.
+Surrogate modelling creates a computer model that can cheaply replace an expensive or otherwise hard to retrieve function. To intuïtively understand what surrogate modelling is, I would like to use a example.
 
 In the following, let's consider a problem where we want to find an object shape (a design) that minimises the (de-)acceleration when this object is dropped onto a flat water surface. This is an optimisation process, where we want to find the best design, and prefer to do that as efficiently possible. 
 

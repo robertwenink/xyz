@@ -3,7 +3,7 @@ title: "Computational Fluid Dynamics: brief method overview"
 subtitle: ""
 date: 2023-10-02T21:48:35+02:00
 draft: false
-description: ""
+description: "A top-level description of the Computational Fluid Dynamics solver dubbed EVA that is able to solve two-phase (in-)compressible fluid flows and uses consistent two-way fluid-structure interactions (FSI), applying this to moving bodies together with a Volume-of-Fluid (VoF) cut-cell method on a staggered arrangement of variables."
 summary: "" 
 
 tags: [CFD]

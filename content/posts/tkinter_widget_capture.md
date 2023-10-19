@@ -3,7 +3,7 @@ title: "Tkinter: how to export a widget as an image"
 subtitle: ""
 date: 2023-10-03T17:05:25+02:00
 draft: false
-description: ""
+description: "Tkinter, is a Python standard library and interface to the Tcl/Tk GUI toolkit. However, there is no native support to export a rendered tkinter.Frame or tkinter.Toplevel to image format. This post describes a workaround to that problem."
 summary: "" 
 
 tags: [GUI, tkinter]

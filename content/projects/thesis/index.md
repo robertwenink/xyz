@@ -3,7 +3,7 @@ title: "Thesis project"
 subtitle: ""
 date: 2023-09-18T15:52:50+02:00
 draft: false
-description: ""
+description: "This master's thesis introduces a novel multi-fidelity methodology that could increase (design) optimisation efficiency and effectivity in deterministic computer experiments. The methodology is among others tested in a design optimisation case that mimics a lifeboat impacting with a still body of water, where the input data is acquired using Computational Fluid Dynamics simulations."
 summary: "" 
 
 tags: [CFD, Gaussian Process Regression, GPR, Kriging, surrogate modelling]
@@ -25,6 +25,8 @@ Before reading this article, it might be good to read up on the following subjec
 - [Kriging](../../posts/kriging/), also known outside engineering as Gaussian Process Regression, is the surrugoate modelling technique at the core of the work of this thesis due to some beneficial characteristics with respect to its use together with expensive-to-evaluate objective functions.
 - [Multi-fidelity Kriging](../../posts/mfkriging/): extending the Kriging surrogate to beneficially combine multiple infromation sources of different precision and cost.
 - [(Multi-fidelity) Efficient Global Optimisation](../../posts/mfEGO/): an algorithm that uses the characteristics of (multi-fidelity) Kriging to converge to the global optimum solution of a design problem.
+
+This master's thesis introduces a novel multi-fidelity methodology that could increase (design) optimisation efficiency and effectivity in deterministic computer experiments. The methodology is among others tested in a design optimisation case that mimics a lifeboat impacting with a still body of water, where the input data is acquired using Computational Fluid Dynamics simulations.
 
 # Motivation
 Automatic design procedures based on Computational Fluid Dynamics (CFD) simulations are becoming increasingly important in practical ship design {{< cite "Scholcz2015" >}}. For an efficient optimisation phase of such a design procedure, accurate high-dimensional surrogate modelling is essential {{< cite "Viana2014" >}}. A surrogate model provides a cheap substitute for an expensive (CFD) simulation, enabling us to feasibly approximate and explore the design space. To illustrate the effectiveness and promise of using surrogate models in naval optimisation routines, {{< cite "Scholcz2017-" >}} show that Surrogate-Based Global optimisation (SBGO) of a tanker`s hull reduces the required computational time from two weeks to only a day when compared with a direct optimisation algorithm. This is important since {{< cite "Raven2017-" >}} state that the time available for hull shape optimisation with the goal of, for instance, wave resistance minimisation is usually only 1 to 2 weeks or even less.

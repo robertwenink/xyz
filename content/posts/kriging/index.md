@@ -3,7 +3,7 @@ title: "Kriging (Gaussian Process Regression)"
 subtitle: ""
 date: 2023-09-14T15:52:50+02:00
 draft: false
-description: ""
+description: "Kriging, also known as a form of Gaussian Process Regression, is a surrogate modelling technique that can provide an estimation of the mean squared error corresponding to its prediction. This post derives the Ordinary Kriging formulation and describes how to treat noisy inputs, the involved hyperparameter tuning process and the extension to Universal Kriging."
 
 tags: [CFD, Gaussian Process Regression, GPR, Kriging, surrogate modelling]
 categories: [Surrogate modelling]

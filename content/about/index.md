@@ -3,7 +3,7 @@ title: "About"
 subtitle: ""
 date: 2023-07-31T16:09:22+02:00
 draft: false
-description: ""
+description: "My name is Robert Wenink. I specialise in the fusion between the fields of Computer Science and (Maritime) Engineering, possessing a master's degree in both. I am open to projects related to full-stack python development, data analysis and data science. On this page you also find some of my company's details."
 layout: "special"
 math: false
 lightgallery: false

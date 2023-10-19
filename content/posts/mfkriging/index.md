@@ -3,7 +3,7 @@ title: "Multi-fidelity Kriging"
 subtitle: ""
 date: 2023-09-18T23:32:51+02:00
 draft: false
-description: ""
+description: "Multi-fidelity Kriging extends Kriging to use multiple sources of data with varying levels of accuracy and costs, with the aim to create surrogate model that is more accurate and/or cheaper in terms of the cost of input data."
 
 tags: []
 categories: [Surrogate modelling]
@@ -17,6 +17,8 @@ bibFile: "library-bib.json"
 ---
 
 <!--more-->
+Multi-fidelity Kriging extends Kriging to use multiple sources of data with varying levels of accuracy and costs, with the aim to create surrogate model that is more accurate and/or cheaper in terms of the cost of input data.
+
 In this post, I focus on the standard linear auto-regressive formulation of {{< cite "Gratiet2014-" >}} in the optimisation context of the EGO adaptive sampling algorithm, and are interested in the potential of this combination to reduce the costs of SBGO. {{< cite "Meliani2019;Korondi2021-" >}} use the recursive formulation of {{< cite "Gratiet2014-" >}} to introduce a multi-fidelity approach to the EGO algorithm and formulate level-selection criteria that balance the expected reduction of the prediction variance with the costs of sampling a given level. The multi-fidelity SBGO method of {{< cite "Meliani2019-" >}} will act as a reference to the method proposed in this thesis since both methods use a so-called nested Design of Experiments (DoE), a sampling strategy that provides the most complete information on the relation between the fidelities {{< cite "Kennedy2000" >}}.
 
 {{< cite "Jones2001-" >}} discusses the relation of Kriging with respect to other surrogate modelling methods and explores possible improvements to EGO and the Expected Improvement criterion. As one of the most promising directions for further work, he hinted towards multi-fidelity simulation: using expensive high-precision simulations together with simulations of a lower precision but a much lower cost. This enables us to respectively balance exploitation and exploration of the search space and thereby cut costs while improving the quality of the surrogate.
