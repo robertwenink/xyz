@@ -1,6 +1,11 @@
 {{- $params := .Params | merge .Site.Params.page -}}
 
 <article class="single summary" itemscope itemtype="http://schema.org/Article">
+    {{- /* Title */ -}}
+    <h1 class="single-title" itemprop="name headline">
+        <a href="{{ .RelPermalink }}">{{ .Title | emojify }}</a>
+    </h1>
+    
     {{- /* Featured image */ -}}
     {{- $image := $params.featuredimagepreview | default $params.featuredimage -}}
     {{- with .Resources.GetMatch "featured-image" -}}
@@ -16,11 +21,6 @@
             </a>
         </div>
     {{- end -}}
-
-    {{- /* Title */ -}}
-    <h1 class="single-title" itemprop="name headline">
-        <a href="{{ .RelPermalink }}">{{ .Title | emojify }}</a>
-    </h1>
 
     {{- /* Meta */ -}}
     <div class="post-meta">

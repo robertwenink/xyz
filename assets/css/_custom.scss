@@ -2,6 +2,10 @@
 // Custom style
 // ==============================
 
+.section-separator {
+    border-bottom: $global-hr-line #f0f0f0;
+}
+
 .mermaid {
     position: relative;
     text-align: center;
