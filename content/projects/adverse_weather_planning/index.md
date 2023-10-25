@@ -11,13 +11,14 @@ categories: []
 series: ""
 weight: 0
 
-featuredImage: ""
-featuredImagePreview: "preview_with_logo4.png"
+featuredImage: "pacific-orca-sept-2012-large_blurred.jpg"
+featuredImagePreview: "preview_with_logo5.png"
 # featuredImagePreview: "preview.png"
 # 800x240 rendered, dus moet width x 0.3 is height
 
 math: false
 lightgallery: false # only set true if linked images in post
+toc: false
 ---
 
 [Cadeler A/S](https://www.cadeler.com/) has been so kind to assign me my first project. The goal was to streamline their planning- and reporting process related to adverse weather conditions during operations with their jack-up vessels, used in the construction and commissioning of offshore windfarms. 
