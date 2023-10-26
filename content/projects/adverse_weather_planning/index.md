@@ -69,14 +69,16 @@ The GUI has the following extra functionalities:
 - Tooltips per input field, making the tool largely self-explained up to the level of the technical specifics.
 - Mechanics to (automatically) save and load the complete state of GUI.
 - The possibility to save (and delete) standard scenarios, to be straighforwardly inserted from within the GUI for an increased efficiency and ease of the workflow.
-- Mechanics to share the user-defined save files and standard scnearios with other users. Likewise, the complete tool can be exported and automatically installed for receiving users.
+- Mechanics to share the user-defined save files and standard scenarios with other users. Likewise, the complete tool can be exported and automatically installed for receiving users.
 - The tool comes with a manual for users and for developers.
 <br/>
 <br/>
 
 {{< image src="AWPtool_projectconstants.png" linked=false caption="The 'Project constants' tab where general project constants, options, and inputs specific to report generation can be supplied. For privacy reasons, examples of the rendered outputs and tabs to provide the weather window inputs and are not shown in this post." >}}
 
-The GUI is written in python using built-in Tkinter and [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter), to obtain a clean and modern look. Any future GUI projects will however be written using [PySide](https://www.qt.io/qt-for-python), the LGPL-licensed official python binding of Qt. The tool's backend and GUI-integration are written using well-known python libraries such as numpy, matplotlib and PIL. Report generation is based on a template file, changed and imputed with the tool's inputs and outputs using [python-docx](https://github.com/python-openxml/python-docx). The tool is exported as a single-file executable using [PyInstaller](https://pyinstaller.org/en/stable/).
+The GUI is written in python using built-in Tkinter and [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter), to obtain a clean and modern look[^1]. The tool's backend and GUI-integration are written using well-known python libraries such as numpy, matplotlib and PIL. Report generation is based on a template file, changed and imputed with the tool's inputs and outputs using [python-docx](https://github.com/python-openxml/python-docx). The tool is exported as a single-file executable using [PyInstaller](https://pyinstaller.org/en/stable/).
+
+[^1]: Any future GUI projects will however be written using [PySide](https://www.qt.io/qt-for-python), the LGPL-licensed official python binding of Qt.
 
 
 
