@@ -12,7 +12,7 @@ series: ""
 weight: 0
 
 featuredImage: "pacific-orca-sept-2012-large_blurred.jpg"
-featuredImagePreview: "preview_with_logo5.png"
+# featuredImagePreview: "preview_with_logo5.png"
 # featuredImagePreview: "preview.png"
 # 800x240 rendered, dus moet width x 0.3 is height
 
