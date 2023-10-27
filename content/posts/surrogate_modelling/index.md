@@ -5,7 +5,7 @@ date: 2023-09-26T16:51:22+02:00
 draft: false
 description: "Surrogate modelling creates a computer model that can cheaply replace an expensive or otherwise hard to retrieve function. The surrogate model can be used in optimisation processes, sensitivity analysis or uncertainty quantification."
 
-tags: [surrogate modelling]
+tags: [Surrogate modelling]
 categories: [Surrogate modelling]
 series: "Master's thesis"
 weight: 1

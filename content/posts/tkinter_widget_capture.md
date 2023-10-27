@@ -6,15 +6,15 @@ draft: false
 description: "Tkinter, is a Python standard library and interface to the Tcl/Tk GUI toolkit. However, there is no native support to export a rendered tkinter.Frame or tkinter.Toplevel to image format. This post describes a workaround to that problem."
 summary: "" 
 
-tags: [GUI, tkinter]
-categories: [programming]
+tags: [GUI, Tkinter]
+categories: [Programming]
 series: ""
 weight: 0
 
 featuredImage: ""
 featuredImagePreview: ""
-
 ---
+
 Tkinter, is a Python standard library and interface to the Tcl/Tk GUI toolkit (Tcl is playfully pronounced as 'tickle').
 Depending on the usage, Tkinter provides an easy-to-use and fast library for creating GUIs, and can presently be made modern and beautiful using the [customtkinter](https://github.com/TomSchimansky/CustomTkinter) package.
 However, there is no native support to export a rendered tkinter.Frame or tkinter.Toplevel to image format. This post describes a workaround to that problem.

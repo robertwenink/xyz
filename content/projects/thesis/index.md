@@ -6,7 +6,7 @@ draft: false
 description: "This master's thesis introduces a novel multi-fidelity methodology that could increase (design) optimisation efficiency and effectivity in deterministic computer experiments. The methodology is among others tested in a design optimisation case that mimics a lifeboat impacting with a still body of water, where the input data is acquired using Computational Fluid Dynamics simulations."
 summary: "" 
 
-tags: [CFD, Gaussian Process Regression, GPR, Kriging, surrogate modelling]
+tags: [CFD, Gaussian Process Regression, GPR, Kriging, Surrogate modelling]
 categories: [Surrogate modelling]
 series: "Master's thesis"
 

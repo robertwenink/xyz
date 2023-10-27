@@ -6,8 +6,8 @@ draft: false
 description: "" # important for proper SEO!!
 summary: "" 
 
-tags: []
-categories: []
+tags: [GUI,]
+categories: [Automation]
 series: ""
 weight: 0
 
