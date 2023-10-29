@@ -1,7 +1,7 @@
 # documentation for theme found in https://hugoloveit.com/categories/documentation/
 title = "Robert Wenink - Maritime Engineering and Computer Science"
 baseURL = "https://robertwenink.xyz/"
-theme = "hugo-cite"
+theme = "themeworkmakesthedreamwork"
 
 languageCode = "en"
 languageName = "English"

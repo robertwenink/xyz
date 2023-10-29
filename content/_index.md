@@ -42,13 +42,14 @@ math: false
   </div>
 
   </div>
-  <!-- padding om de ul binnen de div te houden -->
+  
+  <!-- padding om de ul binnen de div te houden --
   <div style="padding:1px;">
   
   - To read more about me, my skills and [Curriculum Vitae](/resume/), see the [About](/about/) section.
   - A project portfolio is found under [Projects](/projects/).
   - A tech blog is maintained in [Posts](/posts/).
-  </div>
+  </div> -->
 
   <div id="hire-me">
   Want to hire me, or have any suggestions?
