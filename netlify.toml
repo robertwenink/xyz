@@ -28,3 +28,8 @@ HUGO_VERSION = "0.115.4"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
+
+[[redirects]]
+  from = "/"
+  to = "https://www.robertwenink.com"
+  force = true # COMMENT: ensure that we always redirect
