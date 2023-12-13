@@ -30,6 +30,26 @@ HUGO_VERSION = "0.115.4"
 HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
-  from = "/"
+  from = "/about/"
+  to = "https://www.robertwenink.com/about/"
+  force = true
+
+[[redirects]]
+  from = "/resume/"
+  to = "https://www.robertwenink.com/resume/"
+  force = true
+
+[[redirects]]
+  from = "/projects/*"
+  to = "https://www.robertwenink.com/projects/"
+  force = true
+
+[[redirects]]
+  from = "/posts/*"
+  to = "https://www.robertwenink.com/posts/"
+  force = true
+
+[[redirects]]
+  from = "/*"
   to = "https://www.robertwenink.com"
   force = true # COMMENT: ensure that we always redirect
